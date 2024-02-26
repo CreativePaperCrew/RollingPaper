@@ -14,6 +14,12 @@
     "react/no-unused-state": "warn",
     "react/jsx-key": "warn",
     "react/self-closing-comp": "warn",
-    "react/jsx-curly-brace-presence": "warn"
+    "react/jsx-curly-brace-presence": "warn",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }

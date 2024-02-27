@@ -15,8 +15,8 @@ export const HeaderContentContainer = styled.div`
   align-items: center;
   gap: 0.0625rem;
   flex-shrink: 0;
-  padding: 0.75rem 22.25rem;
-  @media screen and (max-width: 1199px) {
+  padding: 0 22.25rem;
+  @media screen and (max-width: 1248px) {
     padding: 0.6875rem 1.5rem;
   }
   @media screen and (max-width: 767px) {

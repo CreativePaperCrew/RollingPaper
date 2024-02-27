@@ -18,7 +18,9 @@ const Header = () => {
             <LogoContent>Rolling</LogoContent>
           </LogoContainer>
         </Link>
-        <HeaderButton>롤링 페이퍼 만들기</HeaderButton>
+        <Link to="/post" style={{ textDecoration: 'none' }}>
+          <HeaderButton>롤링 페이퍼 만들기</HeaderButton>
+        </Link>
       </HeaderContent>
     </HeaderContentContainer>
   );

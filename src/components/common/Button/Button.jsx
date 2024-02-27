@@ -1,14 +1,12 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ButtonContainer, CustomButton } from './ButtonStyled';
 
 const Button = ({ text, to, width }) => {
-  const navigate = useNavigate();
-
   return (
     <ButtonContainer>
-      <CustomButton onClick={() => navigate(to)} width={width}>
-        {text}
-      </CustomButton>
+      <Link to={to} style={{ textDecoration: 'none' }}>
+        <CustomButton width={width}>{text}</CustomButton>
+      </Link>
     </ButtonContainer>
   );
 };

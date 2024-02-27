@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
-import { ButtonContainer, CustomButton } from './ButtonStyled';
+import * as S from './ButtonStyled';
 
 const Button = ({ text, to, width }) => {
   return (
-    <ButtonContainer>
+    <S.ButtonContainer>
       <Link to={to} style={{ textDecoration: 'none' }}>
-        <CustomButton width={width}>{text}</CustomButton>
+        <S.CustomButton width={width}>{text}</S.CustomButton>
       </Link>
-    </ButtonContainer>
+    </S.ButtonContainer>
   );
 };
 

@@ -1,28 +1,22 @@
 import { Link } from 'react-router-dom';
-import {
-  HeaderButton,
-  HeaderContent,
-  HeaderContentContainer,
-  LogoContainer,
-  LogoContent,
-} from './HeaderStyled';
+import * as S from './HeaderStyled';
 import LogoImg from '../../../assets/images/logo.svg';
 
 const Header = () => {
   return (
-    <HeaderContentContainer>
-      <HeaderContent>
+    <S.HeaderContentContainer>
+      <S.HeaderContent>
         <Link to="/" style={{ textDecoration: 'none' }}>
-          <LogoContainer>
+          <S.LogoContainer>
             <img src={LogoImg} alt="로고 이미지" />
-            <LogoContent>Rolling</LogoContent>
-          </LogoContainer>
+            <S.LogoContent>Rolling</S.LogoContent>
+          </S.LogoContainer>
         </Link>
         <Link to="/post" style={{ textDecoration: 'none' }}>
-          <HeaderButton>롤링 페이퍼 만들기</HeaderButton>
+          <S.HeaderButton>롤링 페이퍼 만들기</S.HeaderButton>
         </Link>
-      </HeaderContent>
-    </HeaderContentContainer>
+      </S.HeaderContent>
+    </S.HeaderContentContainer>
   );
 };
 

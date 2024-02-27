@@ -63,10 +63,9 @@ export const PointButton = styled.button`
   border: none;
   background: var(--purple-600);
   color: var(--white);
-  font-family: Pretendard;
-  font-size: 0.875rem;
+  font-size: var(--font-14);
   font-style: normal;
-  font-weight: 700;
+  font-weight: var(--font-bold);
   line-height: 1.25rem;
   letter-spacing: -0.0044rem;
   @media screen and (max-width: 767px) {
@@ -82,16 +81,14 @@ export const DescriptionContainer = styled.div`
 `;
 
 export const MainDescription = styled.span`
-  color: var(--gray-900, #181818);
-  font-family: Pretendard;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 700;
+  color: var(--gray-900);
+  font-size: var(--font-24);
+  font-weight: var(--font-bold);
   line-height: 2.25rem;
   letter-spacing: -0.015rem;
   white-space: normal;
   @media screen and (max-width: 767px) {
-    font-size: 1.125rem;
+    font-size: var(--font-18);
     line-height: 1.75rem;
     letter-spacing: -0.0112rem;
   }
@@ -101,16 +98,15 @@ export const EmojiDescription = styled(MainDescription)`
 `;
 
 export const SubDescription = styled.p`
-  color: var(--gray-500, #555);
-  font-family: Pretendard;
-  font-size: 1.125rem;
+  color: var(--gray-500);
+  font-size: var(--font-18);
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--font-regular);
   line-height: 1.75rem;
   letter-spacing: -0.0112rem;
   white-space: nowrap;
   @media screen and (max-width: 767px) {
-    font-size: 0.9375rem;
+    font-size: var(--font-15);
     line-height: 1.375rem;
     letter-spacing: -0.0094rem;
   }

@@ -1,34 +1,24 @@
 import styled from 'styled-components';
 
-export const HeaderContainer = styled.div`
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
-`;
-
 export const HeaderContentContainer = styled.div`
   display: flex;
-  width: 100%;
-  height: 4rem;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.0625rem;
-  flex-shrink: 0;
-  padding: 0 22.25rem;
-  @media screen and (max-width: 1248px) {
-    padding: 0.6875rem 1.5rem;
-  }
-  @media screen and (max-width: 767px) {
-    padding: 0.75rem 1.25rem;
-  }
+  width: 100%;
 `;
 
 export const HeaderContent = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
+  height: 4rem;
+  padding: 0 1.5rem;
+
+  @media (min-width: 1200px) {
+    max-width: 120rem;
+    padding: 0 clamp(1.5rem, 2vw + 1rem, 12.5rem);
+  }
 `;
 
 export const LogoContainer = styled.div`

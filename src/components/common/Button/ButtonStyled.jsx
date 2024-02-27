@@ -4,7 +4,6 @@ export const ButtonContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  text-decoration: none;
 `;
 
 export const CustomButton = styled.button`
@@ -18,10 +17,8 @@ export const CustomButton = styled.button`
   background: var(--purple-600);
   color: var(--white);
   text-align: center;
-  font-family: Pretendard;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 700;
+  font-size: var(--font-18);
+  font-weight: var(--font-bold);
   line-height: 1.75rem;
   letter-spacing: -0.0112rem;
   width: ${(props) => (props.width ? `${props.width}rem` : 'auto')};

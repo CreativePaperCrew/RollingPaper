@@ -16,6 +16,12 @@ export const HeaderContentContainer = styled.div`
   gap: 0.0625rem;
   flex-shrink: 0;
   padding: 0.75rem 22.25rem;
+  @media screen and (max-width: 1199px) {
+    padding: 0.6875rem 1.5rem;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 0.75rem 1.25rem;
+  }
 `;
 
 export const HeaderContent = styled.div`

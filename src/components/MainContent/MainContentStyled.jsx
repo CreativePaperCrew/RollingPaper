@@ -9,6 +9,14 @@ export const MainContentContainer = styled.div`
   flex-direction: column;
   margin: 0.375rem 0;
   gap: 1.875rem;
+  @media screen and (max-width: 1199px) {
+    min-width: 45rem;
+    margin: 3.75rem 1.5rem;
+  }
+  @media screen and (max-width: 767px) {
+    max-width: 20rem;
+    margin: 3.75rem 1.5rem;
+  }
 `;
 
 export const FirstContent = styled.div`
@@ -17,6 +25,12 @@ export const FirstContent = styled.div`
   gap: 0.75rem;
   border-radius: 1rem;
   background: var(--surface);
+  @media screen and (max-width: 1199px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 2.25rem;
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -24,6 +38,10 @@ export const TextContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
+  @media screen and (max-width: 1199px) {
+    width: 80%;
+    margin: 2.5rem 6.25rem 0 2.5rem;
+  }
 `;
 
 export const PointButton = styled.button`
@@ -82,4 +100,10 @@ export const SecondContent = styled.div`
   align-items: flex-start;
   border-radius: 1rem;
   background: var(--surface);
+  @media screen and (max-width: 1199px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0;
+    gap: 2.25rem;
+  }
 `;

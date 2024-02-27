@@ -2,25 +2,25 @@ import styled from 'styled-components';
 
 export const PostCardsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(1, 32rem);
-  grid-template-rows: repeat(auto-fit, 23rem);
+  grid-template-columns: repeat(1, 20rem);
+  grid-template-rows: repeat(auto-fit, 14.375rem);
   justify-content: center;
-  gap: 1.6rem;
+  gap: 1rem;
   align-items: center;
   height: 100vh;
-  padding: 0 2rem 0;
+  padding: 0 1.25rem 0;
   overflow: scroll;
   scrollbar-width: none;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 35.4rem);
-    grid-template-rows: repeat(auto-fit, 28.4rem);
-    padding: 0 2.4rem;
+    grid-template-columns: repeat(2, 22.125rem);
+    grid-template-rows: repeat(auto-fit, 17.75rem);
+    padding: 0 1.5rem;
   }
 
   @media (min-width: 1248px) {
-    grid-template-columns: repeat(3, 38.4rem);
-    grid-template-rows: repeat(auto-fit, 28rem);
+    grid-template-columns: repeat(3, 24rem);
+    grid-template-rows: repeat(auto-fit, 17.5rem);
     padding: 0;
   }
 `;

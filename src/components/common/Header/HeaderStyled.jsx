@@ -30,10 +30,9 @@ export const LogoContainer = styled.div`
 export const LogoContent = styled.h2`
   color: #4a494f;
   text-align: center;
-  /* font-family: Poppins; */
-  font-size: 1.2482rem;
+  font-size: var(--font-20);
   font-style: normal;
-  font-weight: 700;
+  font-weight: var(--font-bold);
   line-height: normal;
 `;
 
@@ -51,10 +50,9 @@ export const HeaderButton = styled.button`
   }
   color: var(--gray-900);
   text-align: center;
-  font-family: Pretendard;
-  font-size: 1rem;
+  font-size: var(--font-16);
   font-style: normal;
-  font-weight: 700;
-  line-height: 1.625rem; /* 162.5% */
+  font-weight: var(--font-bold);
+  line-height: 1.625rem;
   letter-spacing: -0.01rem;
 `;

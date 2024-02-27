@@ -6,7 +6,7 @@ import {
   LogoContainer,
   LogoContent,
 } from './HeaderStyled';
-import LogoImg from '../../assets/images/logo.svg';
+import LogoImg from '../../../assets/images/logo.svg';
 
 const Header = () => {
   return (

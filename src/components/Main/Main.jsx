@@ -1,11 +1,17 @@
 import MainContent from '../MainContent/MainContent';
-import { MainContentContainer } from './MainStyled';
+import Button from '../common/Button/Button';
+import { ButtonContainer, MainContentContainer } from './MainStyled';
 
 const Main = () => {
   return (
-    <MainContentContainer>
-      <MainContent />
-    </MainContentContainer>
+    <>
+      <MainContentContainer>
+        <MainContent />
+      </MainContentContainer>
+      <ButtonContainer>
+        <Button text="구경해보기" to="/list" width={17.5} />
+      </ButtonContainer>
+    </>
   );
 };
 

@@ -28,4 +28,10 @@ export const CustomButton = styled.button`
   &:hover {
     background: var(--purple-700);
   }
+  @media screen and (max-width: 1199px) {
+    width: 45rem;
+  }
+  @media screen and (max-width: 767px) {
+    width: 20rem;
+  }
 `;

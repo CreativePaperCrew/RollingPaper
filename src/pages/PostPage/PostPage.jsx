@@ -49,7 +49,7 @@ const PostPage = () => {
   return (
     <PostCardsContainer>
       {dummyData.map((postCard) => (
-        <PostCard key={dummyData.id} cardData={postCard} />
+        <PostCard key={postCard.id} cardData={postCard} />
       ))}
     </PostCardsContainer>
   );

@@ -15,8 +15,8 @@ import PatternImgBeige from '../../assets/images/CardPattern2.svg';
 import PatternImgBlue from '../../assets/images/CardPattern3.svg';
 import PatternImgGreen from '../../assets/images/CardPattern4.svg';
 
-const ListColorCard = () => {
-  const backgroundColor = 'purple';
+const ListColorCard = ({ cardData }) => {
+  const { name, messageCount, backgroundColor } = cardData;
   let patternColor;
 
   switch (backgroundColor) {
@@ -41,10 +41,10 @@ const ListColorCard = () => {
     <CardContainer color={backgroundColor}>
       <CardContentContainer>
         <RecipientContainer>
-          <Recipient>To. Sowon</Recipient>
+          <Recipient>To. {name}</Recipient>
           <p>추가예정</p>
           <MessageCountContainer>
-            <MessageCount>30</MessageCount>
+            <MessageCount>{messageCount}</MessageCount>
             <MessageCountText>명이 작성했어요</MessageCountText>
           </MessageCountContainer>
         </RecipientContainer>

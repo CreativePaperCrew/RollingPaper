@@ -1,5 +1,6 @@
 import React from 'react';
 import PostCard from '../../components/PostCard/PostCard';
+import AddPostCard from '../../components/PostCard/AddPostCard';
 import { PostCardsContainer } from './PostPageStyle';
 
 const dummyData = [
@@ -48,6 +49,7 @@ const dummyData = [
 const PostPage = () => {
   return (
     <PostCardsContainer>
+      <AddPostCard />
       {dummyData.map((postCard) => (
         <PostCard key={postCard.id} cardData={postCard} />
       ))}

@@ -1,8 +1,8 @@
 import * as S from './InputStyle';
 
-const Input = ({ children }) => {
+const Input = ({ children, width }) => {
   return (
-    <S.Container>
+    <S.Container className={width}>
       <S.Input placeholder={children} />
       <S.ErrorMessage>내용을 입력해주세요.</S.ErrorMessage>
     </S.Container>

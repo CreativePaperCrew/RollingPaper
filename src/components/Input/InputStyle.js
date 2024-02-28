@@ -5,6 +5,10 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 0.25rem;
   width: 20rem;
+
+  &.long {
+    width: 45rem;
+  }
 `;
 
 export const Input = styled.input`

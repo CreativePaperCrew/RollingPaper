@@ -1,5 +1,6 @@
 import * as S from './ColorBoxStyle';
 import checkIcon from '../../assets/icons/check.svg';
+import { useState } from 'react';
 
 const colors = [
   { name: 'orange', value: 'var(--orange-200)' },
@@ -9,10 +10,22 @@ const colors = [
 ];
 
 const ColorBox = () => {
+  const [selectedColor, setSelectedColor] = useState();
+
+  const handleBoxClick = (color) => {
+    setSelectedColor(color);
+  };
+
   return (
     <S.BoxContainer>
       {colors.map((color) => (
-        <S.ColorBox color={color.value} key={color.name} />
+        <S.ColorBox
+          color={color.value}
+          key={color.name}
+          onClick={() => handleBoxClick(color.name)}
+        >
+          {selectedColor === color.name && <S.CheckIcon src={checkIcon} />}
+        </S.ColorBox>
       ))}
     </S.BoxContainer>
   );

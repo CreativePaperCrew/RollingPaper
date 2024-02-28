@@ -8,6 +8,7 @@ export const BoxContainer = styled.div`
 `;
 
 export const ColorBox = styled.div`
+  position: relative;
   width: 10.5rem;
   height: 10.5rem;
   border: 0.0625rem solid rgba(0, 0, 0, 0.08);
@@ -17,4 +18,11 @@ export const ColorBox = styled.div`
   &:hover {
     cursor: pointer;
   }
+`;
+
+export const CheckIcon = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;

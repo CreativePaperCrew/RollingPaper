@@ -13,7 +13,22 @@ export const ColorBox = styled.div`
   height: 10.5rem;
   border: 0.0625rem solid rgba(0, 0, 0, 0.08);
   border-radius: 1rem;
-  background-color: ${(props) => props.color};
+  background: ${(props) => props.color};
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const ImageBox = styled.div`
+  position: relative;
+  width: 10.5rem;
+  height: 10.5rem;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  background-image: url(${(props) => props.url});
+  background-size: cover;
+  background-position: center;
 
   &:hover {
     cursor: pointer;

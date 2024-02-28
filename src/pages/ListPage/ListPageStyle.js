@@ -6,6 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap: 3.125rem;
+  margin: 3.125rem 0 2.5rem;
 `;
 
 export const ListCardContentContainer = styled.div`
@@ -18,7 +19,6 @@ export const ListCardContentContainer = styled.div`
 export const ListCardTitle = styled.h2`
   display: flex;
   justify-content: flex-start;
-  /* margin: 3.125rem 0 1rem 23.75rem; */
   color: var(--black);
   font-family: Pretendard;
   font-size: var(--font-24);

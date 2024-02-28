@@ -9,7 +9,7 @@ const colors = [
   { name: 'green', value: 'var(--green-200)' },
 ];
 
-const ColorBox = () => {
+const ColorBox = ({ isColorSelected }) => {
   const [selectedColor, setSelectedColor] = useState();
 
   const handleBoxClick = (color) => {
@@ -18,15 +18,16 @@ const ColorBox = () => {
 
   return (
     <S.BoxContainer>
-      {colors.map((color) => (
-        <S.ColorBox
-          color={color.value}
-          key={color.name}
-          onClick={() => handleBoxClick(color.name)}
-        >
-          {selectedColor === color.name && <S.CheckIcon src={checkIcon} />}
-        </S.ColorBox>
-      ))}
+      {isColorSelected &&
+        colors.map((color) => (
+          <S.ColorBox
+            color={color.value}
+            key={color.name}
+            onClick={() => handleBoxClick(color.name)}
+          >
+            {selectedColor === color.name && <S.CheckIcon src={checkIcon} />}
+          </S.ColorBox>
+        ))}
     </S.BoxContainer>
   );
 };

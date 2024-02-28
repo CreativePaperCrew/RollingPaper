@@ -1,19 +1,23 @@
-import { useEffect, useState } from 'react';
 import * as S from './ToggleButtonStyle';
 
-const ToggleButton = () => {
-  const [isColorSelected, setIsColorSelected] = useState(false);
-  const [isImageSelected, setIsImageSelected] = useState(false);
+const ToggleButton = ({
+  handleColorClick,
+  handleImageClick,
+  isColorSelected,
+  isImageSelected,
+}) => {
+  // const [isColorSelected, setIsColorSelected] = useState(false);
+  // const [isImageSelected, setIsImageSelected] = useState(false);
 
-  const handleColorClick = () => {
-    setIsColorSelected(!isColorSelected);
-    setIsImageSelected(false);
-  };
+  // const handleColorClick = () => {
+  //   setIsColorSelected(!isColorSelected);
+  //   setIsImageSelected(false);
+  // };
 
-  const handleImageClick = () => {
-    setIsColorSelected(false);
-    setIsImageSelected(!isImageSelected);
-  };
+  // const handleImageClick = () => {
+  //   setIsColorSelected(false);
+  //   setIsImageSelected(!isImageSelected);
+  // };
 
   return (
     <S.ButtonContainer>

@@ -34,7 +34,7 @@ const ListColorCard = ({ cardData }) => {
           <p>추가예정</p>
           <S.MessageCountContainer>
             <S.MessageCount>{messageCount}</S.MessageCount>
-            <S.MessageCountText>명이 작성했어요</S.MessageCountText>
+            <S.MessageCountText>명이 작성했어요!</S.MessageCountText>
           </S.MessageCountContainer>
         </S.RecipientContainer>
         <S.EmojiContainer>

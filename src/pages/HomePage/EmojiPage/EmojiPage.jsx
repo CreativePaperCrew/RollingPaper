@@ -4,7 +4,7 @@ import Emojis from '../../components/Emojis/Emojis';
 const EmojiPage = () => {
   return (
     <>
-      <div>메인 페이지입니다</div>
+      <div>이모지 페이지입니다</div>
       <div>
         <Emojis />
       </div>

@@ -1,8 +1,8 @@
 import * as S from './ListColorCardStyle';
-import PatternImgPurple from '../../assets/images/CardPattern1.svg';
-import PatternImgBeige from '../../assets/images/CardPattern2.svg';
-import PatternImgBlue from '../../assets/images/CardPattern3.svg';
-import PatternImgGreen from '../../assets/images/CardPattern4.svg';
+import patternImgPurple from '../../assets/images/cardPattern1.svg';
+import patternImgBeige from '../../assets/images/cardPattern2.svg';
+import patternImgBlue from '../../assets/images/cardPattern3.svg';
+import patternImgGreen from '../../assets/images/cardPattern4.svg';
 
 const ListColorCard = ({ cardData }) => {
   const { name, messageCount, backgroundColor } = cardData;
@@ -10,19 +10,19 @@ const ListColorCard = ({ cardData }) => {
 
   switch (backgroundColor) {
     case 'beige':
-      patternColor = PatternImgBeige;
+      patternColor = patternImgBeige;
       break;
     case 'purple':
-      patternColor = PatternImgPurple;
+      patternColor = patternImgPurple;
       break;
     case 'blue':
-      patternColor = PatternImgBlue;
+      patternColor = patternImgBlue;
       break;
     case 'green':
-      patternColor = PatternImgGreen;
+      patternColor = patternImgGreen;
       break;
     default:
-      patternColor = PatternImgPurple;
+      patternColor = patternImgPurple;
       break;
   }
 

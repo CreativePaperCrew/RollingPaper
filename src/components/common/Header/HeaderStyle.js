@@ -16,7 +16,7 @@ export const HeaderContent = styled.div`
   padding: 0 1.5rem;
 
   @media (min-width: 1200px) {
-    max-width: 120rem;
+    max-width: 75.4375rem;
     padding: 0 clamp(1.5rem, 2vw + 1rem, 12.5rem);
   }
 `;

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import * as S from './PostCreatingPageStyle';
 import Input from '../../components/Input/Input';
 import ToggleButton from '../../components/ToggleButton/ToggleButton';
@@ -8,15 +8,15 @@ const PostCreatingPage = () => {
   const [isColorSelected, setIsColorSelected] = useState(false);
   const [isImageSelected, setIsImageSelected] = useState(false);
 
-  const handleColorClick = () => {
+  const handleColorClick = useCallback(() => {
     setIsColorSelected(!isColorSelected);
     setIsImageSelected(false);
-  };
+  }, '');
 
-  const handleImageClick = () => {
+  const handleImageClick = useCallback(() => {
     setIsColorSelected(false);
     setIsImageSelected(!isImageSelected);
-  };
+  }, '');
 
   return (
     <>

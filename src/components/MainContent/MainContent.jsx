@@ -1,6 +1,6 @@
 import * as S from './MainContentStyle';
-import Img1 from '../../assets/images/MainImg1.png';
-import Img2 from '../../assets/images/MainImg2.png';
+import img1 from '../../assets/images/mainImg1.png';
+import img2 from '../../assets/images/mainImg2.png';
 
 const MainContent = () => {
   return (
@@ -15,10 +15,10 @@ const MainContent = () => {
             <S.SubDescription>로그인 없이 자유롭게 만들어요.</S.SubDescription>
           </S.DescriptionContainer>
         </S.TextContainer>
-        <S.MainImg1 src={Img1} alt="이미지1" />
+        <S.MainImg1 src={img1} alt="이미지1" />
       </S.FirstContent>
       <S.SecondContent>
-        <S.MainImg2 src={Img2} alt="이미지2" />
+        <S.MainImg2 src={img2} alt="이미지2" />
         <S.TextContainer>
           <S.PointButton>Point. 02</S.PointButton>
           <S.DescriptionContainer>

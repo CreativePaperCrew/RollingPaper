@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './PostCardStyle';
-import deleteImg from '../../assets/Icons/deleted.svg';
+import deleteImg from '../../assets/icons/deleted.svg';
 
 const PostCard = ({ cardData }) => {
   const { author, profileImg, relationship, message, date } = cardData;

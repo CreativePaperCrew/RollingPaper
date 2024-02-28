@@ -1,0 +1,9 @@
+.EmojiPickerReact {
+  --epr-emoji-size: 24px !important;
+  --epr-category-navigation-button-size: 24px !important;
+  --epr-preview-text-size: 12px !important;
+
+  .epr-emoji-category-label {
+    font-size: 13px;
+  }
+}

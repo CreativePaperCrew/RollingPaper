@@ -17,9 +17,12 @@ const ListPage = () => {
   return (
     <>
       <Header />
-      {listData.map((element) => (
-        <ListCard key={element.id} cardData={element} />
-      ))}
+      <S.ListCardsContainer>
+        {listData.map((element) => (
+          <ListCard key={element.id} cardData={element} />
+        ))}
+      </S.ListCardsContainer>
+
       <S.ButtonContainer>
         <Button text="나도 만들어보기" to="/post" width={17.5} />
       </S.ButtonContainer>

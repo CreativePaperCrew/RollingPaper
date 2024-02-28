@@ -5,7 +5,7 @@ import patternImgBlue from '../../assets/images/cardPattern3.svg';
 import patternImgGreen from '../../assets/images/cardPattern4.svg';
 
 const ListColorCard = ({ cardData }) => {
-  const { name, messageCount, backgroundColor } = cardData;
+  const { name, messageCount, backgroundImageURL, backgroundColor } = cardData;
   let patternColor;
 
   switch (backgroundColor) {
@@ -27,14 +27,23 @@ const ListColorCard = ({ cardData }) => {
   }
 
   return (
-    <S.CardContainer color={backgroundColor}>
+    <S.CardContainer
+      $backgroundImageURL={backgroundImageURL}
+      color={backgroundColor}
+    >
       <S.CardContentContainer>
         <S.RecipientContainer>
-          <S.Recipient>To. {name}</S.Recipient>
+          <S.Recipient $backgroundImageURL={backgroundImageURL}>
+            To. {name}
+          </S.Recipient>
           <p>추가예정</p>
           <S.MessageCountContainer>
-            <S.MessageCount>{messageCount}</S.MessageCount>
-            <S.MessageCountText>명이 작성했어요!</S.MessageCountText>
+            <S.MessageCount $backgroundImageURL={backgroundImageURL}>
+              {messageCount}
+            </S.MessageCount>
+            <S.MessageCountText $backgroundImageURL={backgroundImageURL}>
+              명이 작성했어요!
+            </S.MessageCountText>
           </S.MessageCountContainer>
         </S.RecipientContainer>
         <S.EmojiContainer>
@@ -42,7 +51,9 @@ const ListColorCard = ({ cardData }) => {
           <div>추가예정</div>
         </S.EmojiContainer>
       </S.CardContentContainer>
-      <S.CardPattern src={patternColor} alt="패턴이미지" />
+      {!backgroundImageURL && (
+        <S.CardPattern src={patternColor} alt="패턴이미지" />
+      )}
     </S.CardContainer>
   );
 };

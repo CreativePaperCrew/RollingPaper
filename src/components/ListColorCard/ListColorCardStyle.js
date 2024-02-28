@@ -22,7 +22,16 @@ export const CardContainer = styled.div`
   flex-shrink: 0;
   border-radius: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background: ${(props) => getBackgroundColor(props.color)};
+  ${(props) =>
+    props.$backgroundImageURL
+      ? `background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.54) 0%,
+          rgba(0, 0, 0, 0.54) 100%
+        ), url(${props.$backgroundImageURL});`
+      : `background: ${getBackgroundColor(props.color)};`}
+  background-size: cover;
+  background-position: center;
   box-shadow: 0 0.125rem 0.75rem 0 rgba(0, 0, 0, 0.08);
   padding: 1.875rem 1.5rem 1.25rem;
 `;
@@ -47,7 +56,8 @@ export const Recipient = styled.h2`
   -webkit-line-clamp: 1;
   align-self: stretch;
   overflow: hidden;
-  color: var(--gray-900);
+  color: ${(props) =>
+    props.$backgroundImageURL ? 'var(--white)' : 'var(--gray-900)'};
   text-overflow: ellipsis;
   font-family: Pretendard;
   font-size: var(--font-24);
@@ -63,7 +73,8 @@ export const MessageCountContainer = styled.div`
 `;
 
 export const MessageCount = styled.span`
-  color: var(--gray-700);
+  color: ${(props) =>
+    props.$backgroundImageURL ? 'var(--gray-200)' : 'var(--gray-700)'};
   font-family: Pretendard;
   font-size: var(--font-16);
   font-style: normal;
@@ -73,7 +84,8 @@ export const MessageCount = styled.span`
 `;
 
 export const MessageCountText = styled.p`
-  color: var(--gray-700);
+  color: ${(props) =>
+    props.$backgroundImageURL ? 'var(--gray-200)' : 'var(--gray-700)'};
   font-family: Pretendard;
   font-size: var(--font-16);
   font-style: normal;

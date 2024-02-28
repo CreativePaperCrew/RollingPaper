@@ -1,4 +1,4 @@
-import * as S from './MainContentStyled';
+import * as S from './MainContentStyle';
 import Img1 from '../../assets/images/MainImg1.png';
 import Img2 from '../../assets/images/MainImg2.png';
 

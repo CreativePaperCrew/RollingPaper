@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import * as S from './ButtonStyled';
+import * as S from './ButtonStyle';
 
 const Button = ({ text, to, width }) => {
   return (

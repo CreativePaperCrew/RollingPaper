@@ -1,7 +1,7 @@
 import MainContent from '../MainContent/MainContent';
 import Button from '../common/Button/Button';
 import Header from '../common/Header/Header';
-import * as S from './MainStyled';
+import * as S from './MainStyle';
 
 const Main = () => {
   return (

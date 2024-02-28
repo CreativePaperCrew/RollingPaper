@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import teamApiClient from '../../apis/teamApiConfig';
 import Button from '../../components/common/Button/Button';
 import Header from '../../components/common/Header/Header';
-import ListCard from '../../components/ListCard/ListCard';
+import ListCard from '../../components/ListPage/ListCard/ListCard';
 import * as S from './ListPageStyle';
 
 const ListPage = () => {

@@ -1,8 +1,8 @@
 import * as S from './ListCardStyle';
-import patternImgPurple from '../../assets/images/cardPattern1.svg';
-import patternImgBeige from '../../assets/images/cardPattern2.svg';
-import patternImgBlue from '../../assets/images/cardPattern3.svg';
-import patternImgGreen from '../../assets/images/cardPattern4.svg';
+import patternImgPurple from '../../../assets/images/cardPattern1.svg';
+import patternImgBeige from '../../../assets/images/cardPattern2.svg';
+import patternImgBlue from '../../../assets/images/cardPattern3.svg';
+import patternImgGreen from '../../../assets/images/cardPattern4.svg';
 
 const ListCard = ({ cardData }) => {
   const { name, messageCount, backgroundImageURL, backgroundColor } = cardData;

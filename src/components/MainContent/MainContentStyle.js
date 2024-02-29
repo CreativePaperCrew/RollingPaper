@@ -93,6 +93,12 @@ export const MainDescription = styled.span`
     letter-spacing: -0.0112rem;
   }
 `;
+
+export const LineBreak = styled.br`
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+`;
 export const EmojiDescription = styled(MainDescription)`
   width: 14.8125rem;
 `;

@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './HomepageStyle';
 import MainContent from '../../components/MainContent/MainContent';
-import LinkButton from '../../components/common/LinkButton/LinkButton';
+import LinkButton from '../../components/common/Buttons/LinkButton/LinkButton';
 
 const HomePage = () => {
   return (

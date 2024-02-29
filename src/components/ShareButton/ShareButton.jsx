@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import useToggle from '../../hooks/useToggle';
 import shareIconSvg from '../../assets/icons/share.svg';
 import {
   ShareButtonContainer,
@@ -7,11 +7,11 @@ import {
   ShareOption,
 } from './ShareButtonStyle';
 const ShareButton = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isToggleOpen, changeToggle] = useToggle();
   return (
-    <ShareButtonContainer onClick={() => setIsExpanded(!isExpanded)}>
+    <ShareButtonContainer onClick={changeToggle}>
       <ShareIcon src={shareIconSvg} alt="share icon" />
-      {isExpanded && (
+      {isToggleOpen && (
         <ShareDropdown>
           <ShareOption onClick={() => alert('카톡공유')}>
             카카오톡 공유

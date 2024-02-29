@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import useToggle from '../../hooks/useToggle';
 import EmojiBadge from '../EmojiBadge/EmojiBadge';
 import {
   EmojiBadgesExpanded,
@@ -8,12 +8,12 @@ import {
 import ArrowDownSvg from '../../assets/icons/arrowDown.svg';
 
 const ReactionDropdown = ({ data }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isToggleOpen, changeToggle] = useToggle();
 
   return (
-    <ArrowDownButton onClick={() => setIsExpanded(!isExpanded)}>
+    <ArrowDownButton onClick={changeToggle}>
       <ArrowDownImage src={ArrowDownSvg} alt="see more reactions" />
-      {isExpanded && (
+      {isToggleOpen && (
         <EmojiBadgesExpanded>
           <EmojiBadge data={{ emoji: '😊', count: 16 }} />
           <EmojiBadge data={{ emoji: '😊', count: 16 }} />

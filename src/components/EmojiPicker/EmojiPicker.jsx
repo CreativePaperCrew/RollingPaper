@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useState } from 'react';
+import useToggle from '../../hooks/useToggle';
 import Picker from 'emoji-picker-react';
 import {
   EmojiPickerContainer,
@@ -12,17 +12,15 @@ import {
 import emojiPickerImage from '../../assets/icons/emojiPicker.svg';
 
 const EmojiPicker = () => {
-  const [isEmojiPickerOpen, setIsEmojiPickerOpen] = useState(false);
+  const [isToggleOpen, changeToggle] = useToggle();
   const handleEmojiPick = (emojiObject) => {
     alert(emojiObject.emoji + emojiObject.names.join(', '));
-    setIsEmojiPickerOpen(false);
+    changeToggle();
   };
 
   return (
     <EmojiPickerContainer>
-      <EmojiPickerButton
-        onClick={() => setIsEmojiPickerOpen(!isEmojiPickerOpen)}
-      >
+      <EmojiPickerButton onClick={changeToggle}>
         <EmojiPickerButtonIcon
           src={emojiPickerImage}
           alt="smiling face icon to add emoji"
@@ -32,7 +30,7 @@ const EmojiPicker = () => {
 
       <Picker
         emojiStyle="native"
-        open={isEmojiPickerOpen}
+        open={isToggleOpen}
         width={300}
         height={400}
         onEmojiClick={handleEmojiPick}

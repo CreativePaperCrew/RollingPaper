@@ -6,7 +6,7 @@ import LogoImg from '../../../assets/icons/icon.svg';
 const Header = () => {
   const location = useLocation();
 
-  const shouldShowButton =
+  const isShouldShowButton =
     location.pathname === '/' || location.pathname === '/list';
 
   return (
@@ -18,7 +18,7 @@ const Header = () => {
             <S.LogoContent>Rolling</S.LogoContent>
           </S.LogoContainer>
         </S.ButtonLink>
-        {shouldShowButton && (
+        {isShouldShowButton && (
           <S.ButtonLink to="/post">
             <S.HeaderButton>롤링 페이퍼 만들기</S.HeaderButton>
           </S.ButtonLink>

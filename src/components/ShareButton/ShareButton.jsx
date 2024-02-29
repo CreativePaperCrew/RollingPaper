@@ -23,7 +23,7 @@ const ShareButton = () => {
   const hostAddress = window.location.origin;
   const shareLink = `${hostAddress}/post/id`;
 
-  const handleShare = async () => {
+  const handleShareURLClick = async () => {
     try {
       await navigator.clipboard.writeText(shareLink);
       showToast(true, 'URL이 클립보드에 복사되었습니다!');
@@ -40,7 +40,9 @@ const ShareButton = () => {
           <ShareOption onClick={() => alert('카톡공유')}>
             카카오톡 공유
           </ShareOption>
-          <ShareOption onClick={() => handleShare()}>URL 공유</ShareOption>
+          <ShareOption onClick={() => handleShareURLClick()}>
+            URL 공유
+          </ShareOption>
         </ShareDropdown>
       )}
       {isShouldRender && (

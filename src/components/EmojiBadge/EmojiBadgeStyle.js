@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const EmojiBadgeContainer = styled.div`
   display: inline-flex;
   flex-direction: row;
-  padding: 8px 12px;
+  padding: 0.5rem 0.75rem;
   align-items: center;
-  gap: 2px;
-  border-radius: 32px;
+  gap: 0.125rem;
+  border-radius: 2rem;
   background: rgba(0, 0, 0, 0.54);
 `;
 

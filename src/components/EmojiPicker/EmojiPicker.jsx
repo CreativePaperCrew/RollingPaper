@@ -9,7 +9,7 @@ import {
   EmojiPickerButtonText,
 } from './EmojiPickerStyle';
 
-import emojiPickerImage from '../../assets/Icons/emojiPicker.svg';
+import emojiPickerImage from '../../assets/icons/emojiPicker.svg';
 
 const EmojiPicker = () => {
   const [isEmojiPickerOpen, setIsEmojiPickerOpen] = useState(false);

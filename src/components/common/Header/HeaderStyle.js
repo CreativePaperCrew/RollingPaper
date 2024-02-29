@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const HeaderContentContainer = styled.div`
@@ -56,4 +57,8 @@ export const HeaderButton = styled.button`
   font-weight: var(--font-bold);
   line-height: 1.625rem;
   letter-spacing: -0.01rem;
+`;
+
+export const ButtonLink = styled(Link)`
+  text-decoration: none;
 `;

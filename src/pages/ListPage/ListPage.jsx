@@ -7,8 +7,7 @@ import * as S from './ListPageStyle';
 
 const ListPage = () => {
   const [listData, setListData] = useState([]);
-  const [slideMessageCount, setSlideMessageCount] = useState(0);
-  const [slideCreatedAt, setSlideCreatedAt] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(0);
 
   useEffect(() => {
     teamApiClient.get('/recipients/').then((res) => {
@@ -27,24 +26,10 @@ const ListPage = () => {
   const sortedMessageCountList = listData.slice().sort(compareMessageCount);
   const sortedCreatedAtList = listData.slice().sort(compareCreatedAt);
 
-  const handleNextMessageCount = () => {
-    setSlideMessageCount((prevIndex) =>
-      Math.min(prevIndex + 4, listData.length - 1),
+  const handleSlideChange = (step) => {
+    setSlideIndex((prevIndex) =>
+      Math.max(Math.min(prevIndex + step, listData.length - 1), 0),
     );
-  };
-
-  const handlePreviousMessageCount = () => {
-    setSlideMessageCount((prevIndex) => Math.max(prevIndex - 4, 0));
-  };
-
-  const handleNextCreatedAt = () => {
-    setSlideCreatedAt((prevIndex) =>
-      Math.min(prevIndex + 4, listData.length - 1),
-    );
-  };
-
-  const handlePreviousCreatedAt = () => {
-    setSlideCreatedAt((prevIndex) => Math.max(prevIndex - 4, 0));
   };
 
   return (
@@ -55,18 +40,18 @@ const ListPage = () => {
           <S.ListCardTitle>인기 롤링 페이퍼 🔥</S.ListCardTitle>
           <ListCardContent
             sortedDataList={sortedMessageCountList}
-            slideIndex={slideMessageCount}
-            handlePrevious={handlePreviousMessageCount}
-            handleNext={handleNextMessageCount}
+            slideIndex={slideIndex}
+            handlePrevious={() => handleSlideChange(-4)}
+            handleNext={() => handleSlideChange(4)}
           />
         </S.ListCardContentContainer>
         <S.ListCardContentContainer>
           <S.ListCardTitle>최근에 만든 롤링 페이퍼 ⭐️</S.ListCardTitle>
           <ListCardContent
             sortedDataList={sortedCreatedAtList}
-            slideIndex={slideCreatedAt}
-            handlePrevious={handlePreviousCreatedAt}
-            handleNext={handleNextCreatedAt}
+            slideIndex={slideIndex}
+            handlePrevious={() => handleSlideChange(-4)}
+            handleNext={() => handleSlideChange(4)}
           />
         </S.ListCardContentContainer>
       </S.Container>

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import * as S from './PostCreatingPageStyle';
 import Input from '../../components/Input/Input';
-import ToggleButton from '../../components/ToggleButton/ToggleButton';
+import BackgroundTypeSelectButton from '../../components/BackgroundTypeSelectButton/BackgroundTypeSelectButton';
 import BackgroundSelector from '../../components/BackgroundSelector/BackgroundSelector';
 import LinkButton from '../../components/common/Buttons/LinkButton/LinkButton';
 
@@ -31,7 +31,7 @@ const PostCreatingPage = () => {
               컬러를 선택하거나, 이미지를 선택할 수 있습니다.
             </S.InformationMessage>
           </S.ContainerSelect>
-          <ToggleButton
+          <BackgroundTypeSelectButton
             handleColorClick={handleColorClick}
             handleImageClick={handleImageClick}
             select={select}

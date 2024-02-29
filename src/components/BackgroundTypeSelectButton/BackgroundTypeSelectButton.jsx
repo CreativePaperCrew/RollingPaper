@@ -1,6 +1,10 @@
-import * as S from './ToggleButtonStyle';
+import * as S from './BackgroundTypeSelectButtonStyle';
 
-const ToggleButton = ({ handleColorClick, handleImageClick, select }) => {
+const BackgroundTypeSelectButton = ({
+  handleColorClick,
+  handleImageClick,
+  select,
+}) => {
   return (
     <S.ButtonContainer>
       {console.log(select)}
@@ -20,4 +24,4 @@ const ToggleButton = ({ handleColorClick, handleImageClick, select }) => {
   );
 };
 
-export default ToggleButton;
+export default BackgroundTypeSelectButton;

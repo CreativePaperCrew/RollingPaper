@@ -93,6 +93,12 @@ export const MainDescription = styled.span`
     letter-spacing: -0.0112rem;
   }
 `;
+
+export const LineBreak = styled.br`
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+`;
 export const EmojiDescription = styled(MainDescription)`
   width: 14.8125rem;
 `;
@@ -112,12 +118,14 @@ export const SubDescription = styled.p`
   }
 `;
 export const MainImg1 = styled.img`
+  max-width: 45rem;
   @media screen and (max-width: 767px) {
     width: 27.125rem;
   }
 `;
 
 export const MainImg2 = styled.img`
+  max-width: 45rem;
   @media screen and (max-width: 767px) {
     width: 20rem;
   }

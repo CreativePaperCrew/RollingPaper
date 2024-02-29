@@ -10,7 +10,8 @@ const MainContent = () => {
           <S.PointButton>Point. 01</S.PointButton>
           <S.DescriptionContainer>
             <S.MainDescription>
-              누구나 손쉽게, 온라인 롤링 페이퍼를 만들 수 있어요
+              누구나 손쉽게, 온라인
+              <S.LineBreak /> 롤링 페이퍼를 만들 수 있어요
             </S.MainDescription>
             <S.SubDescription>로그인 없이 자유롭게 만들어요.</S.SubDescription>
           </S.DescriptionContainer>

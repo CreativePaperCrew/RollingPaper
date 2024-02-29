@@ -5,6 +5,8 @@ export const MainContentContainer = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
+  margin-top: 3.75rem;
+  margin-bottom: 1.5rem;
 `;
 
 export const ButtonContainer = styled.div`

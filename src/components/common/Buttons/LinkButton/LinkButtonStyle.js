@@ -1,4 +1,9 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+export const CustomButtonLink = styled(Link)`
+  text-decoration: none;
+`;
 
 export const ButtonContainer = styled.div`
   display: flex;
@@ -22,6 +27,7 @@ export const CustomButton = styled.button`
   line-height: 1.75rem;
   letter-spacing: -0.0112rem;
   width: ${(props) => (props.width ? `${props.width}rem` : 'auto')};
+  cursor: pointer;
 
   &:hover {
     background: var(--purple-700);

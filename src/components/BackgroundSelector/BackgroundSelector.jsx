@@ -37,8 +37,6 @@ const BackgroundSelector = ({ select }) => {
 
   return (
     <S.BoxContainer>
-      {console.log(selectedColor)}
-      {console.log(selectedImage)}
       {select === 'color'
         ? colors.map((color) => (
             <S.ColorBox

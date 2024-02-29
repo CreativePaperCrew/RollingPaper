@@ -7,7 +7,8 @@ import * as S from './ListPageStyle';
 
 const ListPage = () => {
   const [listData, setListData] = useState([]);
-  const [slideIndex, setSlideIndex] = useState(0);
+  const [slideMessageCount, setSlideMessageCount] = useState(0);
+  const [slideCreatedAt, setSlideCreatedAt] = useState(0);
 
   useEffect(() => {
     teamApiClient.get('/recipients/').then((res) => {
@@ -26,8 +27,14 @@ const ListPage = () => {
   const sortedMessageCountList = listData.slice().sort(compareMessageCount);
   const sortedCreatedAtList = listData.slice().sort(compareCreatedAt);
 
-  const handleSlideChange = (step) => {
-    setSlideIndex((prevIndex) =>
+  const handleSlideChangeMessageCount = (step) => {
+    setSlideMessageCount((prevIndex) =>
+      Math.max(Math.min(prevIndex + step, listData.length - 1), 0),
+    );
+  };
+
+  const handleSlideChangeCreatedAt = (step) => {
+    setSlideCreatedAt((prevIndex) =>
       Math.max(Math.min(prevIndex + step, listData.length - 1), 0),
     );
   };
@@ -40,18 +47,18 @@ const ListPage = () => {
           <S.ListCardTitle>인기 롤링 페이퍼 🔥</S.ListCardTitle>
           <ListCardContent
             sortedDataList={sortedMessageCountList}
-            slideIndex={slideIndex}
-            handlePrevious={() => handleSlideChange(-4)}
-            handleNext={() => handleSlideChange(4)}
+            slideIndex={slideMessageCount}
+            handlePrevious={() => handleSlideChangeMessageCount(-4)}
+            handleNext={() => handleSlideChangeMessageCount(4)}
           />
         </S.ListCardContentContainer>
         <S.ListCardContentContainer>
           <S.ListCardTitle>최근에 만든 롤링 페이퍼 ⭐️</S.ListCardTitle>
           <ListCardContent
             sortedDataList={sortedCreatedAtList}
-            slideIndex={slideIndex}
-            handlePrevious={() => handleSlideChange(-4)}
-            handleNext={() => handleSlideChange(4)}
+            slideIndex={slideCreatedAt}
+            handlePrevious={() => handleSlideChangeCreatedAt(-4)}
+            handleNext={() => handleSlideChangeCreatedAt(4)}
           />
         </S.ListCardContentContainer>
       </S.Container>

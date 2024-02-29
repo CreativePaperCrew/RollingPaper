@@ -62,3 +62,10 @@ export const HeaderButton = styled.button`
 export const ButtonLink = styled(Link)`
   text-decoration: none;
 `;
+
+export const HeaderLine = styled.div`
+  width: 100%;
+  height: 0.0625rem;
+  flex-shrink: 0;
+  background: #ededed;
+`;

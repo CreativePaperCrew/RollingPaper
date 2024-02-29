@@ -3,6 +3,7 @@ import * as S from './PostCreatingPageStyle';
 import Input from '../../components/Input/Input';
 import ToggleButton from '../../components/ToggleButton/ToggleButton';
 import BackgroundSelector from '../../components/BackgroundSelector/BackgroundSelector';
+import LinkButton from '../../components/common/Buttons/LinkButton/LinkButton';
 
 const PostCreatingPage = () => {
   const [select, setSelect] = useState('color');
@@ -35,7 +36,8 @@ const PostCreatingPage = () => {
             handleImageClick={handleImageClick}
             select={select}
           />
-          {<BackgroundSelector select={select} />}
+          <BackgroundSelector select={select} />
+          <LinkButton width="45" text="생성하기" />
         </S.ContainerWhole>
       </main>
     </>

@@ -52,6 +52,7 @@ const PostPage = () => {
     <>
       <ServiceHeader />
       <PostCardsContainer>
+        <AddPostCard />
         {dummyData.map((postCard) => (
           <PostCard key={postCard.id} cardData={postCard} />
         ))}

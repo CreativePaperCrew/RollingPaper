@@ -11,25 +11,27 @@ import ShareButton from '../ShareButton/ShareButton';
 import TopReactions from '../TopReactions/TopReactions';
 import ReactionDropdown from '../ReactionDropdown/ReactionDropdown';
 
-const ServiceHeader = () => {
+const ServiceHeader = ({ recipientData }) => {
   return (
-    <>
-      <HorizontalBar />
-      <ServiceHeaderContainer>
-        <NameArea>To. Ashley Kim</NameArea>
-        <HorizontalBar onlyMobile={true} />
-        <OptionArea>
-          <VerticalBar margin="1.75rem" onlyMobile={false} />
-          <TopReactions />
-          <ReactionDropdown />
-          <EmojiPicker />
-          <VerticalBar margin="0.8125rem" onlyMobile={false} />
-          <VerticalBar margin="0.9375rem;" onlyMobile={true} />
-          <ShareButton />
-        </OptionArea>
-      </ServiceHeaderContainer>
-      <HorizontalBar />
-    </>
+    recipientData && (
+      <>
+        <HorizontalBar />
+        <ServiceHeaderContainer>
+          <NameArea>To. {recipientData.name}</NameArea>
+          <HorizontalBar $onlyMobile={true} />
+          <OptionArea>
+            <VerticalBar $margin="1.75rem" $onlyMobile={false} />
+            <TopReactions topReactions={recipientData.topReactions} />
+            <ReactionDropdown />
+            <EmojiPicker />
+            <VerticalBar $margin="0.8125rem" $onlyMobile={false} />
+            <VerticalBar $margin="0.9375rem;" $onlyMobile={true} />
+            <ShareButton />
+          </OptionArea>
+        </ServiceHeaderContainer>
+        <HorizontalBar />
+      </>
+    )
   );
 };
 

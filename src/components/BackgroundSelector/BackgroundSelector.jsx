@@ -2,13 +2,7 @@ import { useEffect, useState } from 'react';
 import apiClient from '../../apis/apiConfig';
 import * as S from './BackgroundSelectorStyle';
 import checkIcon from '../../assets/icons/check.svg';
-
-const colors = [
-  { name: 'beige', value: '--orange-200' },
-  { name: 'purple', value: '--purple-200' },
-  { name: 'blue', value: '--blue-200' },
-  { name: 'green', value: '--green-200' },
-];
+import COLORS from '../../constants/COLORS';
 
 const BackgroundSelector = ({ select }) => {
   const [selectedColor, setSelectedColor] = useState('beige');
@@ -38,7 +32,7 @@ const BackgroundSelector = ({ select }) => {
   return (
     <S.BoxContainer>
       {select === 'color'
-        ? colors.map((color) => (
+        ? COLORS.map((color) => (
             <S.ColorBox
               color={color.value}
               key={color.name}

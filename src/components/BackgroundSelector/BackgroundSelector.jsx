@@ -18,12 +18,17 @@ const BackgroundSelector = ({ select }) => {
   useEffect(() => {
     apiClient.get('/background-images/').then((res) => {
       setImageUrls(res.data.imageUrls);
-      setSeletedImage(res.data.imageUrls[0]);
+      if (select === 'image') {
+        setSeletedImage(res.data.imageUrls[0]);
+      } else {
+        setSeletedImage(null);
+      }
     });
-  }, []);
+  }, [select]);
 
   const handleColorClick = (color) => {
     setSelectedColor(color);
+    setSeletedImage(null);
   };
 
   const handleImageClick = (image) => {
@@ -32,6 +37,8 @@ const BackgroundSelector = ({ select }) => {
 
   return (
     <S.BoxContainer>
+      {console.log(selectedColor)}
+      {console.log(selectedImage)}
       {select === 'color'
         ? colors.map((color) => (
             <S.ColorBox

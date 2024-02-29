@@ -8,11 +8,11 @@ import LinkButton from '../../components/common/Buttons/LinkButton/LinkButton';
 const PostCreatingPage = () => {
   const [select, setSelect] = useState('color');
 
-  const handleColorClick = () => {
+  const handleColorButtonClick = () => {
     setSelect('color');
   };
 
-  const handleImageClick = () => {
+  const handleImageButtonClick = () => {
     setSelect('image');
   };
 
@@ -30,8 +30,8 @@ const PostCreatingPage = () => {
           </S.InformationMessage>
         </S.ContainerSelect>
         <BackgroundTypeSelectButton
-          handleColorClick={handleColorClick}
-          handleImageClick={handleImageClick}
+          handleColorButtonClick={handleColorButtonClick}
+          handleImageButtonClick={handleImageButtonClick}
           select={select}
         />
         <BackgroundSelector select={select} />

@@ -1,21 +1,20 @@
 import * as S from './BackgroundTypeSelectButtonStyle';
 
 const BackgroundTypeSelectButton = ({
-  handleColorClick,
-  handleImageClick,
+  handleColorButtonClick,
+  handleImageButtonClick,
   select,
 }) => {
   return (
     <S.ButtonContainer>
-      {console.log(select)}
       <S.Button
-        onClick={handleColorClick}
+        onClick={handleColorButtonClick}
         className={select === 'color' && 'clicked'}
       >
         컬러
       </S.Button>
       <S.Button
-        onClick={handleImageClick}
+        onClick={handleImageButtonClick}
         className={select === 'image' && 'clicked'}
       >
         이미지

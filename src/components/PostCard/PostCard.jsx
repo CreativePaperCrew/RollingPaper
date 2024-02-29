@@ -1,4 +1,5 @@
 import React from 'react';
+import Badge from '../Badge/Badge';
 import * as S from './PostCardStyle';
 import deleteImg from '../../assets/icons/deleted.svg';
 
@@ -20,7 +21,7 @@ const PostCard = ({ cardData }) => {
               <S.AuthorFrom>From.</S.AuthorFrom>
               <S.Author>{author}</S.Author>
             </S.AuthorTitle>
-            <div>{relationship}</div>
+            <Badge relationship={relationship} />
           </S.AuthorContainer>
         </S.PostCardProfile>
       </S.PostCardTop>

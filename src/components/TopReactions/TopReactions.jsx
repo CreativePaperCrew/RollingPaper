@@ -1,12 +1,12 @@
 import EmojiBadge from '../EmojiBadge/EmojiBadge';
 import { TopReactionsContainer } from './TopReactionsStyle';
 
-const TopReactions = ({ data }) => {
+const TopReactions = ({ topReactions }) => {
   return (
     <TopReactionsContainer>
-      <EmojiBadge data={{ emoji: '😊', count: 16 }} />
-      <EmojiBadge data={{ emoji: '😊', count: 16 }} />
-      <EmojiBadge data={{ emoji: '😊', count: 16 }} />
+      {topReactions.map((data) => (
+        <EmojiBadge key={data.id} data={data} />
+      ))}
     </TopReactionsContainer>
   );
 };

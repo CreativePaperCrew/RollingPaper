@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import teamApiClient from '../../apis/teamApiConfig';
-import Button from '../../components/common/Button/Button';
+import LinkButton from '../../components/common/Buttons/LinkButton/LinkButton';
 import ListCardContent from '../../components/ListPage/ListCardContent/ListCardContent';
-import Header from '../../components/common/Header/Header';
 import * as S from './ListPageStyle';
 
 const ListPage = () => {
@@ -41,7 +40,6 @@ const ListPage = () => {
 
   return (
     <>
-      <Header />
       <S.Container>
         <S.ListCardContentContainer>
           <S.ListCardTitle>인기 롤링 페이퍼 🔥</S.ListCardTitle>
@@ -63,7 +61,7 @@ const ListPage = () => {
         </S.ListCardContentContainer>
       </S.Container>
       <S.ButtonContainer>
-        <Button text="나도 만들어보기" to="/post" width={17.5} />
+        <LinkButton text="나도 만들어보기" to="/post" width={17.5} />
       </S.ButtonContainer>
     </>
   );

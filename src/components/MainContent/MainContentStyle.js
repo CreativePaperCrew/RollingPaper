@@ -118,12 +118,14 @@ export const SubDescription = styled.p`
   }
 `;
 export const MainImg1 = styled.img`
+  max-width: 45rem;
   @media screen and (max-width: 767px) {
     width: 27.125rem;
   }
 `;
 
 export const MainImg2 = styled.img`
+  max-width: 45rem;
   @media screen and (max-width: 767px) {
     width: 20rem;
   }

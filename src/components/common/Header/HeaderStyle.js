@@ -45,6 +45,7 @@ export const HeaderButton = styled.button`
   border-radius: 0.375rem;
   border: 1px solid var(--gray-300);
   background: var(--white);
+  cursor: pointer;
   &:hover {
     background: var(--gray-100);
   }

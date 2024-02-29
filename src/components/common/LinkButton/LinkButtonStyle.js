@@ -22,6 +22,7 @@ export const CustomButton = styled.button`
   line-height: 1.75rem;
   letter-spacing: -0.0112rem;
   width: ${(props) => (props.width ? `${props.width}rem` : 'auto')};
+  cursor: pointer;
 
   &:hover {
     background: var(--purple-700);

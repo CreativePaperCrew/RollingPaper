@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import * as S from './ButtonStyle';
+import * as S from './LinkButtonStyle';
 
-const Button = ({ text, to, width }) => {
+const LinkButton = ({ text, to, width }) => {
   return (
     <S.ButtonContainer>
       <Link to={to} style={{ textDecoration: 'none' }}>
@@ -11,4 +11,4 @@ const Button = ({ text, to, width }) => {
   );
 };
 
-export default Button;
+export default LinkButton;

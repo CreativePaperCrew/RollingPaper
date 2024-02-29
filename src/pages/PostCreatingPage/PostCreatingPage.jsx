@@ -1,12 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as S from './PostCreatingPageStyle';
 import Input from '../../components/Input/Input';
 import BackgroundTypeSelectButton from '../../components/BackgroundTypeSelectButton/BackgroundTypeSelectButton';
 import BackgroundSelector from '../../components/BackgroundSelector/BackgroundSelector';
 import LinkButton from '../../components/common/Buttons/LinkButton/LinkButton';
+import getBackgroundImages from '../../apis/getBackgroundImages';
 
 const PostCreatingPage = () => {
   const [select, setSelect] = useState('color');
+  const [selectedColor, setSelectedColor] = useState('beige');
+  const [selectedImage, setSeletedImage] = useState(null);
+  const [imageUrls, setImageUrls] = useState([]);
+
+  useEffect(() => {
+    getBackgroundImages()
+      .then((res) => {
+        setImageUrls(res.imageUrls);
+        if (select === 'image') {
+          setSeletedImage(res.imageUrls[0]);
+        } else {
+          setSeletedImage(null);
+        }
+      })
+      .catch((error) => alert(error.message));
+  }, [select]);
 
   const handleColorButtonClick = () => {
     setSelect('color');
@@ -14,6 +31,15 @@ const PostCreatingPage = () => {
 
   const handleImageButtonClick = () => {
     setSelect('image');
+  };
+
+  const handleColorBoxClick = (color) => {
+    setSelectedColor(color);
+    setSeletedImage(null);
+  };
+
+  const handleImageBoxClick = (image) => {
+    setSeletedImage(image);
   };
 
   return (
@@ -34,7 +60,14 @@ const PostCreatingPage = () => {
           handleImageButtonClick={handleImageButtonClick}
           select={select}
         />
-        <BackgroundSelector select={select} />
+        <BackgroundSelector
+          select={select}
+          selectedColor={selectedColor}
+          selectedImage={selectedImage}
+          handleColorBoxClick={handleColorBoxClick}
+          handleImageBoxClick={handleImageBoxClick}
+          imageUrls={imageUrls}
+        />
         <LinkButton width="45" text="생성하기" />
       </S.Container>
     </>

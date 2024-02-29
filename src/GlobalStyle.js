@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; 
   }
 
   :root {
@@ -63,10 +64,34 @@ const GlobalStyle = createGlobalStyle`
     --font-14: 0.875rem;
     --font-12: 0.75rem;
   }
-  html,
-  body {
-    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; 
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
   }
+
+  input {
+    border: none;
+    padding: none;
+  }
+  input:focus {
+    outline: none;
+  }
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  button {
+    border: none;
+    padding: unset;
+    background-color: unset;
+    cursor: pointer;
+  }
+
 `;
 
 export default GlobalStyle;

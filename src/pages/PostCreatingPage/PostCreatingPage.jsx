@@ -1,22 +1,19 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import * as S from './PostCreatingPageStyle';
 import Input from '../../components/Input/Input';
 import ToggleButton from '../../components/ToggleButton/ToggleButton';
-import ColorBox from '../../components/BackgroundSelector/BackgroundSelector';
+import BackgroundSelector from '../../components/BackgroundSelector/BackgroundSelector';
 
 const PostCreatingPage = () => {
-  const [isColorSelected, setIsColorSelected] = useState(false);
-  const [isImageSelected, setIsImageSelected] = useState(false);
+  const [select, setSelect] = useState('color');
 
-  const handleColorClick = useCallback(() => {
-    setIsColorSelected(!isColorSelected);
-    setIsImageSelected(false);
-  }, '');
+  const handleColorClick = () => {
+    setSelect('color');
+  };
 
-  const handleImageClick = useCallback(() => {
-    setIsColorSelected(false);
-    setIsImageSelected(!isImageSelected);
-  }, '');
+  const handleImageClick = () => {
+    setSelect('image');
+  };
 
   return (
     <>
@@ -36,15 +33,9 @@ const PostCreatingPage = () => {
           <ToggleButton
             handleColorClick={handleColorClick}
             handleImageClick={handleImageClick}
-            isColorSelected={isColorSelected}
-            isImageSelected={isImageSelected}
+            select={select}
           />
-          {
-            <ColorBox
-              isColorSelected={isColorSelected}
-              isImageSelected={isImageSelected}
-            />
-          }
+          {<BackgroundSelector select={select} />}
         </S.ContainerWhole>
       </main>
     </>

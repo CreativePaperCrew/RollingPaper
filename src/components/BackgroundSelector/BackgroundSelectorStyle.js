@@ -26,7 +26,7 @@ export const ImageBox = styled.div`
   height: 10.5rem;
   border: 0.0625rem solid rgba(0, 0, 0, 0.08);
   border-radius: 1rem;
-  background-image: url(${(props) => props.url});
+  background-image: url(${(props) => props.$url});
   background-size: cover;
   background-position: center;
 

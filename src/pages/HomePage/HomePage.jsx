@@ -1,7 +1,19 @@
 import React from 'react';
+import * as S from './HomepageStyle';
+import MainContent from '../../components/MainContent/MainContent';
+import LinkButton from '../../components/common/Buttons/LinkButton/LinkButton';
 
 const HomePage = () => {
-  return <div>샘플 메인페이지</div>;
+  return (
+    <>
+      <S.MainContentContainer>
+        <MainContent />
+      </S.MainContentContainer>
+      <S.ButtonContainer>
+        <LinkButton text="구경해보기" to="/list" width={17.5} />
+      </S.ButtonContainer>
+    </>
+  );
 };
 
 export default HomePage;

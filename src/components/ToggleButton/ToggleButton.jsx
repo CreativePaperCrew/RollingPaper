@@ -1,37 +1,18 @@
 import * as S from './ToggleButtonStyle';
 
-const ToggleButton = ({
-  handleColorClick,
-  handleImageClick,
-  isColorSelected,
-  isImageSelected,
-}) => {
-  // const [isColorSelected, setIsColorSelected] = useState(false);
-  // const [isImageSelected, setIsImageSelected] = useState(false);
-
-  // const handleColorClick = () => {
-  //   setIsColorSelected(!isColorSelected);
-  //   setIsImageSelected(false);
-  // };
-
-  // const handleImageClick = () => {
-  //   setIsColorSelected(false);
-  //   setIsImageSelected(!isImageSelected);
-  // };
-
+const ToggleButton = ({ handleColorClick, handleImageClick, select }) => {
   return (
     <S.ButtonContainer>
-      {console.log(`color : ${isColorSelected}`)}
-      {console.log(`image : ${isImageSelected}`)}
+      {console.log(select)}
       <S.Button
         onClick={handleColorClick}
-        className={isColorSelected && 'clicked'}
+        className={select === 'color' && 'clicked'}
       >
         컬러
       </S.Button>
       <S.Button
         onClick={handleImageClick}
-        className={isImageSelected && 'clicked'}
+        className={select === 'image' && 'clicked'}
       >
         이미지
       </S.Button>

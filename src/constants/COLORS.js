@@ -1,8 +1,8 @@
-const COLORS = [
-  { name: 'beige', value: '--orange-200' },
-  { name: 'purple', value: '--purple-200' },
-  { name: 'blue', value: '--blue-200' },
-  { name: 'green', value: '--green-200' },
-];
+const COLORS = Object.freeze({
+  beige: '--orange-200',
+  purple: '--purple-200',
+  blue: '--blue-200',
+  green: '--green-200',
+});
 
 export default COLORS;

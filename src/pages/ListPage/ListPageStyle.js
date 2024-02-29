@@ -29,15 +29,6 @@ export const ListCardTitle = styled.h2`
   letter-spacing: -0.015rem;
 `;
 
-export const ListCardsContainer = styled.div`
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  justify-content: center;
-  gap: 1.25rem;
-  align-items: center;
-`;
-
 export const ButtonContainer = styled.div`
   padding: 1.5rem 0;
   @media screen and (max-width: 1199px) {
@@ -46,18 +37,4 @@ export const ButtonContainer = styled.div`
   @media screen and (max-width: 767px) {
     padding: 1.5rem 1.25rem;
   }
-`;
-
-export const LeftArrowButtonContainer = styled.div`
-  position: absolute;
-  top: 6.875rem;
-  left: -20px;
-  cursor: pointer;
-`;
-
-export const RightArrowButtonContainer = styled.div`
-  position: absolute;
-  top: 6.875rem;
-  right: -20px;
-  cursor: pointer;
 `;

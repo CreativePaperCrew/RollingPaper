@@ -1,13 +1,9 @@
 import { useEffect, useState } from 'react';
 import teamApiClient from '../../apis/teamApiConfig';
 import Button from '../../components/common/Button/Button';
+import ListCardContent from '../../components/ListPage/ListCardContent/ListCardContent';
 import Header from '../../components/common/Header/Header';
-import ListCard from '../../components/ListPage/ListCard/ListCard';
 import * as S from './ListPageStyle';
-import {
-  LeftArrowButton,
-  RigthArrowButton,
-} from '../../components/ListPage/ArrowButton/ArrowButton';
 
 const ListPage = () => {
   const [listData, setListData] = useState([]);
@@ -57,44 +53,21 @@ const ListPage = () => {
       <S.Container>
         <S.ListCardContentContainer>
           <S.ListCardTitle>인기 롤링 페이퍼 🔥</S.ListCardTitle>
-          <S.ListCardsContainer>
-            {sortedMessageCountList
-              .slice(slideMessageCount, slideMessageCount + 4)
-              .map((element) => (
-                <ListCard key={element.id} cardData={element} />
-              ))}
-            {slideMessageCount > 0 && (
-              <S.LeftArrowButtonContainer>
-                <LeftArrowButton onClick={handlePreviousMessageCount} />
-              </S.LeftArrowButtonContainer>
-            )}
-            {slideMessageCount + 4 < sortedMessageCountList.length && (
-              <S.RightArrowButtonContainer>
-                <RigthArrowButton onClick={handleNextMessageCount} />
-              </S.RightArrowButtonContainer>
-            )}
-          </S.ListCardsContainer>
+          <ListCardContent
+            sortedDataList={sortedMessageCountList}
+            slideIndex={slideMessageCount}
+            handlePrevious={handlePreviousMessageCount}
+            handleNext={handleNextMessageCount}
+          />
         </S.ListCardContentContainer>
         <S.ListCardContentContainer>
           <S.ListCardTitle>최근에 만든 롤링 페이퍼 ⭐️</S.ListCardTitle>
-
-          <S.ListCardsContainer>
-            {sortedCreatedAtList
-              .slice(slideCreatedAt, slideCreatedAt + 4)
-              .map((element) => (
-                <ListCard key={element.id} cardData={element} />
-              ))}
-            {slideCreatedAt > 0 && (
-              <S.LeftArrowButtonContainer>
-                <LeftArrowButton onClick={handlePreviousCreatedAt} />
-              </S.LeftArrowButtonContainer>
-            )}
-            {slideCreatedAt + 4 < sortedCreatedAtList.length && (
-              <S.RightArrowButtonContainer>
-                <RigthArrowButton onClick={handleNextCreatedAt} />
-              </S.RightArrowButtonContainer>
-            )}
-          </S.ListCardsContainer>
+          <ListCardContent
+            sortedDataList={sortedCreatedAtList}
+            slideIndex={slideCreatedAt}
+            handlePrevious={handlePreviousCreatedAt}
+            handleNext={handleNextCreatedAt}
+          />
         </S.ListCardContentContainer>
       </S.Container>
       <S.ButtonContainer>

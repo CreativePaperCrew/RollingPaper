@@ -1,12 +1,11 @@
-import { Link } from 'react-router-dom';
 import * as S from './LinkButtonStyle';
 
 const LinkButton = ({ text, to, width }) => {
   return (
     <S.ButtonContainer>
-      <Link to={to} style={{ textDecoration: 'none' }}>
+      <S.CustomButtonLink to={to}>
         <S.CustomButton width={width}>{text}</S.CustomButton>
-      </Link>
+      </S.CustomButtonLink>
     </S.ButtonContainer>
   );
 };

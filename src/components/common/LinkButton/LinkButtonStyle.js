@@ -1,4 +1,9 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
+export const CustomButtonLink = styled(Link)`
+  text-decoration: none;
+`;
 
 export const ButtonContainer = styled.div`
   display: flex;

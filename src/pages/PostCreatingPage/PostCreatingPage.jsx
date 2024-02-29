@@ -16,13 +16,16 @@ const PostCreatingPage = () => {
     getBackgroundImages()
       .then((res) => {
         setImageUrls(res.imageUrls);
-        if (select === 'image') {
-          setSeletedImage(res.imageUrls[0]);
-        } else {
-          setSeletedImage(null);
-        }
       })
       .catch((error) => alert(error.message));
+  }, []);
+
+  useEffect(() => {
+    if (select === 'image') {
+      setSeletedImage(imageUrls[0]);
+    } else {
+      setSeletedImage(null);
+    }
   }, [select]);
 
   const handleColorButtonClick = () => {

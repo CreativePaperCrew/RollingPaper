@@ -1,6 +1,7 @@
 import React from 'react';
 import PostCard from '../../components/PostCard/PostCard';
 import { PostCardsContainer } from './PostPageStyle';
+import ServiceHeader from '../../components/ServiceHeader/ServiceHeader';
 
 const dummyData = [
   {
@@ -47,11 +48,14 @@ const dummyData = [
 
 const PostPage = () => {
   return (
-    <PostCardsContainer>
-      {dummyData.map((postCard) => (
-        <PostCard key={postCard.id} cardData={postCard} />
-      ))}
-    </PostCardsContainer>
+    <>
+      <ServiceHeader />
+      <PostCardsContainer>
+        {dummyData.map((postCard) => (
+          <PostCard key={postCard.id} cardData={postCard} />
+        ))}
+      </PostCardsContainer>
+    </>
   );
 };
 

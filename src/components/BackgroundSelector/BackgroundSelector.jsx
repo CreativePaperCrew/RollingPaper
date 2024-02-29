@@ -30,7 +30,7 @@ const BackgroundSelector = ({ select }) => {
   };
 
   return (
-    <S.BoxContainer>
+    <S.Container>
       {select === 'color'
         ? COLORS.map((color) => (
             <S.ColorBox
@@ -51,7 +51,7 @@ const BackgroundSelector = ({ select }) => {
               {selectedImage === imageUrl && <S.CheckIcon src={checkIcon} />}
             </S.ImageBox>
           ))}
-    </S.BoxContainer>
+    </S.Container>
   );
 };
 

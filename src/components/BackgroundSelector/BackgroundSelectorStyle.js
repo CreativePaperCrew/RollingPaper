@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BoxContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   gap: 1rem;
   margin-top: 2.8125rem;

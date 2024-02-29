@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-export const ContainerWhole = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 3.5625rem;
 `;
 
-export const ContainerReceiver = styled.div`
+export const Receiver = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -22,7 +22,7 @@ export const Title = styled.p`
   letter-spacing: -0.015rem;
 `;
 
-export const ContainerSelect = styled.div`
+export const BackgroundSelection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.25rem;

@@ -6,7 +6,7 @@ const BackgroundTypeSelectButton = ({
   select,
 }) => {
   return (
-    <S.ButtonContainer>
+    <S.Container>
       <S.Button
         onClick={handleColorButtonClick}
         className={select === 'color' && 'clicked'}
@@ -19,7 +19,7 @@ const BackgroundTypeSelectButton = ({
       >
         이미지
       </S.Button>
-    </S.ButtonContainer>
+    </S.Container>
   );
 };
 

@@ -5,7 +5,7 @@ export const BadgeContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.625rem;
-  padding: 0px 0.5rem;
+  padding: 0 0.5rem;
   background: ${({ background }) => background};
   border-radius: 0.25rem;
 `;

@@ -4,9 +4,15 @@ import Button from '../../components/common/Button/Button';
 import Header from '../../components/common/Header/Header';
 import ListCard from '../../components/ListPage/ListCard/ListCard';
 import * as S from './ListPageStyle';
+import {
+  LeftArrowButton,
+  RigthArrowButton,
+} from '../../components/ListPage/ArrowButton/ArrowButton';
 
 const ListPage = () => {
   const [listData, setListData] = useState([]);
+  const [slideMessageCount, setSlideMessageCount] = useState(0);
+  const [slideCreatedAt, setSlideCreatedAt] = useState(0);
 
   useEffect(() => {
     teamApiClient.get('/recipients/').then((res) => {
@@ -25,6 +31,26 @@ const ListPage = () => {
   const sortedMessageCountList = listData.slice().sort(compareMessageCount);
   const sortedCreatedAtList = listData.slice().sort(compareCreatedAt);
 
+  const handleNextMessageCount = () => {
+    setSlideMessageCount((prevIndex) =>
+      Math.min(prevIndex + 4, listData.length - 1),
+    );
+  };
+
+  const handlePreviousMessageCount = () => {
+    setSlideMessageCount((prevIndex) => Math.max(prevIndex - 4, 0));
+  };
+
+  const handleNextCreatedAt = () => {
+    setSlideCreatedAt((prevIndex) =>
+      Math.min(prevIndex + 4, listData.length - 1),
+    );
+  };
+
+  const handlePreviousCreatedAt = () => {
+    setSlideCreatedAt((prevIndex) => Math.max(prevIndex - 4, 0));
+  };
+
   return (
     <>
       <Header />
@@ -32,17 +58,42 @@ const ListPage = () => {
         <S.ListCardContentContainer>
           <S.ListCardTitle>인기 롤링 페이퍼 🔥</S.ListCardTitle>
           <S.ListCardsContainer>
-            {sortedMessageCountList.map((element) => (
-              <ListCard key={element.id} cardData={element} />
-            ))}
+            {sortedMessageCountList
+              .slice(slideMessageCount, slideMessageCount + 4)
+              .map((element) => (
+                <ListCard key={element.id} cardData={element} />
+              ))}
+            {slideMessageCount > 0 && (
+              <S.LeftArrowButtonContainer>
+                <LeftArrowButton onClick={handlePreviousMessageCount} />
+              </S.LeftArrowButtonContainer>
+            )}
+            {slideMessageCount + 4 < sortedMessageCountList.length && (
+              <S.RightArrowButtonContainer>
+                <RigthArrowButton onClick={handleNextMessageCount} />
+              </S.RightArrowButtonContainer>
+            )}
           </S.ListCardsContainer>
         </S.ListCardContentContainer>
         <S.ListCardContentContainer>
           <S.ListCardTitle>최근에 만든 롤링 페이퍼 ⭐️</S.ListCardTitle>
+
           <S.ListCardsContainer>
-            {sortedCreatedAtList.map((element) => (
-              <ListCard key={element.id} cardData={element} />
-            ))}
+            {sortedCreatedAtList
+              .slice(slideCreatedAt, slideCreatedAt + 4)
+              .map((element) => (
+                <ListCard key={element.id} cardData={element} />
+              ))}
+            {slideCreatedAt > 0 && (
+              <S.LeftArrowButtonContainer>
+                <LeftArrowButton onClick={handlePreviousCreatedAt} />
+              </S.LeftArrowButtonContainer>
+            )}
+            {slideCreatedAt + 4 < sortedCreatedAtList.length && (
+              <S.RightArrowButtonContainer>
+                <RigthArrowButton onClick={handleNextCreatedAt} />
+              </S.RightArrowButtonContainer>
+            )}
           </S.ListCardsContainer>
         </S.ListCardContentContainer>
       </S.Container>

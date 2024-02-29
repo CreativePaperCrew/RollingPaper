@@ -17,7 +17,7 @@ export const ShareButtonContainer = styled.button`
 export const ShareDropdown = styled.div`
   position: absolute;
   top: 120%;
-  right: 30%;
+  right: 10%;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -28,6 +28,9 @@ export const ShareDropdown = styled.div`
   border: 0.0625rem solid var(--gray-300);
   background: var(--white);
   box-shadow: 0 0.125rem 0.75rem 0 rgba(0, 0, 0, 0.08);
+  @media (min-width: 100rem) {
+    right: -150%;
+  }
 `;
 
 export const ShareOption = styled.button`

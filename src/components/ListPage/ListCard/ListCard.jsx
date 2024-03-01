@@ -4,32 +4,35 @@ import patternImgBeige from '../../../assets/images/cardPattern2.svg';
 import patternImgBlue from '../../../assets/images/cardPattern3.svg';
 import patternImgGreen from '../../../assets/images/cardPattern4.svg';
 
+const colors = {
+  beige: {
+    color: '--orange-200',
+    pattern: patternImgBeige,
+  },
+  purple: {
+    color: '--purple-200',
+    pattern: patternImgPurple,
+  },
+  blue: {
+    color: '--blue-200',
+    pattern: patternImgBlue,
+  },
+  green: {
+    color: '--green-200',
+    pattern: patternImgGreen,
+  },
+};
+
+const getBackgroundColor = (color) =>
+  `var(${colors[color]?.color || '--purple-200'})`;
+
 const ListCard = ({ cardData }) => {
   const { name, messageCount, backgroundImageURL, backgroundColor } = cardData;
-  let patternColor;
-
-  switch (backgroundColor) {
-    case 'beige':
-      patternColor = patternImgBeige;
-      break;
-    case 'purple':
-      patternColor = patternImgPurple;
-      break;
-    case 'blue':
-      patternColor = patternImgBlue;
-      break;
-    case 'green':
-      patternColor = patternImgGreen;
-      break;
-    default:
-      patternColor = patternImgPurple;
-      break;
-  }
 
   return (
     <S.CardContainer
       $backgroundImageURL={backgroundImageURL}
-      color={backgroundColor}
+      color={getBackgroundColor(backgroundColor)}
     >
       <S.CardContentContainer>
         <S.RecipientContainer>
@@ -52,7 +55,10 @@ const ListCard = ({ cardData }) => {
         </S.EmojiContainer>
       </S.CardContentContainer>
       {!backgroundImageURL && (
-        <S.CardPattern src={patternColor} alt="패턴이미지" />
+        <S.CardPattern
+          src={colors[backgroundColor]?.pattern || patternImgPurple}
+          alt="패턴이미지"
+        />
       )}
     </S.CardContainer>
   );

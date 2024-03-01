@@ -1,20 +1,5 @@
 import styled from 'styled-components';
 
-const getBackgroundColor = (color) => {
-  switch (color) {
-    case 'beige':
-      return 'var(--orange-200)';
-    case 'purple':
-      return 'var(--purple-200)';
-    case 'blue':
-      return 'var(--blue-200)';
-    case 'green':
-      return 'var(--green-200)';
-    default:
-      return 'var(--purple-200)';
-  }
-};
-
 export const CardContainer = styled.div`
   position: relative;
   width: 17.1875rem;
@@ -29,7 +14,7 @@ export const CardContainer = styled.div`
           rgba(0, 0, 0, 0.54) 0%,
           rgba(0, 0, 0, 0.54) 100%
         ), url(${props.$backgroundImageURL});`
-      : `background: ${getBackgroundColor(props.color)};`}
+      : `background: ${props.color};`}
   background-size: cover;
   background-position: center;
   box-shadow: 0 0.125rem 0.75rem 0 rgba(0, 0, 0, 0.08);

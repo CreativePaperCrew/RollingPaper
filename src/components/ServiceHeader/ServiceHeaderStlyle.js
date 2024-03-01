@@ -24,9 +24,9 @@ export const HorizontalBar = styled.div`
   height: 0.0625rem;
   background-color: #ededed;
   flex-shrink: 0;
-  ${(props) => (props.onlyMobile ? 'display: none;' : '')}
+  ${(props) => (props.$onlyMobile ? 'display: none;' : '')}
   @media (max-width: 48rem) {
-    ${(props) => (props.onlyMobile ? 'display: block;' : '')}
+    ${(props) => (props.$onlyMobile ? 'display: block;' : '')}
   }
 `;
 
@@ -63,9 +63,9 @@ export const VerticalBar = styled.div`
   width: 0.0625rem;
   height: 1.75rem;
   background: var(--gray-200);
-  margin: 0 ${(props) => props.margin};
-  ${(props) => (props.onlyMobile ? 'display: none;' : 'display: block;')}
+  margin: 0 ${(props) => props.$margin};
+  ${(props) => (props.$onlyMobile ? 'display: none;' : 'display: block;')}
   @media (max-width: 48rem) {
-    ${(props) => (props.onlyMobile ? 'display: block;' : 'display: none;')}
+    ${(props) => (props.$onlyMobile ? 'display: block;' : 'display: none;')}
   }
 `;

@@ -1,20 +1,16 @@
 import useToggle from '../../hooks/useToggle';
 import EmojiBadge from '../EmojiBadge/EmojiBadge';
-import {
-  EmojiBadgesExpanded,
-  ArrowDownButton,
-  ArrowDownImage,
-} from './ReactionDropdownStyle';
+import * as S from './ReactionDropdownStyle';
 import ArrowDownSvg from '../../assets/icons/arrowDown.svg';
 
 const ReactionDropdown = ({ data }) => {
   const [isToggleOpen, changeToggle] = useToggle();
 
   return (
-    <ArrowDownButton onClick={changeToggle}>
-      <ArrowDownImage src={ArrowDownSvg} alt="see more reactions" />
+    <S.ArrowDownButton onClick={changeToggle}>
+      <S.ArrowDownImage src={ArrowDownSvg} alt="see more reactions" />
       {isToggleOpen && (
-        <EmojiBadgesExpanded>
+        <S.EmojiBadgesExpanded>
           <EmojiBadge data={{ emoji: '😊', count: 16 }} />
           <EmojiBadge data={{ emoji: '😊', count: 16 }} />
           <EmojiBadge data={{ emoji: '😊', count: 16 }} />
@@ -22,9 +18,9 @@ const ReactionDropdown = ({ data }) => {
           <EmojiBadge data={{ emoji: '😊', count: 16 }} />
           <EmojiBadge data={{ emoji: '😊', count: 16 }} />
           <EmojiBadge data={{ emoji: '😊', count: 16 }} />
-        </EmojiBadgesExpanded>
+        </S.EmojiBadgesExpanded>
       )}
-    </ArrowDownButton>
+    </S.ArrowDownButton>
   );
 };
 

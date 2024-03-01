@@ -9,8 +9,6 @@ export const RecipientsCardsContainer = styled.div`
   align-items: center;
   height: 100vh;
   padding-top: 7.06rem;
-  overflow: scroll;
-  scrollbar-width: none;
   background-color: ${(props) => `var(${props.$backgroundColor}, transparent)`};
   background-image: ${(props) =>
     props.$backgroundImageURL ? `url(${props.$backgroundImageURL})` : 'none'};

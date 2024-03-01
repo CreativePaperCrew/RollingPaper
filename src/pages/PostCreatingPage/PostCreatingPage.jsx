@@ -7,6 +7,7 @@ import LinkButton from '../../components/common/Buttons/LinkButton/LinkButton';
 import getBackgroundImages from '../../apis/getBackgroundImages';
 
 const PostCreatingPage = () => {
+  const [recipient, setRecipient] = useState('');
   const [select, setSelect] = useState('color');
   const [selectedColor, setSelectedColor] = useState('beige');
   const [selectedImage, setSeletedImage] = useState(null);
@@ -27,6 +28,10 @@ const PostCreatingPage = () => {
       setSeletedImage(null);
     }
   }, [select]);
+
+  const saveRecipient = (e) => {
+    setRecipient(e.target.value);
+  };
 
   const handleColorButtonClick = () => {
     setSelect('color');
@@ -50,7 +55,13 @@ const PostCreatingPage = () => {
       <S.Container>
         <S.Receiver>
           <S.Title>To.</S.Title>
-          <Input width="long">받는 사람 이름을 입력해주세요.</Input>
+          <Input
+            width="long"
+            saveRecipient={saveRecipient}
+            recipient={recipient}
+          >
+            받는 사람 이름을 입력해주세요.
+          </Input>
         </S.Receiver>
         <S.BackgroundSelection>
           <S.Title>배경화면을 선택해 주세요.</S.Title>
@@ -71,7 +82,7 @@ const PostCreatingPage = () => {
           handleImageBoxClick={handleImageBoxClick}
           imageUrls={imageUrls}
         />
-        <LinkButton width="45" text="생성하기" />
+        <LinkButton width="45" text="생성하기" isDisabled={!recipient} />
       </S.Container>
     </>
   );

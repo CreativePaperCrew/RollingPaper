@@ -19,6 +19,10 @@ export const CardContainer = styled.div`
   background-position: center;
   box-shadow: 0 0.125rem 0.75rem 0 rgba(0, 0, 0, 0.08);
   padding: 1.875rem 1.5rem 1.25rem;
+  @media screen and (max-width: 767px) {
+    width: 13rem;
+    height: 14.5rem;
+  }
 `;
 
 export const CardContentContainer = styled.div`
@@ -49,6 +53,11 @@ export const Recipient = styled.h2`
   font-weight: var(--font-bold);
   line-height: 2.25rem;
   letter-spacing: -0.015rem;
+  @media screen and (max-width: 767px) {
+    font-size: var(--font-18);
+    line-height: 1.75rem;
+    letter-spacing: -0.0112rem;
+  }
 `;
 
 export const MessageCountContainer = styled.div`
@@ -64,6 +73,11 @@ export const MessageCount = styled.span`
   font-weight: var(--font-bold);
   line-height: 1.625rem;
   letter-spacing: -0.01rem;
+  @media screen and (max-width: 767px) {
+    font-size: var(--font-14);
+    line-height: 1.25rem;
+    letter-spacing: -0.0044rem;
+  }
 `;
 
 export const MessageCountText = styled.p`
@@ -74,6 +88,11 @@ export const MessageCountText = styled.p`
   font-weight: var(--font-regular);
   line-height: 1.625rem;
   letter-spacing: -0.01rem;
+  @media screen and (max-width: 767px) {
+    font-size: var(--font-14);
+    line-height: 1.25rem;
+    letter-spacing: -0.0044rem;
+  }
 `;
 
 export const EmojiContainer = styled.div`

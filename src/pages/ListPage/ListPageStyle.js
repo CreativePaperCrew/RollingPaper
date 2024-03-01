@@ -5,11 +5,15 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3.125rem;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  gap: 4.625rem;
+  margin: 2.5rem 1.5rem 2.625rem;
   @media screen and (min-width: 1200px) {
     margin: 3.125rem 0 2.5rem;
+    gap: 3.125rem;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin: 3.125rem 1.5rem 8.25rem;
+    gap: 3.125rem;
   }
 `;
 

@@ -33,7 +33,7 @@ export const ShareDropdown = styled.div`
   }
 `;
 
-export const ShareOption = styled.button`
+export const ShareOption = styled.div`
   display: flex;
   width: 8.625rem;
   padding: 0.75rem 1rem;
@@ -44,6 +44,7 @@ export const ShareOption = styled.button`
   letter-spacing: -0.01rem;
 
   &:hover {
+    cursor: pointer;
     background: var(--gray-100);
   }
 `;

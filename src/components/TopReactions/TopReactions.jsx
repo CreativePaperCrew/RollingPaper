@@ -1,13 +1,13 @@
 import EmojiBadge from '../EmojiBadge/EmojiBadge';
-import { TopReactionsContainer } from './TopReactionsStyle';
+import * as S from './TopReactionsStyle';
 
 const TopReactions = ({ data }) => {
   return (
-    <TopReactionsContainer>
+    <S.TopReactionsContainer>
       <EmojiBadge data={{ emoji: '😊', count: 16 }} />
       <EmojiBadge data={{ emoji: '😊', count: 16 }} />
       <EmojiBadge data={{ emoji: '😊', count: 16 }} />
-    </TopReactionsContainer>
+    </S.TopReactionsContainer>
   );
 };
 

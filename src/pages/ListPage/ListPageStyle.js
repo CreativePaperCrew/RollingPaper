@@ -6,14 +6,19 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap: 3.125rem;
-  margin: 3.125rem 0 2.5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  @media screen and (min-width: 1200px) {
+    margin: 3.125rem 0 2.5rem;
+  }
 `;
 
 export const ListCardContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 72.5rem;
+  width: 100%;
+  max-width: 72.5rem;
   gap: 1rem;
 `;
 

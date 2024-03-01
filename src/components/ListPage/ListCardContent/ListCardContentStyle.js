@@ -1,11 +1,19 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ListCardsContainer = styled.div`
   position: relative;
   display: flex;
-  justify-content: center;
+  width: 100%;
+  overflow-x: ${(props) => (props.$isScrollable ? 'scroll' : 'hidden')};
   gap: 1.25rem;
-  align-items: center;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const LinkStyle = styled(Link)`
+  width: 17.1875rem;
 `;
 
 export const LeftArrowButtonContainer = styled.div`

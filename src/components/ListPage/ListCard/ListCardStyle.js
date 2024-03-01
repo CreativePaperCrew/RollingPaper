@@ -44,7 +44,6 @@ export const Recipient = styled.h2`
   color: ${(props) =>
     props.$backgroundImageURL ? 'var(--white)' : 'var(--gray-900)'};
   text-overflow: ellipsis;
-  font-family: Pretendard;
   font-size: var(--font-24);
   font-style: normal;
   font-weight: var(--font-bold);
@@ -60,7 +59,6 @@ export const MessageCountContainer = styled.div`
 export const MessageCount = styled.span`
   color: ${(props) =>
     props.$backgroundImageURL ? 'var(--gray-200)' : 'var(--gray-700)'};
-  font-family: Pretendard;
   font-size: var(--font-16);
   font-style: normal;
   font-weight: var(--font-bold);
@@ -71,7 +69,6 @@ export const MessageCount = styled.span`
 export const MessageCountText = styled.p`
   color: ${(props) =>
     props.$backgroundImageURL ? 'var(--gray-200)' : 'var(--gray-700)'};
-  font-family: Pretendard;
   font-size: var(--font-16);
   font-style: normal;
   font-weight: var(--font-regular);

@@ -21,12 +21,14 @@ export const ListCardTitle = styled.h2`
   display: flex;
   justify-content: flex-start;
   color: var(--black);
-  font-family: Pretendard;
   font-size: var(--font-24);
   font-style: normal;
   font-weight: var(--font-bold);
   line-height: 2.25rem;
   letter-spacing: -0.015rem;
+  @media screen and (max-width: 767px) {
+    font-weight: 600;
+  }
 `;
 
 export const ButtonContainer = styled.div`

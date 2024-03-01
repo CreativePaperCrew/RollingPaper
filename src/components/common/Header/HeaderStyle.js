@@ -6,7 +6,6 @@ export const HeaderContentContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  box-shadow: 0px 5px 10px 0px var(--gray-200);
 `;
 
 export const HeaderContent = styled.div`

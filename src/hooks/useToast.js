@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 
 const useToast = () => {
-  const [isShow, setIsShow] = useState(false);
-  const [isShouldRender, setIsShouldRender] = useState(false);
+  const [shouldRender, setShouldRender] = useState(false);
+  const [isShown, setIsShown] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
-  const [isSuccess, setIsSuccess] = useState(true);
 
   const showToast = (status, message) => {
     if (isLoading) return;
     setIsLoading(true);
-    setIsShouldRender(true);
-    setIsShow(true);
+    setShouldRender(true);
+    setIsShown(true);
     setIsSuccess(status);
     setMessage(message);
 
@@ -21,29 +21,29 @@ const useToast = () => {
   };
 
   const startHidingToast = () => {
-    setIsShow(false);
+    setIsShown(false);
     setTimeout(() => {
-      setIsShouldRender(false);
+      setShouldRender(false);
       setIsLoading(false);
     }, 1000);
   };
 
   useEffect(() => {
-    if (!isShow && !isLoading) {
+    if (!isShown && !isLoading) {
       const timer = setTimeout(() => {
-        setIsShouldRender(false);
+        setShouldRender(false);
       }, 1000);
 
       return () => clearTimeout(timer);
     }
-  }, [isShow, isLoading]);
+  }, [isShown, isLoading]);
 
   return {
-    isShow,
-    isShouldRender,
+    shouldRender,
+    isShown,
+    isSuccess,
     showToast,
     startHidingToast,
-    isSuccess,
     message,
   };
 };

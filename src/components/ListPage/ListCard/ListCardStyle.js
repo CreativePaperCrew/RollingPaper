@@ -107,6 +107,9 @@ export const Divider = styled.div`
   height: 0.0625rem;
   background: rgba(0, 0, 0, 0.12);
   z-index: 10;
+  @media screen and (max-width: 767px) {
+    width: 10.125rem;
+  }
 `;
 
 export const CardPattern = styled.img`

@@ -5,7 +5,7 @@ export const ListCardsContainer = styled.div`
   position: relative;
   display: flex;
   width: 100%;
-  overflow-x: ${(props) => (props.$isScrollable ? 'scroll' : 'hidden')};
+  overflow-x: ${(props) => (props.$isScrollable ? 'scroll' : '')};
   gap: 1.25rem;
   &::-webkit-scrollbar {
     display: none;

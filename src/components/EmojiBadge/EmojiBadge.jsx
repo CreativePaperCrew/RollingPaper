@@ -1,15 +1,11 @@
-import {
-  EmojiBadgeContainer,
-  EmojiContainer,
-  ReactionCount,
-} from './EmojiBadgeStyle';
+import * as S from './EmojiBadgeStyle';
 
 const EmojiBadge = ({ data }) => {
   return (
-    <EmojiBadgeContainer>
-      <EmojiContainer>{data.emoji}</EmojiContainer>
-      <ReactionCount>{data.count}</ReactionCount>
-    </EmojiBadgeContainer>
+    <S.EmojiBadgeContainer>
+      <S.EmojiContainer>{data.emoji}</S.EmojiContainer>
+      <S.ReactionCount>{data.count}</S.ReactionCount>
+    </S.EmojiBadgeContainer>
   );
 };
 

@@ -24,8 +24,8 @@ const Badge = ({ relationship }) => {
   const type = RELATIONSHIP[relationship];
 
   return (
-    <S.BadgeContainer background={type.background}>
-      <S.Relationship color={type.color}>{relationship}</S.Relationship>
+    <S.BadgeContainer $background={type.background}>
+      <S.Relationship $color={type.color}>{relationship}</S.Relationship>
     </S.BadgeContainer>
   );
 };

@@ -6,7 +6,7 @@ import { RELATIONSHIPS } from '../../constants/relationships';
 
 const RelationDropdown = () => {
   const [isClickedDown, setIsClickedDown] = useState('false');
-  const [selectedRelation, setSelectedRelation] = useState('친구');
+  const [selectedRelation, setSelectedRelation] = useState('지인');
 
   const handleArrowClick = () => {
     setIsClickedDown(!isClickedDown);

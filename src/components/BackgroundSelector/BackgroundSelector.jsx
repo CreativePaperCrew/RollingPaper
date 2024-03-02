@@ -1,6 +1,6 @@
 import * as S from './BackgroundSelectorStyle';
 import checkIcon from '../../assets/icons/check.svg';
-import COLORS from '../../constants/COLORS';
+import { COLORS } from '../../constants/colors';
 
 const BackgroundSelector = ({
   select,

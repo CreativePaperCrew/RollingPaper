@@ -3,8 +3,9 @@ import patternImgPurple from '../../../assets/images/cardPattern1.svg';
 import patternImgBeige from '../../../assets/images/cardPattern2.svg';
 import patternImgBlue from '../../../assets/images/cardPattern3.svg';
 import patternImgGreen from '../../../assets/images/cardPattern4.svg';
+import TopReactions from '../../TopReactions/TopReactions';
 
-const colors = {
+const COLORS = {
   beige: {
     color: '--orange-200',
     pattern: patternImgBeige,
@@ -24,10 +25,16 @@ const colors = {
 };
 
 const getBackgroundColor = (color) =>
-  `var(${colors[color]?.color || '--purple-200'})`;
+  `var(${COLORS[color]?.color || '--purple-200'})`;
 
 const ListCard = ({ cardData }) => {
-  const { name, messageCount, backgroundImageURL, backgroundColor } = cardData;
+  const {
+    name,
+    messageCount,
+    backgroundImageURL,
+    backgroundColor,
+    topReactions,
+  } = cardData;
 
   return (
     <S.CardContainer
@@ -51,12 +58,12 @@ const ListCard = ({ cardData }) => {
         </S.RecipientContainer>
         <S.EmojiContainer>
           <S.Divider />
-          <div>추가예정</div>
+          <TopReactions topReactions={topReactions} />
         </S.EmojiContainer>
       </S.CardContentContainer>
       {!backgroundImageURL && (
         <S.CardPattern
-          src={colors[backgroundColor]?.pattern || patternImgPurple}
+          src={COLORS[backgroundColor]?.pattern || patternImgPurple}
           alt="패턴이미지"
         />
       )}

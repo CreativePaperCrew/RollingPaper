@@ -19,7 +19,7 @@ const RelationDropdown = () => {
   return (
     <S.SelectedRelation name="relation" onClick={handleArrowClick}>
       {selectedRelation}
-      {isClickedDown ? (
+      {!isClickedDown ? (
         <div>
           <img src={arrowTop} alt="arrow-top" />
           <S.RelationList>

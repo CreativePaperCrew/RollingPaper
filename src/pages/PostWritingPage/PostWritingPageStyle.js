@@ -52,3 +52,14 @@ export const ProfileMessage = styled.p`
   line-height: 1.625rem;
   letter-spacing: -0.01rem;
 `;
+
+export const ImageList = styled.div`
+  display: flex;
+  gap: 0.25rem;
+`;
+
+export const AvaliableImages = styled.img`
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 70%;
+`;

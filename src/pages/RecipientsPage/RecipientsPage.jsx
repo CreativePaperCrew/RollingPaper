@@ -9,6 +9,7 @@ import * as S from './RecipientsPageStyle';
 import ServiceHeader from '../../components/ServiceHeader/ServiceHeader';
 import PostCard from '../../components/PostCard/PostCard';
 import { COLORS } from '../../constants/colors';
+import AddPostCard from '../../components/PostCard/AddPostCard';
 
 const RecipientsPage = () => {
   const { id } = useParams();
@@ -47,6 +48,7 @@ const RecipientsPage = () => {
         $backgroundColor={backgroundColor}
         $backgroundImageURL={recipientData?.backgroundImageURL}
       >
+        <AddPostCard />
         {rollingPapers.map((postCard) => (
           <PostCard key={postCard.id} cardData={postCard} />
         ))}

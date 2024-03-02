@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './AddButtonStyle';
-import plusIcon from '../../../assets/icons/plus.svg';
+import plusIcon from '../../../../assets/icons/plus.svg';
 
 const AddButton = () => {
   return (

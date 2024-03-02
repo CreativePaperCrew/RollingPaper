@@ -32,6 +32,11 @@ export const CustomButton = styled.button`
   &:hover {
     background: var(--purple-700);
   }
+
+  &:disabled {
+    background: var(--gray-200);
+  }
+
   @media screen and (max-width: 1199px) {
     width: 45rem;
   }

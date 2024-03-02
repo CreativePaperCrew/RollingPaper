@@ -2,9 +2,11 @@ import React from 'react';
 import Badge from '../Badge/Badge';
 import * as S from './PostCardStyle';
 import deleteImg from '../../assets/icons/deleted.svg';
+import { formatKSTDate } from '../../utils/formatKSTDate';
 
 const PostCard = ({ cardData }) => {
-  const { author, profileImg, relationship, message, date } = cardData;
+  const { content, createdAt, font, profileImageURL, relationship, sender } =
+    cardData;
 
   return (
     <S.PostCardContainer>
@@ -14,21 +16,21 @@ const PostCard = ({ cardData }) => {
             <S.DeleteButton src={deleteImg} alt="카드를 삭제하는 버튼" />
           </S.DeleteContainer>
           <S.ProfileImgContainer>
-            <S.ProfileImg src={profileImg} />
+            <S.ProfileImg src={profileImageURL} />
           </S.ProfileImgContainer>
           <S.AuthorContainer>
             <S.AuthorTitle>
               <S.AuthorFrom>From.</S.AuthorFrom>
-              <S.Author>{author}</S.Author>
+              <S.Author>{sender}</S.Author>
             </S.AuthorTitle>
             <Badge relationship={relationship} />
           </S.AuthorContainer>
         </S.PostCardProfile>
       </S.PostCardTop>
       <S.ContentContainer>
-        <S.Content>{message}</S.Content>
+        <S.Content>{content}</S.Content>
       </S.ContentContainer>
-      <S.PostCardDate>{date}</S.PostCardDate>
+      <S.PostCardDate>{formatKSTDate(createdAt)}</S.PostCardDate>
     </S.PostCardContainer>
   );
 };

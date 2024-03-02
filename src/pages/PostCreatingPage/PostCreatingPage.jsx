@@ -27,7 +27,7 @@ const PostCreatingPage = () => {
     } else {
       setSeletedImage(null);
     }
-  }, [select]);
+  }, [select, imageUrls]);
 
   const saveRecipient = (e) => {
     setRecipient(e.target.value);
@@ -51,40 +51,34 @@ const PostCreatingPage = () => {
   };
 
   return (
-    <>
-      <S.Container>
-        <S.Receiver>
-          <S.Title>To.</S.Title>
-          <Input
-            width="long"
-            saveRecipient={saveRecipient}
-            recipient={recipient}
-          >
-            받는 사람 이름을 입력해주세요.
-          </Input>
-        </S.Receiver>
-        <S.BackgroundSelection>
-          <S.Title>배경화면을 선택해 주세요.</S.Title>
-          <S.InformationMessage>
-            컬러를 선택하거나, 이미지를 선택할 수 있습니다.
-          </S.InformationMessage>
-        </S.BackgroundSelection>
-        <BackgroundTypeSelectButton
-          handleColorButtonClick={handleColorButtonClick}
-          handleImageButtonClick={handleImageButtonClick}
-          select={select}
-        />
-        <BackgroundSelector
-          select={select}
-          selectedColor={selectedColor}
-          selectedImage={selectedImage}
-          handleColorBoxClick={handleColorBoxClick}
-          handleImageBoxClick={handleImageBoxClick}
-          imageUrls={imageUrls}
-        />
-        <LinkButton width="45" text="생성하기" isDisabled={!recipient} />
-      </S.Container>
-    </>
+    <S.Container>
+      <S.Receiver>
+        <S.Title>To.</S.Title>
+        <Input width="long" saveRecipient={saveRecipient} recipient={recipient}>
+          받는 사람 이름을 입력해주세요.
+        </Input>
+      </S.Receiver>
+      <S.BackgroundSelection>
+        <S.Title>배경화면을 선택해 주세요.</S.Title>
+        <S.InformationMessage>
+          컬러를 선택하거나, 이미지를 선택할 수 있습니다.
+        </S.InformationMessage>
+      </S.BackgroundSelection>
+      <BackgroundTypeSelectButton
+        handleColorButtonClick={handleColorButtonClick}
+        handleImageButtonClick={handleImageButtonClick}
+        select={select}
+      />
+      <BackgroundSelector
+        select={select}
+        selectedColor={selectedColor}
+        selectedImage={selectedImage}
+        handleColorBoxClick={handleColorBoxClick}
+        handleImageBoxClick={handleImageBoxClick}
+        imageUrls={imageUrls}
+      />
+      <LinkButton width="45" text="생성하기" isDisabled={!recipient} />
+    </S.Container>
   );
 };
 

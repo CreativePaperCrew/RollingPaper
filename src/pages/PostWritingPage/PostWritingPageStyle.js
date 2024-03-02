@@ -38,6 +38,7 @@ export const ProfileImage = styled.div`
 
 export const ImageContainer = styled.div`
   display: flex;
+  align-items: center;
   gap: 2rem;
 `;
 

@@ -1,6 +1,7 @@
 import Input from '../../components/Input/Input';
 import * as S from './PostWritingPageStyle';
 import basicProfile from '../../assets/icons/basicProfile.svg';
+import RelationDropdown from '../../components/RelationDropdown/RelationDropdown';
 
 const PostWritingPage = () => {
   return (
@@ -23,6 +24,7 @@ const PostWritingPage = () => {
         </S.ProfileImage>
         <S.Receiver>
           <S.Title>상대와의 관계</S.Title>
+          <RelationDropdown>칭구칭구</RelationDropdown>
         </S.Receiver>
         <S.Receiver>
           <S.Title>내용을 입력해 주세요.</S.Title>

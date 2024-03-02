@@ -11,7 +11,7 @@ export const BadgeContainer = styled.div`
 `;
 
 export const Relationship = styled.p`
-  color: ${({ color }) => color};
+  color: ${({ $color }) => $color};
   font-size: var(--font-14);
   font-style: var(--font-regular);
   line-height: 1.25rem;

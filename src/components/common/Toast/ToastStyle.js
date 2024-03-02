@@ -32,7 +32,7 @@ export const ToastContainer = styled.div`
   padding: 1.1875rem 1.875rem;
   display: flex;
   animation: ${(props) =>
-    props.$isShow
+    props.$isShown
       ? css`
           ${slideUp} 0.5s forwards
         `

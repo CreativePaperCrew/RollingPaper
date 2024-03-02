@@ -1,13 +1,13 @@
 import EmojiBadge from '../EmojiBadge/EmojiBadge';
-import { TopReactionsContainer } from './TopReactionsStyle';
+import * as S from './TopReactionsStyle';
 
 const TopReactions = ({ topReactions }) => {
   return (
-    <TopReactionsContainer>
+    <S.TopReactionsContainer>
       {topReactions.map((data) => (
         <EmojiBadge key={data.id} data={data} />
       ))}
-    </TopReactionsContainer>
+    </S.TopReactionsContainer>
   );
 };
 

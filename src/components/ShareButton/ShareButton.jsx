@@ -1,22 +1,17 @@
 import useToggle from '../../hooks/useToggle';
 import Toast from '../common/Toast/Toast';
 import shareIconSvg from '../../assets/icons/share.svg';
-import {
-  ShareButtonContainer,
-  ShareDropdown,
-  ShareIcon,
-  ShareOption,
-} from './ShareButtonStyle';
+import * as S from './ShareButtonStyle';
 import useToast from '../../hooks/useToast';
 
 const ShareButton = () => {
   const {
-    showToast,
-    isShow,
-    isShouldRender,
+    shouldRender,
+    isShown,
     isSuccess,
-    message,
+    showToast,
     startHidingToast,
+    message,
   } = useToast();
   const [isToggleOpen, changeToggle] = useToggle();
 
@@ -33,28 +28,30 @@ const ShareButton = () => {
   };
 
   return (
-    <ShareButtonContainer onClick={changeToggle}>
-      <ShareIcon src={shareIconSvg} alt="share icon" />
-      {isToggleOpen && (
-        <ShareDropdown>
-          <ShareOption onClick={() => alert('카톡공유')}>
-            카카오톡 공유
-          </ShareOption>
-          <ShareOption onClick={() => handleShareURLClick()}>
-            URL 공유
-          </ShareOption>
-        </ShareDropdown>
-      )}
-      {isShouldRender && (
+    <>
+      <S.ShareButtonContainer onClick={changeToggle}>
+        <S.ShareIcon src={shareIconSvg} alt="share icon" />
+        {isToggleOpen && (
+          <S.ShareDropdown>
+            <S.ShareOption onClick={() => alert('카톡공유')}>
+              카카오톡 공유
+            </S.ShareOption>
+            <S.ShareOption onClick={() => handleShareURLClick()}>
+              URL 공유
+            </S.ShareOption>
+          </S.ShareDropdown>
+        )}
+      </S.ShareButtonContainer>
+      {shouldRender && (
         <Toast
+          shouldRender={shouldRender}
+          isShown={isShown}
           isSuccess={isSuccess}
           message={message}
-          isShow={isShow}
-          isShouldRender={isShouldRender}
           startHidingToast={startHidingToast}
         />
       )}
-    </ShareButtonContainer>
+    </>
   );
 };
 

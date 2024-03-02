@@ -6,20 +6,12 @@ export const BadgeContainer = styled.div`
   align-items: center;
   gap: 0.625rem;
   padding: 0 0.5rem;
-<<<<<<< HEAD
-  background: var(${({ background }) => background});
-=======
-  background: ${({ $background }) => $background};
->>>>>>> ad021c7c0a6f3f95952f691f59210ecf13fb164a
+  background: var(${({ $background }) => $background});
   border-radius: 0.25rem;
 `;
 
 export const Relationship = styled.p`
-<<<<<<< HEAD
-  color: var(${({ color }) => color});
-=======
-  color: ${({ $color }) => $color};
->>>>>>> ad021c7c0a6f3f95952f691f59210ecf13fb164a
+  color: var(${({ $color }) => $color});
   font-size: var(--font-14);
   font-style: var(--font-regular);
   line-height: 1.25rem;

@@ -1,6 +1,5 @@
 import Input from '../../components/Input/Input';
 import * as S from './PostWritingPageStyle';
-import basicProfile from '../../assets/icons/basicProfile.svg';
 import RelationDropdown from '../../components/RelationDropdown/RelationDropdown';
 import { useEffect, useState } from 'react';
 import getProfileImages from '../../apis/getProfileImages';
@@ -8,17 +7,23 @@ import getProfileImages from '../../apis/getProfileImages';
 const PostWritingPage = () => {
   const [recipient, setRecipient] = useState('');
   const [profileImageUrls, setProfileImageUrls] = useState([]);
+  const [selectedImageUrl, setSelectedImageUrl] = useState(null);
 
   useEffect(() => {
     getProfileImages()
       .then((res) => {
         setProfileImageUrls(res.imageUrls);
+        setSelectedImageUrl(res.imageUrls[0]);
       })
       .catch((error) => alert(error.message));
   }, []);
 
   const saveRecipient = (e) => {
     setRecipient(e.target.value);
+  };
+
+  const handleImageClick = (url) => {
+    setSelectedImageUrl(url);
   };
 
   return (
@@ -37,14 +42,16 @@ const PostWritingPage = () => {
         <S.ProfileImage>
           <S.Title>프로필 이미지</S.Title>
           <S.ImageContainer>
-            <div>
-              <img src={basicProfile} alt="basic-profile" />
-            </div>
+            <S.SelectedImage src={selectedImageUrl} alt="basic-profile" />
             <S.ImageSelector>
               <S.ProfileMessage>프로필 이미지를 선택해주세요</S.ProfileMessage>
               <S.ImageList>
                 {profileImageUrls.map((url) => (
-                  <S.AvaliableImages src={url} key={url} />
+                  <S.AvaliableImages
+                    src={url}
+                    key={url}
+                    onClick={() => handleImageClick(url)}
+                  />
                 ))}
               </S.ImageList>
             </S.ImageSelector>

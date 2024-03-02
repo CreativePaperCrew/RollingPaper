@@ -42,6 +42,12 @@ export const ImageContainer = styled.div`
   gap: 2rem;
 `;
 
+export const SelectedImage = styled.img`
+  width: 5rem;
+  height: 5rem;
+  border-radius: 70%;
+`;
+
 export const ImageSelector = styled.div`
   display: flex;
   flex-direction: column;
@@ -63,4 +69,8 @@ export const AvaliableImages = styled.img`
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 70%;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;

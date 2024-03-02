@@ -3,11 +3,15 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
   width: 20rem;
+
+  &.long {
+    width: 45rem;
+  }
 `;
 
 export const Input = styled.input`
+  margin-bottom: 0.25rem;
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
   background: var(--white);
@@ -45,9 +49,10 @@ export const Input = styled.input`
 
 export const ErrorMessage = styled.p`
   display: none;
+  height: 0;
   color: var(--error);
   font-family: Pretendard;
-  font-size: var(--font-12);
+  font-size: var(--font-14);
   line-height: 1.125rem;
   letter-spacing: -0.0037rem;
 

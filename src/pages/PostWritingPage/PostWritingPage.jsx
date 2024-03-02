@@ -9,6 +9,14 @@ const PostWritingPage = () => {
   const [profileImageUrls, setProfileImageUrls] = useState([]);
   const [selectedImageUrl, setSelectedImageUrl] = useState(null);
 
+  const saveRecipient = (e) => {
+    setRecipient(e.target.value);
+  };
+
+  const handleImageClick = (url) => {
+    setSelectedImageUrl(url);
+  };
+
   useEffect(() => {
     getProfileImages()
       .then((res) => {
@@ -17,14 +25,6 @@ const PostWritingPage = () => {
       })
       .catch((error) => alert(error.message));
   }, []);
-
-  const saveRecipient = (e) => {
-    setRecipient(e.target.value);
-  };
-
-  const handleImageClick = (url) => {
-    setSelectedImageUrl(url);
-  };
 
   return (
     <S.Container>

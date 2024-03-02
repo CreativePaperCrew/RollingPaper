@@ -20,7 +20,7 @@ const ServiceHeader = ({ recipientData }) => {
             <EmojiPicker />
             <S.VerticalBar $margin="0.8125rem" $onlyMobile={false} />
             <S.VerticalBar $margin="0.9375rem;" $onlyMobile={true} />
-            <ShareButton />
+            <ShareButton recipientsId={recipientData.id} />
           </S.OptionArea>
         </S.ServiceHeaderContainer>
         <S.HorizontalBar />

@@ -4,7 +4,7 @@ import shareIconSvg from '../../assets/icons/share.svg';
 import * as S from './ShareButtonStyle';
 import useToast from '../../hooks/useToast';
 
-const ShareButton = () => {
+const ShareButton = ({ recipientsId }) => {
   const {
     shouldRender,
     isShown,
@@ -16,7 +16,7 @@ const ShareButton = () => {
   const [isToggleOpen, changeToggle] = useToggle();
 
   const hostAddress = window.location.origin;
-  const shareLink = `${hostAddress}/post/id`;
+  const shareLink = `${hostAddress}/post/${recipientsId}`;
 
   const handleShareURLClick = async () => {
     try {

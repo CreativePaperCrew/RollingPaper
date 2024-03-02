@@ -14,6 +14,7 @@ export const SelectedRelation = styled.div`
   letter-spacing: -0.01rem;
 
   &:hover {
+    cursor: pointer;
     border: 1px solid var(--gray-500);
   }
 `;

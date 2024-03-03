@@ -3,6 +3,7 @@ import * as S from './PostWritingPageStyle';
 import RelationDropdown from '../../components/RelationDropdown/RelationDropdown';
 import { useEffect, useState } from 'react';
 import getProfileImages from '../../apis/getProfileImages';
+import TextEditor from '../../components/TextEditor/TextEditor';
 
 const PostWritingPage = () => {
   const [recipient, setRecipient] = useState('');
@@ -63,6 +64,7 @@ const PostWritingPage = () => {
         </S.Receiver>
         <S.Receiver>
           <S.Title>내용을 입력해 주세요</S.Title>
+          <TextEditor />
         </S.Receiver>
         <S.Receiver>
           <S.Title>폰트 선택</S.Title>

@@ -32,7 +32,7 @@ const ListPage = () => {
         </S.ListCardContentContainer>
       </S.Container>
       <S.ButtonContainer>
-        <S.ButtonLink to="/list">
+        <S.ButtonLink to="/post">
           <S.CustomButton size="medium">나도해보기</S.CustomButton>
         </S.ButtonLink>
       </S.ButtonContainer>

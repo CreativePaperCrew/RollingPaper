@@ -10,7 +10,7 @@ export const LeftArrowButton = ({ onClick }) => {
   );
 };
 
-export const RigthArrowButton = ({ onClick }) => {
+export const RightArrowButton = ({ onClick }) => {
   return (
     <S.ArrowContainer onClick={onClick}>
       <S.ArrowImg src={rightArrowImg} alt="오른쪽 화살표 이미지" />

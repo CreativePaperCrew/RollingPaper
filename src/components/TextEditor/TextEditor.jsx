@@ -45,6 +45,7 @@ const TextEditor = () => {
       modules={modules}
       formats={formats}
       value={quillValue || ''}
+      placeholder="메세지를 입력해주세요"
       onChange={handleQuillChange}
     />
   );

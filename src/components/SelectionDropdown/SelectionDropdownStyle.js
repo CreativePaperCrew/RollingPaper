@@ -16,13 +16,13 @@ export const SelectedRelation = styled.div`
 
   &:hover {
     cursor: pointer;
-    border: 1px solid var(--gray-500);
+    border: 0.0625rem solid var(--gray-500);
   }
 `;
 
 export const RelationList = styled.li`
   position: absolute;
-  left: -0.1px;
+  left: -0.0063rem;
   top: 3.25rem;
   padding: 0.625rem 0;
   width: 320px;

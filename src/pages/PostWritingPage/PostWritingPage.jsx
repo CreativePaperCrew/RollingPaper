@@ -6,6 +6,7 @@ import getProfileImages from '../../apis/getProfileImages';
 import TextEditor from '../../components/TextEditor/TextEditor';
 import { RELATIONSHIPS } from '../../constants/relationships';
 import { FONTS } from '../../constants/fonts';
+import { Link } from 'react-router-dom';
 
 const PostWritingPage = () => {
   const [recipient, setRecipient] = useState('');
@@ -72,7 +73,9 @@ const PostWritingPage = () => {
           <S.Title>폰트 선택</S.Title>
           <SelectionDropdown selectList={FONTS} defaultValue="Noto Sans" />
         </S.SectionFrame>
-        <S.CreateButton size="long">생성하기</S.CreateButton>
+        <Link to="/">
+          <S.CreateButton size="large">생성하기</S.CreateButton>
+        </Link>
       </S.LeftAlignFrame>
     </S.Container>
   );

@@ -11,9 +11,9 @@ const Router = () => (
     <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="post/:id/message" element={<PostWritingPage />} />
-        <Route path="/post" element={<PostCreatingPage />} />
+        <Route path="post" element={<PostCreatingPage />} />
         <Route path="post/:id" element={<RecipientsPage />} />
+        <Route path="post/:id/message" element={<PostWritingPage />} />
       </Route>
     </Routes>
   </BrowserRouter>

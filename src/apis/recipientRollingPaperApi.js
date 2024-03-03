@@ -51,17 +51,11 @@ export const getRecipientRollingPaperReactions = async (recipientId) => {
  * @param {string} recipientId -  수신자의 ID
  * @returns {Promise} - 롤링페이퍼 메시지 정보를 포함하는 Promise 객체
  */
-export const postRecipientRollingPaperReactions = async (
-  recipientId,
-  emoji,
-) => {
+export const postRecipientRollingPaperReactions = async (recipientId, body) => {
   try {
     const response = await teamApiClient.post(
       `/recipients/${recipientId}/reactions/`,
-      {
-        emoji: emoji,
-        type: 'increase',
-      },
+      body,
     );
     return response.data;
   } catch (error) {

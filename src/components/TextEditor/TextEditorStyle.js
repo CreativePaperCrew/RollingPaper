@@ -18,4 +18,9 @@ export const TextEditor = styled(ReactQuill)`
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
   }
+
+  .ql-editor.ql-blank::before {
+    font-size: 0.875rem;
+    font-style: normal;
+  }
 `;

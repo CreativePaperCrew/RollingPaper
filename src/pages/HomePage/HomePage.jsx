@@ -1,7 +1,6 @@
 import React from 'react';
 import * as S from './HomepageStyle';
 import MainContent from '../../components/MainContent/MainContent';
-import LinkButton from '../../components/common/Buttons/LinkButton/LinkButton';
 
 const HomePage = () => {
   return (
@@ -10,7 +9,9 @@ const HomePage = () => {
         <MainContent />
       </S.MainContentContainer>
       <S.ButtonContainer>
-        <LinkButton text="구경해보기" to="/list" width={17.5} />
+        <S.ButtonLink to="/list">
+          <S.CustomButton size="medium">구경해보기</S.CustomButton>
+        </S.ButtonLink>
       </S.ButtonContainer>
     </>
   );

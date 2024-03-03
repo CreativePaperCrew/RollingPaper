@@ -12,6 +12,7 @@ export const SelectedRelation = styled.div`
   color: var(--gray-900);
   line-height: 1.625rem;
   letter-spacing: -0.01rem;
+  z-index: 999;
 
   &:hover {
     cursor: pointer;
@@ -21,10 +22,10 @@ export const SelectedRelation = styled.div`
 
 export const RelationList = styled.li`
   position: absolute;
-  left: 0;
+  left: -0.1px;
   top: 3.25rem;
   padding: 0.625rem 0;
-  width: 19.875rem;
+  width: 320px;
   border-radius: 0.5rem;
   border: 0.0625rem solid var(--gray-300);
   background: var(--white);

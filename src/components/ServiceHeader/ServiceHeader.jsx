@@ -4,6 +4,7 @@ import * as S from './ServiceHeaderStyle';
 import ShareButton from '../ShareButton/ShareButton';
 import TopReactions from '../TopReactions/TopReactions';
 import ReactionDropdown from '../ReactionDropdown/ReactionDropdown';
+import WritersList from '../WritersList/WritersList';
 
 const ServiceHeader = ({ recipientData }) => {
   return (
@@ -14,6 +15,10 @@ const ServiceHeader = ({ recipientData }) => {
           <S.NameArea>To. {recipientData.name}</S.NameArea>
           <S.HorizontalBar $onlyMobile={true} />
           <S.OptionArea>
+            <WritersList
+              messageCount={recipientData.messageCount}
+              recentMessages={recipientData.recentMessages}
+            />
             <S.VerticalBar $margin="1.75rem" $onlyMobile={false} />
             <TopReactions topReactions={recipientData.topReactions} />
             <ReactionDropdown />

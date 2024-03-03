@@ -5,6 +5,10 @@ export const WritersListContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.6875rem;
+  ${(props) => (props.$onlyDesktop ? 'display: none;' : 'display: flex;')}
+  @media (max-width: 75rem) {
+    ${(props) => (props.$onlyDesktop ? 'display: flex;' : 'display: none')}
+  }
 `;
 
 export const ProfileCircles = styled.div`

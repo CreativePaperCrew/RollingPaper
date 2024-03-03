@@ -18,6 +18,7 @@ const ServiceHeader = ({ recipientData }) => {
             <WritersList
               messageCount={recipientData.messageCount}
               recentMessages={recipientData.recentMessages}
+              $onlyDesktop={true}
             />
             <S.VerticalBar $margin="1.75rem" $onlyMobile={false} />
             <TopReactions topReactions={recipientData.topReactions} />

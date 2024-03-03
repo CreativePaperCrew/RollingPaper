@@ -1,24 +1,18 @@
-import {
-  BoldText,
-  ProfileCircle,
-  ProfileCircles,
-  TextArea,
-  WritersListContainer,
-} from './WritersListStyle';
+import * as S from './WritersListStyle';
 
 export default function WritersList({ messageCount, recentMessages }) {
   return (
-    <WritersListContainer>
-      <ProfileCircles>
+    <S.WritersListContainer>
+      <S.ProfileCircles>
         {recentMessages &&
           recentMessages.map((msg, i) => (
-            <ProfileCircle key={i} $imgUrl={msg.profileImageURL} />
+            <S.ProfileCircle key={i} $imgUrl={msg.profileImageURL} />
           ))}
-        <ProfileCircle>{`+${messageCount - recentMessages.length}`}</ProfileCircle>
-      </ProfileCircles>
-      <TextArea>
-        <BoldText>{messageCount}</BoldText>명이 작성했어요!
-      </TextArea>
-    </WritersListContainer>
+        <S.ProfileCircle>{`+${messageCount - recentMessages.length}`}</S.ProfileCircle>
+      </S.ProfileCircles>
+      <S.TextArea>
+        <S.BoldText>{messageCount}</S.BoldText>명이 작성했어요!
+      </S.TextArea>
+    </S.WritersListContainer>
   );
 }

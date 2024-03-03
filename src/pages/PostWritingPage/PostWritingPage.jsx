@@ -31,8 +31,8 @@ const PostWritingPage = () => {
 
   return (
     <S.Container>
-      <S.LeftAlign>
-        <S.Receiver>
+      <S.LeftAlignFrame>
+        <S.SectionFrame>
           <S.Title>From.</S.Title>
           <Input
             width="long"
@@ -41,7 +41,7 @@ const PostWritingPage = () => {
           >
             보내는 사람 이름을 입력해주세요
           </Input>
-        </S.Receiver>
+        </S.SectionFrame>
         <S.ProfileImage>
           <S.Title>프로필 이미지</S.Title>
           <S.ImageContainer>
@@ -60,19 +60,19 @@ const PostWritingPage = () => {
             </S.ImageSelector>
           </S.ImageContainer>
         </S.ProfileImage>
-        <S.Receiver>
+        <S.SectionFrame>
           <S.Title>상대와의 관계</S.Title>
           <SelectionDropdown selectList={RELATIONSHIPS} defaultValue="지인" />
-        </S.Receiver>
-        <S.Receiver>
+        </S.SectionFrame>
+        <S.SectionFrame>
           <S.Title>내용을 입력해 주세요</S.Title>
           <TextEditor />
-        </S.Receiver>
-        <S.Receiver>
+        </S.SectionFrame>
+        <S.SectionFrame>
           <S.Title>폰트 선택</S.Title>
           <SelectionDropdown selectList={FONTS} defaultValue="Noto Sans" />
-        </S.Receiver>
-      </S.LeftAlign>
+        </S.SectionFrame>
+      </S.LeftAlignFrame>
     </S.Container>
   );
 };

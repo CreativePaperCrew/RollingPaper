@@ -7,7 +7,7 @@ export const Container = styled.div`
   margin-top: 3.5625rem;
 `;
 
-export const LeftAlign = styled.div`
+export const LeftAlignFrame = styled.div`
   display: flex;
   gap: 3.125rem;
   flex-direction: column;
@@ -15,7 +15,7 @@ export const LeftAlign = styled.div`
   width: 45rem;
 `;
 
-export const Receiver = styled.div`
+export const SectionFrame = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;

@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import * as S from './RelationDropdownStyle';
+import * as S from './SelectionDropdownStyle';
 import arrowTop from '../../assets/icons/arrowTop.svg';
 import arrowDown from '../../assets/icons/arrowDown.svg';
-import { RELATIONSHIPS } from '../../constants/relationships';
 
-const RelationDropdown = () => {
+const RelationDropdown = ({ selectList, defaultValue }) => {
   const [isClickedDown, setIsClickedDown] = useState('false');
-  const [selectedRelation, setSelectedRelation] = useState('지인');
+  const [selectedRelation, setSelectedRelation] = useState(defaultValue);
 
   const handleArrowClick = () => {
     setIsClickedDown(!isClickedDown);
@@ -23,7 +22,7 @@ const RelationDropdown = () => {
         <div>
           <img src={arrowTop} alt="arrow-top" />
           <S.RelationList>
-            {RELATIONSHIPS.map((relation) => (
+            {selectList.map((relation) => (
               <S.Relation
                 key={relation}
                 onClick={() => handleRelationClick(relation)}

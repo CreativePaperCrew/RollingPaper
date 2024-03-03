@@ -1,9 +1,11 @@
 import Input from '../../components/Input/Input';
 import * as S from './PostWritingPageStyle';
-import RelationDropdown from '../../components/RelationDropdown/RelationDropdown';
+import SelectionDropdown from '../../components/SelectionDropdown/SelectionDropdown';
 import { useEffect, useState } from 'react';
 import getProfileImages from '../../apis/getProfileImages';
 import TextEditor from '../../components/TextEditor/TextEditor';
+import { RELATIONSHIPS } from '../../constants/relationships';
+import { FONTS } from '../../constants/fonts';
 
 const PostWritingPage = () => {
   const [recipient, setRecipient] = useState('');
@@ -60,7 +62,7 @@ const PostWritingPage = () => {
         </S.ProfileImage>
         <S.Receiver>
           <S.Title>상대와의 관계</S.Title>
-          <RelationDropdown />
+          <SelectionDropdown selectList={RELATIONSHIPS} defaultValue="지인" />
         </S.Receiver>
         <S.Receiver>
           <S.Title>내용을 입력해 주세요</S.Title>
@@ -68,6 +70,7 @@ const PostWritingPage = () => {
         </S.Receiver>
         <S.Receiver>
           <S.Title>폰트 선택</S.Title>
+          <SelectionDropdown selectList={FONTS} defaultValue="Noto Sans" />
         </S.Receiver>
       </S.LeftAlign>
     </S.Container>

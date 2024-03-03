@@ -64,4 +64,6 @@ export const CustomButton = styled(Button)`
   }
 `;
 
-export const ButtonLink = styled(Link)``;
+export const ButtonLink = styled(Link)`
+  text-decoration: none;
+`;

@@ -9,6 +9,7 @@ export const Container = styled.div`
 
 export const LeftAlign = styled.div`
   display: flex;
+  gap: 3.125rem;
   flex-direction: column;
   align-items: left;
   width: 45rem;
@@ -18,7 +19,6 @@ export const Receiver = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-bottom: 3.125rem;
 `;
 
 export const Title = styled.p`

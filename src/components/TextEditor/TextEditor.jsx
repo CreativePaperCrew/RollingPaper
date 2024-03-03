@@ -1,11 +1,53 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import * as S from './TextEditorStyle';
+
+const formats = [
+  'bold',
+  'italic',
+  'underline',
+  'list',
+  'bullet',
+  'align',
+  'color',
+  'background',
+];
 
 const TextEditor = () => {
-  const [value, setValue] = useState('');
+  const [quillValue, setQuillValue] = useState('');
 
-  return <ReactQuill theme="snow" value={value} onChange={setValue} />;
+  const handleQuillChange = (content, delta, source, editor) => {
+    setQuillValue(editor.getContents());
+  };
+
+  const modules = useMemo(() => {
+    return {
+      toolbar: {
+        container: [
+          ['bold', 'italic', 'underline'],
+          [{ align: '' }, { align: 'center' }, { align: 'right' }],
+          [{ list: 'ordered' }, { list: 'bullet' }],
+          [
+            {
+              color: [],
+            },
+            { background: [] },
+          ],
+        ],
+      },
+    };
+  }, []);
+
+  return (
+    <S.TextEditor
+      theme="snow"
+      modules={modules}
+      formats={formats}
+      value={quillValue || ''}
+      onChange={handleQuillChange}
+    />
+  );
 };
 
 export default TextEditor;

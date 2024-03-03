@@ -9,7 +9,7 @@ const Input = ({ children, width, saveRecipient, recipient }) => {
         className={!recipient && 'errorMessage'}
       />
       <S.ErrorMessage className={!recipient && 'errorMessage'}>
-        내용을 입력해주세요.
+        내용을 입력해주세요
       </S.ErrorMessage>
     </S.Container>
   );

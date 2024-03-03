@@ -1,11 +1,11 @@
 import styled from 'styled-components';
+import { Button } from '../../components/common/Buttons/Button/ButtonStyle';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 3.5625rem;
-  margin-bottom: 15rem;
 `;
 
 export const LeftAlignFrame = styled.div`
@@ -74,4 +74,9 @@ export const AvaliableImages = styled.img`
   &:hover {
     cursor: pointer;
   }
+`;
+
+export const CreateButton = styled(Button)`
+  margin-top: 3.875rem;
+  margin-bottom: 3.75rem;
 `;

@@ -72,6 +72,7 @@ const PostWritingPage = () => {
           <S.Title>폰트 선택</S.Title>
           <SelectionDropdown selectList={FONTS} defaultValue="Noto Sans" />
         </S.SectionFrame>
+        <S.CreateButton size="long">생성하기</S.CreateButton>
       </S.LeftAlignFrame>
     </S.Container>
   );

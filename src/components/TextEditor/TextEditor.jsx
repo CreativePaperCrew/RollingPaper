@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react';
-import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import * as S from './TextEditorStyle';
 

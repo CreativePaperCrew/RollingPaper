@@ -3,7 +3,6 @@ import * as S from './PostCreatingPageStyle';
 import Input from '../../components/Input/Input';
 import BackgroundTypeSelectButton from '../../components/BackgroundTypeSelectButton/BackgroundTypeSelectButton';
 import BackgroundSelector from '../../components/BackgroundSelector/BackgroundSelector';
-import LinkButton from '../../components/common/Buttons/LinkButton/LinkButton';
 import getBackgroundImages from '../../apis/getBackgroundImages';
 
 const PostCreatingPage = () => {
@@ -77,7 +76,6 @@ const PostCreatingPage = () => {
         handleImageBoxClick={handleImageBoxClick}
         imageUrls={imageUrls}
       />
-      <LinkButton width="45" text="생성하기" isDisabled={!recipient} />
     </S.Container>
   );
 };

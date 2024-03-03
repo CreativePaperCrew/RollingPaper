@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import teamApiClient from '../../apis/teamApiConfig';
-import LinkButton from '../../components/common/Buttons/LinkButton/LinkButton';
 import ListCardContent from '../../components/ListPage/ListCardContent/ListCardContent';
 import * as S from './ListPageStyle';
 
@@ -33,7 +32,9 @@ const ListPage = () => {
         </S.ListCardContentContainer>
       </S.Container>
       <S.ButtonContainer>
-        <LinkButton text="나도 만들어보기" to="/post" width={17.5} />
+        <S.ButtonLink to="/list">
+          <S.CustomButton size="medium">나도해보기</S.CustomButton>
+        </S.ButtonLink>
       </S.ButtonContainer>
     </>
   );

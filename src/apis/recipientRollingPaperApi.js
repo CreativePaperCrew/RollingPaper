@@ -40,7 +40,7 @@ export const getRecipientRollingPaperReactions = async (recipientId) => {
     const response = await teamApiClient.get(
       `/recipients/${recipientId}/reactions/`,
     );
-    return response.data;
+    return response.data.results;
   } catch (error) {
     throw new Error('대상자의 리액션 목록을 불러오는데 실패했습니다');
   }

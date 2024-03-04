@@ -113,4 +113,7 @@ export const CardPattern = styled.img`
   position: absolute;
   bottom: 0;
   right: 0;
+  @media screen and (max-width: 767px) {
+    width: 6.6875rem;
+  }
 `;

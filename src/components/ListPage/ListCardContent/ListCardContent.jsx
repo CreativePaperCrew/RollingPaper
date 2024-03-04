@@ -2,16 +2,22 @@ import { useState, useEffect } from 'react';
 import ListCard from '../ListCard/ListCard';
 import { LeftArrowButton, RightArrowButton } from '../ArrowButton/ArrowButton';
 import * as S from './ListCardContentStyle';
+import teamApiClient from '../../../apis/teamApiConfig';
 
-const ListCardContent = ({ sortedDataList }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const ListCardContent = ({ isSortLike }) => {
+  const [listData, setListData] = useState([]);
   const [isScrollable, setIsScrollable] = useState(false);
+  const [limit, setLimit] = useState(4);
+  const [offset, setOffset] = useState(0);
 
   const updateScroll = () => {
     const isSmallScreen = window.innerWidth < 1200;
     setIsScrollable(isSmallScreen);
     if (isSmallScreen) {
-      setCurrentIndex(0);
+      setLimit(8);
+      setOffset(0);
+    } else {
+      setLimit(4);
     }
   };
 
@@ -22,37 +28,35 @@ const ListCardContent = ({ sortedDataList }) => {
     return () => window.removeEventListener('resize', updateScroll);
   }, []);
 
+  useEffect(() => {
+    teamApiClient
+      .get(`/recipients/?limit=${limit}&offset=${offset}&sort=${isSortLike}`)
+      .then((res) => {
+        setListData(res.data.results);
+      });
+  }, [limit, offset, isSortLike]);
+
   const handlePrevious = () => {
-    setCurrentIndex((prevIndex) => Math.max(0, prevIndex - 1));
+    setOffset(offset - 1);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      Math.min(sortedDataList.length - 1, prevIndex + 1),
-    );
+    setOffset(offset + 1);
   };
 
   return (
     <S.ListCardsContainer $isScrollable={isScrollable}>
-      {isScrollable
-        ? sortedDataList.map((element) => (
-            <S.LinkStyle to={`/post/${element.id}`} key={element.id}>
-              <ListCard key={element.id} cardData={element} />
-            </S.LinkStyle>
-          ))
-        : sortedDataList
-            .slice(currentIndex, currentIndex + 4)
-            .map((element) => (
-              <S.LinkStyle to={`/post/${element.id}`} key={element.id}>
-                <ListCard key={element.id} cardData={element} />
-              </S.LinkStyle>
-            ))}
-      {currentIndex > 0 && !isScrollable && (
+      {listData.map((element) => (
+        <S.LinkStyle to={`/post/${element.id}`} key={element.id}>
+          <ListCard key={element.id} cardData={element} />
+        </S.LinkStyle>
+      ))}
+      {offset > 0 && !isScrollable && (
         <S.LeftArrowButtonContainer>
           <LeftArrowButton onClick={handlePrevious} />
         </S.LeftArrowButtonContainer>
       )}
-      {currentIndex + 4 < sortedDataList.length && !isScrollable && (
+      {offset + 4 <= listData.length && !isScrollable && (
         <S.RightArrowButtonContainer>
           <RightArrowButton onClick={handleNext} />
         </S.RightArrowButtonContainer>

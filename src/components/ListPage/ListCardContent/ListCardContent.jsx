@@ -64,7 +64,7 @@ const ListCardContent = ({ isSortLike }) => {
           <LeftArrowButton onClick={handlePrevious} />
         </S.LeftArrowButtonContainer>
       )}
-      {!isScrollable && offset + 4 <= listData.length && (
+      {!isScrollable && offset + 4 < 8 && (
         <S.RightArrowButtonContainer>
           <RightArrowButton onClick={handleNext} />
         </S.RightArrowButtonContainer>

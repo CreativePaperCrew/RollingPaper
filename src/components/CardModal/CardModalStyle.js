@@ -137,6 +137,7 @@ export const ContentContainer = styled.div`
 export const Content = styled.p`
   width: 100%;
   height: 100%;
+  padding-right: 0.5rem;
   color: var(--gray-600);
   font-size: var(--font-15);
   line-height: 1.5rem;

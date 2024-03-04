@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import teamApiClient from '../../../apis/teamApiConfig';
-import ListCard from '../ListCard/ListCard';
+import { getRecipients } from '../../../apis/recipientRollingPaperApi';
 import {
   LeftArrowButton,
   RightArrowButton,
 } from '../../common/Buttons/ArrowButton/ArrowButton';
+import ListCard from '../ListCard/ListCard';
 import * as S from './ListCardContentStyle';
 
 const ListCardContent = ({ isSortLike }) => {
@@ -32,11 +32,19 @@ const ListCardContent = ({ isSortLike }) => {
   }, []);
 
   useEffect(() => {
-    teamApiClient
-      .get(`/recipients/?limit=${limit}&offset=${offset}&sort=${isSortLike}`)
-      .then((res) => {
-        setListData(res.data.results);
-      });
+    const fetchRecipient = async () => {
+      try {
+        const response = await getRecipients({ limit, offset, isSortLike });
+        setListData(response);
+      } catch (error) {
+        console.error(
+          '롤링페이퍼 대상자를 불러오는데 실패했습니다:',
+          error.message,
+        );
+      }
+    };
+
+    fetchRecipient();
   }, [limit, offset, isSortLike]);
 
   const handlePrevious = () => {

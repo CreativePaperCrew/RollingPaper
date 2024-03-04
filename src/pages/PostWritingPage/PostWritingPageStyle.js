@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Button } from '../../components/common/Buttons/Button/ButtonStyle';
 
 export const Container = styled.div`
   display: flex;
@@ -76,7 +75,7 @@ export const AvaliableImages = styled.img`
   }
 `;
 
-export const CreateButton = styled(Button)`
+export const MarginFrame = styled.div`
   margin-top: 3.875rem;
   margin-bottom: 3.75rem;
 `;

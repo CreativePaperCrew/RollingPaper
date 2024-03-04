@@ -7,14 +7,15 @@ import TextEditor from '../../components/TextEditor/TextEditor';
 import { RELATIONSHIPS } from '../../constants/relationships';
 import { FONTS } from '../../constants/fonts';
 import { Link } from 'react-router-dom';
+import Button from '../../components/common/Buttons/Button/Button';
 
 const PostWritingPage = () => {
-  const [recipient, setRecipient] = useState('');
+  const [senderName, setSenderName] = useState('');
   const [profileImageUrls, setProfileImageUrls] = useState([]);
   const [selectedImageUrl, setSelectedImageUrl] = useState(null);
 
   const saveRecipient = (e) => {
-    setRecipient(e.target.value);
+    setSenderName(e.target.value);
   };
 
   const handleImageClick = (url) => {
@@ -38,7 +39,7 @@ const PostWritingPage = () => {
           <Input
             width="long"
             saveRecipient={saveRecipient}
-            recipient={recipient}
+            recipient={senderName}
           >
             보내는 사람 이름을 입력해주세요
           </Input>
@@ -74,7 +75,11 @@ const PostWritingPage = () => {
           <SelectionDropdown selectList={FONTS} defaultValue="Noto Sans" />
         </S.SectionFrame>
         <Link to="/">
-          <S.CreateButton size="large">생성하기</S.CreateButton>
+          <S.MarginFrame>
+            <Button size="large" isDisabled={!senderName && true}>
+              생성하기
+            </Button>
+          </S.MarginFrame>
         </Link>
       </S.LeftAlignFrame>
     </S.Container>

@@ -6,6 +6,7 @@ import BackgroundSelector from '../../components/BackgroundSelector/BackgroundSe
 import getBackgroundImages from '../../apis/getBackgroundImages';
 import Button from '../../components/common/Buttons/Button/Button';
 import { postRecipient } from '../../apis/recipientRollingPaperApi';
+import { useNavigate } from 'react-router-dom';
 
 const PostCreatingPage = () => {
   const [recipient, setRecipient] = useState('');
@@ -13,6 +14,8 @@ const PostCreatingPage = () => {
   const [selectedColor, setSelectedColor] = useState('beige');
   const [selectedImage, setSeletedImage] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     getBackgroundImages()
@@ -62,7 +65,7 @@ const PostCreatingPage = () => {
         backgroundColor,
         backgroundImageURL,
       );
-      console.log(response);
+      navigate('/post/' + response.id);
     } catch (error) {
       alert(error.message);
     }

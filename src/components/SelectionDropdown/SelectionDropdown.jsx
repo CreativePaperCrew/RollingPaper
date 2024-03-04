@@ -3,40 +3,42 @@ import * as S from './SelectionDropdownStyle';
 import arrowTop from '../../assets/icons/arrowTop.svg';
 import arrowDown from '../../assets/icons/arrowDown.svg';
 
-const RelationDropdown = ({ selectList, defaultValue }) => {
+const SelectionDropdown = ({
+  selectList,
+  handleOptionClick,
+  type,
+  children,
+}) => {
   const [isClickedDown, setIsClickedDown] = useState('false');
-  const [selectedRelation, setSelectedRelation] = useState(defaultValue);
 
   const handleArrowClick = () => {
     setIsClickedDown(!isClickedDown);
   };
 
-  const handleRelationClick = (relation) => {
-    setSelectedRelation(relation);
-  };
-
   return (
-    <S.SelectedRelation name="relation" onClick={handleArrowClick}>
-      {selectedRelation}
+    <S.SelectedOption onClick={handleArrowClick}>
+      {children}
       {!isClickedDown ? (
         <div>
           <img src={arrowTop} alt="arrow-top" />
-          <S.RelationList>
-            {selectList.map((relation) => (
-              <S.Relation
-                key={relation}
-                onClick={() => handleRelationClick(relation)}
+          <S.OptionList>
+            {selectList.map((option) => (
+              <S.Option
+                key={option}
+                onClick={() => {
+                  handleOptionClick(type, option);
+                }}
               >
-                {relation}
-              </S.Relation>
+                {option}
+              </S.Option>
             ))}
-          </S.RelationList>
+          </S.OptionList>
         </div>
       ) : (
         <img src={arrowDown} alt="arrow-down" />
       )}
-    </S.SelectedRelation>
+    </S.SelectedOption>
   );
 };
 
-export default RelationDropdown;
+export default SelectionDropdown;

@@ -13,11 +13,13 @@ const formats = [
   'background',
 ];
 
-const TextEditor = () => {
-  const [quillValue, setQuillValue] = useState('');
+const TextEditor = ({ handleContentOnchange }) => {
+  const [quillValue, setQuillValue] = useState({});
 
   const handleQuillChange = (content, delta, source, editor) => {
     setQuillValue(editor.getContents());
+    const text = editor.getText();
+    handleContentOnchange(text);
   };
 
   const modules = useMemo(() => {

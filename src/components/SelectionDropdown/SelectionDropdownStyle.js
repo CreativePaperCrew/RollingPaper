@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SelectedRelation = styled.div`
+export const SelectedOption = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,7 @@ export const SelectedRelation = styled.div`
   }
 `;
 
-export const RelationList = styled.li`
+export const OptionList = styled.li`
   position: absolute;
   left: -0.0063rem;
   top: 3.25rem;
@@ -33,7 +33,7 @@ export const RelationList = styled.li`
   list-style: none;
 `;
 
-export const Relation = styled.ul`
+export const Option = styled.ul`
   padding: 0.75rem 1rem;
   color: var(--gray-900);
   line-height: 1.625rem;

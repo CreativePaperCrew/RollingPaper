@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
-import ListCard from '../ListCard/ListCard';
-import { LeftArrowButton, RightArrowButton } from '../ArrowButton/ArrowButton';
-import * as S from './ListCardContentStyle';
 import teamApiClient from '../../../apis/teamApiConfig';
+import ListCard from '../ListCard/ListCard';
+import {
+  LeftArrowButton,
+  RightArrowButton,
+} from '../../common/Buttons/ArrowButton/ArrowButton';
+import * as S from './ListCardContentStyle';
 
 const ListCardContent = ({ isSortLike }) => {
   const [listData, setListData] = useState([]);

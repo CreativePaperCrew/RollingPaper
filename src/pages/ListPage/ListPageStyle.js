@@ -33,7 +33,6 @@ export const ListCardTitle = styled.h2`
   justify-content: flex-start;
   color: var(--black);
   font-size: var(--font-24);
-  font-style: normal;
   font-weight: var(--font-bold);
   line-height: 2.25rem;
   letter-spacing: -0.015rem;

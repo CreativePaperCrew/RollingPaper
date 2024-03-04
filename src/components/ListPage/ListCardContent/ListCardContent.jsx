@@ -51,12 +51,12 @@ const ListCardContent = ({ isSortLike }) => {
           <ListCard key={element.id} cardData={element} />
         </S.LinkStyle>
       ))}
-      {offset > 0 && !isScrollable && (
+      {!isScrollable && offset > 0 && (
         <S.LeftArrowButtonContainer>
           <LeftArrowButton onClick={handlePrevious} />
         </S.LeftArrowButtonContainer>
       )}
-      {offset + 4 <= listData.length && !isScrollable && (
+      {!isScrollable && offset + 4 <= listData.length && (
         <S.RightArrowButtonContainer>
           <RightArrowButton onClick={handleNext} />
         </S.RightArrowButtonContainer>

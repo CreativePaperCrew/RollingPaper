@@ -11,6 +11,7 @@ export const Button = styled.button`
   border-radius: 0.375rem;
   padding: 0.5rem 1rem;
   border: none;
+  background-color: var(--gray-100);
   color: var(--gray-900);
   text-align: center;
   line-height: 1.625rem;

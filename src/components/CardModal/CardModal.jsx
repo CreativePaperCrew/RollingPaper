@@ -1,7 +1,6 @@
 import React from 'react';
 import Badge from '../Badge/Badge';
 import * as S from './CardModalStyle';
-
 import { formatKSTDate } from '../../utils/formatKSTDate';
 
 const CardModal = ({ cardData, onClose }) => {

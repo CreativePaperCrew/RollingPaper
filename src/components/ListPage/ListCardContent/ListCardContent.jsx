@@ -12,11 +12,7 @@ const ListCardContent = ({ isSortLike }) => {
   const [limit, setLimit] = useState(4);
   const [offset, setOffset] = useState(0);
 
-  const {
-    data: listData,
-    isLoading,
-    error,
-  } = useRecipientData(limit, offset, isSortLike);
+  const { data: listData, error } = useRecipientData(limit, offset, isSortLike);
 
   useEffect(() => {
     updateScroll();
@@ -43,10 +39,6 @@ const ListCardContent = ({ isSortLike }) => {
   const handleNext = () => {
     setOffset(offset + 1);
   };
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
 
   if (error) {
     return <div>Error: {error.message}</div>;

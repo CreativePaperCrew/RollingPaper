@@ -10,7 +10,7 @@ const Router = () => (
     <Routes>
       <Route path="/" element={<AppLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="/post" element={<PostCreatingPage />} />
+        <Route path="post" element={<PostCreatingPage />} />
         <Route path="post/:id" element={<RecipientsPage />} />
       </Route>
     </Routes>

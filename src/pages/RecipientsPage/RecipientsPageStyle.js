@@ -14,6 +14,7 @@ export const RecipientsCardsContainer = styled.div`
     props.$backgroundImageURL ? `url(${props.$backgroundImageURL})` : 'none'};
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 22.125rem);

@@ -4,6 +4,9 @@ import Input from '../../components/Input/Input';
 import BackgroundTypeSelectButton from '../../components/BackgroundTypeSelectButton/BackgroundTypeSelectButton';
 import BackgroundSelector from '../../components/BackgroundSelector/BackgroundSelector';
 import getBackgroundImages from '../../apis/getBackgroundImages';
+import Button from '../../components/common/Buttons/Button/Button';
+import { postRecipient } from '../../apis/recipientRollingPaperApi';
+import { useNavigate } from 'react-router-dom';
 
 const PostCreatingPage = () => {
   const [recipient, setRecipient] = useState('');
@@ -11,6 +14,8 @@ const PostCreatingPage = () => {
   const [selectedColor, setSelectedColor] = useState('beige');
   const [selectedImage, setSeletedImage] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     getBackgroundImages()
@@ -49,6 +54,23 @@ const PostCreatingPage = () => {
     setSeletedImage(image);
   };
 
+  const handleCreateButtonClick = async (
+    name,
+    backgroundColor,
+    backgroundImageURL,
+  ) => {
+    try {
+      const response = await postRecipient(
+        name,
+        backgroundColor,
+        backgroundImageURL,
+      );
+      navigate('/post/' + response.id);
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   return (
     <S.Container>
       <S.Receiver>
@@ -76,6 +98,15 @@ const PostCreatingPage = () => {
         handleImageBoxClick={handleImageBoxClick}
         imageUrls={imageUrls}
       />
+      <Button
+        size="large"
+        isDisabled={!recipient && true}
+        handleButtonClick={() =>
+          handleCreateButtonClick(recipient, selectedColor, selectedImage)
+        }
+      >
+        생성하기
+      </Button>
     </S.Container>
   );
 };

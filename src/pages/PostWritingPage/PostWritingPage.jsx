@@ -58,7 +58,9 @@ const PostWritingPage = () => {
         font,
       );
       navigate('/post/' + id);
-    } catch (error) {}
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   useEffect(() => {

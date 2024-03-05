@@ -4,12 +4,12 @@ import * as S from './PostCardStyle';
 import deleteImg from '../../assets/icons/deleted.svg';
 import { formatKSTDate } from '../../utils/formatKSTDate';
 
-const PostCard = ({ cardData }) => {
+const PostCard = ({ cardData, onClick }) => {
   const { content, createdAt, font, profileImageURL, relationship, sender } =
     cardData;
 
   return (
-    <S.PostCardContainer>
+    <S.PostCardContainer onClick={onClick}>
       <S.PostCardTop>
         <S.PostCardProfile>
           <S.DeleteContainer>

@@ -7,15 +7,19 @@ import {
 } from '../../apis/recipientRollingPaperApi';
 import useFetchData from '../../hooks/useFetchData';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
-import { COLORS } from '../../constants/colors';
-import * as S from './RecipientsPageStyle';
+import useToggle from '../../hooks/useToggle';
 import ServiceHeader from '../../components/ServiceHeader/ServiceHeader';
-import AddPostCard from '../../components/PostCard/AddPostCard';
 import PostCard from '../../components/PostCard/PostCard';
+import AddPostCard from '../../components/PostCard/AddPostCard';
+import CardModal from '../../components/CardModal/CardModal';
+import * as S from './RecipientsPageStyle';
+import { COLORS } from '../../constants/colors';
 
 const RecipientsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [isOpen, toggleIsOpen] = useToggle();
+  const [selectedCardData, setSelectedCardData] = useState(null);
   const LIMIT = 8;
   const [offset, setOffset] = useState(0);
   const [count, setCount] = useState(null);
@@ -73,6 +77,11 @@ const RecipientsPage = () => {
     ? COLORS[recipientData.backgroundColor]
     : '';
 
+  const handleCardClick = (cardData) => {
+    setSelectedCardData(cardData);
+    toggleIsOpen();
+  };
+
   return (
     <>
       <ServiceHeader recipientData={recipientData} />
@@ -82,9 +91,16 @@ const RecipientsPage = () => {
       >
         <AddPostCard />
         {cardData?.map((postCard) => (
-          <PostCard key={postCard.id} cardData={postCard} />
+          <PostCard
+            onClick={() => handleCardClick(postCard)}
+            key={postCard.id}
+            cardData={postCard}
+          />
         ))}
         <S.TargetedLine ref={observedRef} />
+        {isOpen && (
+          <CardModal cardData={selectedCardData} onClose={toggleIsOpen} />
+        )}
       </S.RecipientsCardsContainer>
     </>
   );

@@ -7,7 +7,7 @@ export const RecipientsCardsContainer = styled.div`
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   padding-top: 7.06rem;
   background-color: ${(props) => `var(${props.$backgroundColor}, transparent)`};
   background-image: ${(props) =>
@@ -24,4 +24,10 @@ export const RecipientsCardsContainer = styled.div`
     grid-template-columns: repeat(3, 24rem);
     grid-template-rows: repeat(auto-fit, 17.5rem);
   }
+`;
+
+export const Loading = styled.div`
+  width: 100%;
+  height: 1.25rem;
+  background-color: red;
 `;

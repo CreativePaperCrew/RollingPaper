@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useParams } from 'react-router-dom';
 import useToggle from '../../hooks/useToggle';
@@ -18,12 +18,11 @@ const EmojiPicker = () => {
   const handleEmojiPick = async (emojiObject) => {
     changeToggle();
     await handlePost({ emoji: emojiObject.emoji, type: 'increase' });
+    window.location.reload();
     // if (data) {
     //   window.location.reload();
     // }
-    window.location.reload();
   };
-
   return (
     <S.EmojiPickerContainer>
       <S.EmojiPickerButton onClick={changeToggle}>

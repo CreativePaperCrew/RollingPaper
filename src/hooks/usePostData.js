@@ -9,7 +9,6 @@ function usePostData(apiFunction, params = []) {
     setIsLoading(true);
     try {
       const response = await apiFunction(...params, body);
-      console.log(response);
       setData(response);
     } catch (error) {
       setError(error);

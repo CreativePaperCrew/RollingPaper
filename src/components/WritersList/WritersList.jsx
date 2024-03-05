@@ -5,8 +5,8 @@ export default function WritersList({ messageCount, recentMessages }) {
     <S.WritersListContainer>
       <S.ProfileCircles>
         {recentMessages &&
-          recentMessages.map((msg, i) => (
-            <S.ProfileCircle key={i} $imgUrl={msg.profileImageURL} />
+          recentMessages.map((msg) => (
+            <S.ProfileCircle key={msg.id} $imgUrl={msg.profileImageURL} />
           ))}
         <S.ProfileCircle>{`+${messageCount - recentMessages.length}`}</S.ProfileCircle>
       </S.ProfileCircles>

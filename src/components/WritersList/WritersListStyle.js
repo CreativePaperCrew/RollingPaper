@@ -6,7 +6,7 @@ export const WritersListContainer = styled.div`
   align-items: center;
   gap: 0.6875rem;
   ${(props) => (props.$onlyDesktop ? 'display: none;' : 'display: flex;')}
-  @media (max-width: 75rem) {
+  @media (max-width: 1200px) {
     ${(props) => (props.$onlyDesktop ? 'display: flex;' : 'display: none')}
   }
 `;
@@ -19,8 +19,6 @@ export const ProfileCircles = styled.div`
 `;
 
 export const ProfileCircle = styled.div`
-  /* flex-basis: calc(20% - 10px); */
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,12 +36,13 @@ export const ProfileCircle = styled.div`
   overflow: hidden;
   color: var(--gray-500);
   font-size: 0.75rem;
-  font-style: normal;
   font-weight: 500;
   line-height: 1.125rem;
   letter-spacing: -0.00375rem;
   &:last-child {
     background: var(--white);
+    width: auto;
+    padding: 0.3125rem 0.375rem;
     border: 0.0625rem solid #e3e3e3;
   }
 `;
@@ -51,8 +50,6 @@ export const ProfileCircle = styled.div`
 export const TextArea = styled.div`
   color: var(--gray-900, #181818);
   font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 400;
   line-height: 1.6875rem;
 `;
 

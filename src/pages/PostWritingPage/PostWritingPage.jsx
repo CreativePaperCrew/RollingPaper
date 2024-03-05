@@ -1,14 +1,14 @@
-import Input from '../../components/Input/Input';
-import * as S from './PostWritingPageStyle';
-import SelectionDropdown from '../../components/SelectionDropdown/SelectionDropdown';
 import { useEffect, useState } from 'react';
-import getProfileImages from '../../apis/getProfileImages';
-import TextEditor from '../../components/TextEditor/TextEditor';
-import { RELATIONSHIPS } from '../../constants/relationships';
-import { FONTS } from '../../constants/fonts';
-import Button from '../../components/common/Buttons/Button/Button';
-import { postRecipientRollingPaperMessage } from '../../apis/recipientRollingPaperApi';
 import { useNavigate, useParams } from 'react-router-dom';
+import { postRecipientRollingPaperMessage } from '../../apis/recipientRollingPaperApi';
+import * as S from './PostWritingPageStyle';
+import getProfileImages from '../../apis/getProfileImages';
+import { FONTS } from '../../constants/fonts';
+import { RELATIONSHIPS } from '../../constants/relationships';
+import Button from '../../components/common/Buttons/Button/Button';
+import Input from '../../components/Input/Input';
+import SelectionDropdown from '../../components/SelectionDropdown/SelectionDropdown';
+import TextEditor from '../../components/TextEditor/TextEditor';
 
 const PostWritingPage = () => {
   const [senderName, setSenderName] = useState('');

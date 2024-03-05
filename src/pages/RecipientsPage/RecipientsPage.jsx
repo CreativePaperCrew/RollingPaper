@@ -18,7 +18,7 @@ const RecipientsPage = () => {
   const [offset, setOffset] = useState(0);
   const [count, setCount] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [message, setMessage] = useState([]);
+  const [cardData, setCardData] = useState([]);
   const observerRef = useRef(null);
   const targetRef = useRef(null);
 
@@ -39,7 +39,7 @@ const RecipientsPage = () => {
   };
 
   useEffect(() => {
-    if (message.length > 7) {
+    if (cardData.length > 7) {
       observerRef.current = new IntersectionObserver(handleObserver, {
         threshold: 0.5,
       });
@@ -48,7 +48,7 @@ const RecipientsPage = () => {
         observerRef.current.observe(targetRef.current);
       }
     }
-  }, [message]);
+  }, [cardData]);
 
   const fetchData = async () => {
     if (offset >= count && count !== null) {
@@ -61,7 +61,7 @@ const RecipientsPage = () => {
       const response = await getRecipientRollingPaperMessages(id, 8, offset);
       const newData = response.results;
       setCount(response.count);
-      setMessage((prevData) => [...prevData, ...newData]);
+      setCardData((prevData) => [...prevData, ...newData]);
     } catch (error) {
       alert('에러');
     }
@@ -90,7 +90,7 @@ const RecipientsPage = () => {
         $backgroundImageURL={recipientData?.backgroundImageURL}
       >
         <AddPostCard />
-        {message?.map((postCard) => (
+        {cardData?.map((postCard) => (
           <PostCard key={postCard.id} cardData={postCard} />
         ))}
         <S.TargetedLine ref={targetRef} />

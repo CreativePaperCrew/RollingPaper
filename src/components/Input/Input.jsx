@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import * as S from './InputStyle';
 
-const Input = ({ placeholder, saveRecipient, recipient }) => {
+const Input = ({ placeholder, saveValue, value }) => {
   const [isBlank, setIsBlank] = useState(false);
 
   const handleFocusout = () => {
-    setIsBlank(!recipient);
+    setIsBlank(!value);
   };
 
   return (
@@ -14,7 +14,7 @@ const Input = ({ placeholder, saveRecipient, recipient }) => {
         placeholder={placeholder}
         $isError={isBlank}
         onChange={(e) => {
-          saveRecipient(e);
+          saveValue(e);
           setIsBlank(false);
         }}
         onBlur={handleFocusout}

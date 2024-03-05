@@ -79,8 +79,8 @@ const PostWritingPage = () => {
           <S.Title>From.</S.Title>
           <Input
             width="long"
-            saveRecipient={saveRecipient}
-            recipient={senderName}
+            saveValue={saveRecipient}
+            value={senderName}
             placeholder="보내는 사람 이름을 입력해주세요"
           />
         </S.SectionFrame>

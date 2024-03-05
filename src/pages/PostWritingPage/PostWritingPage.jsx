@@ -49,7 +49,7 @@ const PostWritingPage = () => {
     font,
   ) => {
     try {
-      const response = await postRecipientRollingPaperMessage(
+      await postRecipientRollingPaperMessage(
         id,
         sender,
         profileImageURL,

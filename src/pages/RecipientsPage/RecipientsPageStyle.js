@@ -7,7 +7,7 @@ export const RecipientsCardsContainer = styled.div`
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  height: 100vh;
+  padding-bottom: 3rem;
   padding-top: 7.06rem;
   background-color: ${(props) => `var(${props.$backgroundColor}, transparent)`};
   background-image: ${(props) =>

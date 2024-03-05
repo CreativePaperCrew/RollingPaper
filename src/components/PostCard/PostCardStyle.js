@@ -10,6 +10,22 @@ export const PostCardContainer = styled.div`
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
   cursor: pointer;
 
+  &:hover button {
+    background-color: var(--gray-600);
+  }
+
+  &:active button {
+    background-color: var(--gray-700);
+  }
+
+  &:focus button {
+    background-color: var(--gray-800);
+  }
+
+  &:disabled button {
+    background-color: var(--gray-300);
+  }
+
   @media (min-width: 768px) {
     width: 22rem;
     height: 17.75rem;

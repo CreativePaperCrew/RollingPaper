@@ -10,7 +10,6 @@ const formats = [
   'bullet',
   'align',
   'color',
-  'background',
 ];
 
 const TextEditor = ({ handleContentOnchange }) => {
@@ -33,7 +32,6 @@ const TextEditor = ({ handleContentOnchange }) => {
             {
               color: [],
             },
-            { background: [] },
           ],
         ],
       },

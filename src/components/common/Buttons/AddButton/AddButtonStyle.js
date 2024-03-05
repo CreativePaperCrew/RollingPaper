@@ -13,20 +13,4 @@ export const AddButtonContainer = styled.button`
   border: none;
   border-radius: 6.25rem;
   background: var(--gray-500);
-
-  &:hover {
-    background-color: var(--gray-600);
-  }
-
-  &:active {
-    background-color: var(--gray-700);
-  }
-
-  &:focus {
-    background-color: var(--gray-800);
-  }
-
-  &:disabled {
-    background-color: var(--gray-300);
-  }
 `;

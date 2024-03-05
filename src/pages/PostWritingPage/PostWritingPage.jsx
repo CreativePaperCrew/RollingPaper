@@ -81,9 +81,8 @@ const PostWritingPage = () => {
             width="long"
             saveRecipient={saveRecipient}
             recipient={senderName}
-          >
-            보내는 사람 이름을 입력해주세요
-          </Input>
+            placeholder="보내는 사람 이름을 입력해주세요"
+          />
         </S.SectionFrame>
         <S.ProfileImage>
           <S.Title>프로필 이미지</S.Title>
@@ -129,7 +128,7 @@ const PostWritingPage = () => {
         </S.SectionFrame>
         <S.MarginFrame>
           <Button
-            isDisabled={!senderName && true}
+            isDisabled={!senderName}
             handleButtonClick={() =>
               handleCreateButtonClick(
                 senderName,

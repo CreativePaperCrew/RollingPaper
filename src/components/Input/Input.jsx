@@ -1,16 +1,14 @@
 import * as S from './InputStyle';
 
-const Input = ({ children, width, saveRecipient, recipient }) => {
+const Input = ({ placeholder, saveRecipient, recipient }) => {
   return (
-    <S.Container className={width}>
+    <S.Container>
       <S.Input
-        placeholder={children}
+        placeholder={placeholder}
+        $isError={!recipient}
         onChange={(e) => saveRecipient(e)}
-        className={!recipient && 'errorMessage'}
       />
-      <S.ErrorMessage className={!recipient && 'errorMessage'}>
-        내용을 입력해주세요
-      </S.ErrorMessage>
+      {!recipient && <S.ErrorMessage>내용을 입력해주세요</S.ErrorMessage>}
     </S.Container>
   );
 };

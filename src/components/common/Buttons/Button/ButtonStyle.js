@@ -20,7 +20,7 @@ export const Button = styled.button`
   line-height: ${(props) => (props.size === 'small' ? '1.625rem' : '1.75rem')};
   letter-spacing: ${(props) =>
     props.size === 'small' ? '-0.01rem' : '-0.0112rem'};
-  width: ${(props) => (props.size ? `${BUTTON_SIZE[props.size]}rem` : 'auto')};
+  width: ${(props) => (props.size ? `${BUTTON_SIZE[props.size]}rem` : '100%')};
   cursor: pointer;
 
   &:hover {

@@ -53,20 +53,19 @@ export const PostCardProfile = styled.div`
   gap: 0.875rem;
 `;
 
-export const ProfileImgContainer = styled.div`
+export const ProfileImg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 3.5rem;
   height: 3.5rem;
   border: 1px solid var(--gray-200);
-  border-radius: 100px;
+  border-radius: 6.25rem;
   background-color: var(--white);
-`;
-
-export const ProfileImg = styled.img`
-  width: 100%;
-  border-radius: 100%;
+  background-image: ${(props) =>
+    props.$profileImageURL ? `url(${props.$profileImageURL})` : 'none'};
+  background-size: cover;
+  background-position: center;
 `;
 
 export const AuthorContainer = styled.div`

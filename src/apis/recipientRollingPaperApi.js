@@ -56,10 +56,9 @@ export const postRecipient = async (
 };
 
 export const getRecipients = async ({ limit, offset, isSortLike }) => {
+  const query = `limit=${limit}&offset=${offset}&sort=${isSortLike}`;
   try {
-    const response = await teamApiClient.get(
-      `/recipients/?limit=${limit}&offset=${offset}&sort=${isSortLike}`,
-    );
+    const response = await teamApiClient.get(`/recipients/?${query}`);
     return response.data.results;
   } catch (error) {
     throw new Error('롤링페이퍼 대상자를 불러오는데 실패했습니다');

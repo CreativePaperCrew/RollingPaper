@@ -1,45 +1,88 @@
-import React, { useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   getRecipientRollingPapers,
   getRecipientRollingPaperMessages,
 } from '../../apis/recipientRollingPaperApi';
 import useFetchData from '../../hooks/useFetchData';
+import { COLORS } from '../../constants/colors';
 import * as S from './RecipientsPageStyle';
 import ServiceHeader from '../../components/ServiceHeader/ServiceHeader';
-import PostCard from '../../components/PostCard/PostCard';
-import { COLORS } from '../../constants/colors';
 import AddPostCard from '../../components/PostCard/AddPostCard';
+import PostCard from '../../components/PostCard/PostCard';
 
 const RecipientsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const {
-    data: recipientData,
-    isLoading: isLoadingRecipient,
-    error: recipientError,
-  } = useFetchData(getRecipientRollingPapers, [id]);
+  const observerRef = useRef(null);
+  const targetRef = useRef(null);
+  const [offset, setOffset] = useState(0);
+  const [count, setCount] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState([]);
 
-  const {
-    data: messagesData,
-    isLoading: isLoadingMessages,
-    error: messagesError,
-  } = useFetchData(getRecipientRollingPaperMessages, [id]);
+  const { data: recipientData, error: recipientError } = useFetchData(
+    getRecipientRollingPapers,
+    [id],
+  );
+
+  const handleObserver = (entries) => {
+    const target = entries[0];
+    if (
+      target.isIntersecting &&
+      !isLoading &&
+      (count == null || offset < count)
+    ) {
+      setOffset((prevOffset) => prevOffset + 8);
+    }
+  };
 
   useEffect(() => {
-    if (messagesError || recipientError) {
+    if (message.length > 7) {
+      observerRef.current = new IntersectionObserver(handleObserver, {
+        threshold: 0.5,
+      });
+
+      if (targetRef.current) {
+        observerRef.current.observe(targetRef.current);
+      }
+
+      return () => observerRef.current?.disconnect();
+    }
+  }, [message]);
+
+  const fetchData = async () => {
+    if (offset >= count && count !== null) {
+      observerRef.current.disconnect();
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const response = await getRecipientRollingPaperMessages(id, 8, offset);
+      const newData = response.results;
+      setCount(response.count);
+      setMessage((prevData) => [...prevData, ...newData]);
+    } catch (error) {
+      alert('에러');
+    }
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [offset]);
+
+  useEffect(() => {
+    if (recipientError) {
       navigate('/');
     }
-  }, [messagesError, recipientError, navigate]);
-
-  if (isLoadingMessages || isLoadingRecipient) {
-    return <div>데이터 로딩 중...</div>;
-  }
+  }, [recipientError, navigate]);
 
   const backgroundColor = recipientData
     ? COLORS[recipientData.backgroundColor]
     : '';
-  const rollingPapers = messagesData ? messagesData.results : [];
 
   return (
     <>
@@ -49,9 +92,10 @@ const RecipientsPage = () => {
         $backgroundImageURL={recipientData?.backgroundImageURL}
       >
         <AddPostCard />
-        {rollingPapers.map((postCard) => (
+        {message?.map((postCard) => (
           <PostCard key={postCard.id} cardData={postCard} />
         ))}
+        <div ref={targetRef} style={{ height: '10px' }} />
       </S.RecipientsCardsContainer>
     </>
   );

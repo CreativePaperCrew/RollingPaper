@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const Container = styled.div`
   display: flex;
@@ -13,6 +14,10 @@ export const LeftAlignFrame = styled.div`
   flex-direction: column;
   align-items: left;
   width: 45rem;
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    width: 330px;
+  }
 `;
 
 export const SectionFrame = styled.div`
@@ -61,8 +66,13 @@ export const ProfileMessage = styled.p`
 `;
 
 export const ImageList = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
   gap: 0.25rem;
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 `;
 
 export const AvaliableImages = styled.img`
@@ -73,9 +83,20 @@ export const AvaliableImages = styled.img`
   &:hover {
     cursor: pointer;
   }
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 `;
 
 export const MarginFrame = styled.div`
+  width: 100%;
   margin-top: 3.875rem;
   margin-bottom: 3.75rem;
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    margin-top: 12.875rem;
+    margin-bottom: 1.5rem;
+  }
 `;

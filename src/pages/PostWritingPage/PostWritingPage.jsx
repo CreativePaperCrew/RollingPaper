@@ -129,7 +129,6 @@ const PostWritingPage = () => {
         </S.SectionFrame>
         <S.MarginFrame>
           <Button
-            size="large"
             isDisabled={!senderName && true}
             handleButtonClick={() =>
               handleCreateButtonClick(

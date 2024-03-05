@@ -48,7 +48,7 @@ const ListCardContent = ({ isSortLike }) => {
     <S.ListCardsContainer $isScrollable={isScrollable}>
       {listData.map((element) => (
         <S.LinkStyle to={`/post/${element.id}`} key={element.id}>
-          <ListCard key={element.id} cardData={element} />
+          <ListCard cardData={element} />
         </S.LinkStyle>
       ))}
       {!isScrollable && offset > 0 && (

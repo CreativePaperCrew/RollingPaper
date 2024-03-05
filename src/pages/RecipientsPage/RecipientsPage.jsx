@@ -32,10 +32,10 @@ const RecipientsPage = () => {
     }
   };
 
-  const observer = useIntersectionObserver(
+  const observedRef = useIntersectionObserver(
     getMoreCardData,
     { threshold: 0.5 },
-    cardData.length > 7,
+    cardData.length >= 8,
   );
 
   const fetchData = async () => {
@@ -79,7 +79,7 @@ const RecipientsPage = () => {
         {cardData?.map((postCard) => (
           <PostCard key={postCard.id} cardData={postCard} />
         ))}
-        <S.TargetedLine ref={observer} />
+        <S.TargetedLine ref={observedRef} />
       </S.RecipientsCardsContainer>
     </>
   );

@@ -16,6 +16,7 @@ import PostCard from '../../components/PostCard/PostCard';
 const RecipientsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const LIMIT = 8;
   const [offset, setOffset] = useState(0);
   const [count, setCount] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -28,14 +29,14 @@ const RecipientsPage = () => {
 
   const getMoreCardData = () => {
     if (!isLoading && (count == null || offset < count)) {
-      setOffset((prevOffset) => prevOffset + 8);
+      setOffset((prevOffset) => prevOffset + LIMIT);
     }
   };
 
   const observedRef = useIntersectionObserver(
     getMoreCardData,
     { threshold: 0.5 },
-    cardData.length >= 8,
+    cardData.length >= LIMIT,
   );
 
   const fetchData = async () => {
@@ -44,7 +45,11 @@ const RecipientsPage = () => {
     }
     setIsLoading(true);
     try {
-      const response = await getRecipientRollingPaperMessages(id, 8, offset);
+      const response = await getRecipientRollingPaperMessages(
+        id,
+        LIMIT,
+        offset,
+      );
       const newData = response.results;
       setCount(response.count);
       setCardData((prevData) => [...prevData, ...newData]);

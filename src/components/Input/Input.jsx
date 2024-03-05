@@ -13,7 +13,10 @@ const Input = ({ placeholder, saveRecipient, recipient }) => {
       <S.Input
         placeholder={placeholder}
         $isError={isBlank}
-        onChange={(e) => saveRecipient(e)}
+        onChange={(e) => {
+          saveRecipient(e);
+          setIsBlank(false);
+        }}
         onBlur={handleFocusout}
       />
       {isBlank && <S.ErrorMessage>내용을 입력해주세요</S.ErrorMessage>}

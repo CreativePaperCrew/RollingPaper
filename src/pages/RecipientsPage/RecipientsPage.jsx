@@ -15,12 +15,12 @@ import PostCard from '../../components/PostCard/PostCard';
 const RecipientsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const observerRef = useRef(null);
-  const targetRef = useRef(null);
   const [offset, setOffset] = useState(0);
   const [count, setCount] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState([]);
+  const observerRef = useRef(null);
+  const targetRef = useRef(null);
 
   const { data: recipientData, error: recipientError } = useFetchData(
     getRecipientRollingPapers,
@@ -47,8 +47,6 @@ const RecipientsPage = () => {
       if (targetRef.current) {
         observerRef.current.observe(targetRef.current);
       }
-
-      return () => observerRef.current?.disconnect();
     }
   }, [message]);
 
@@ -95,7 +93,7 @@ const RecipientsPage = () => {
         {message?.map((postCard) => (
           <PostCard key={postCard.id} cardData={postCard} />
         ))}
-        <div ref={targetRef} style={{ height: '10px' }} />
+        <S.TargetedLine ref={targetRef} />
       </S.RecipientsCardsContainer>
     </>
   );

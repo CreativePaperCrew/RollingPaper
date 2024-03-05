@@ -57,7 +57,6 @@ const PostWritingPage = () => {
         content,
         font,
       );
-      console.log(response.data);
       navigate('/post/' + id);
     } catch (error) {}
   };

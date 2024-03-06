@@ -23,16 +23,20 @@ const RecipientsPage = () => {
   const LIMIT = 8;
   const [offset, setOffset] = useState(0);
   const [count, setCount] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [cardData, setCardData] = useState([]);
+  const [data, setData] = useState([]);
 
   const { data: recipientData, error: recipientError } = useFetchData(
     getRecipientRollingPapers,
     [id],
   );
 
+  const { data: messagesData, isLoading: messageLoading } = useFetchData(
+    getRecipientRollingPaperMessages,
+    [id, LIMIT, offset],
+  );
+
   const getMoreCardData = () => {
-    if (!isLoading && (count == null || offset < count)) {
+    if (!messageLoading) {
       setOffset((prevOffset) => prevOffset + LIMIT);
     }
   };
@@ -40,32 +44,25 @@ const RecipientsPage = () => {
   const observedRef = useIntersectionObserver(
     getMoreCardData,
     { threshold: 0.5 },
-    cardData.length >= LIMIT,
+    messagesData?.results.length >= LIMIT,
   );
 
   const fetchData = async () => {
-    if (offset >= count && count !== null) {
+    if (offset >= count) {
       return;
     }
-    setIsLoading(true);
-    try {
-      const response = await getRecipientRollingPaperMessages(
-        id,
-        LIMIT,
-        offset,
-      );
-      const newData = response.results;
-      setCount(response.count);
-      setCardData((prevData) => [...prevData, ...newData]);
-    } catch (error) {
-      alert('에러');
-    }
-    setIsLoading(false);
+    setCount(messagesData.count);
   };
 
   useEffect(() => {
+    if (messagesData) {
+      setData((prevData) => [...prevData, ...messagesData.results]);
+    }
+  }, [messagesData]);
+
+  useEffect(() => {
     fetchData();
-  }, [offset]);
+  }, [fetchData]);
 
   useEffect(() => {
     if (recipientError) {
@@ -76,7 +73,6 @@ const RecipientsPage = () => {
   const backgroundColor = recipientData
     ? COLORS[recipientData.backgroundColor]
     : '';
-
   const handleCardClick = (cardData) => {
     setSelectedCardData(cardData);
     toggleIsOpen();
@@ -90,7 +86,7 @@ const RecipientsPage = () => {
         $backgroundImageURL={recipientData?.backgroundImageURL}
       >
         <AddPostCard />
-        {cardData?.map((postCard) => (
+        {data?.map((postCard) => (
           <PostCard
             onClick={() => handleCardClick(postCard)}
             key={postCard.id}

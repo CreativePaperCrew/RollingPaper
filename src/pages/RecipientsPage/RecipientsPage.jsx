@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
@@ -5,46 +6,73 @@ import {
   getRecipientRollingPaperMessages,
 } from '../../apis/recipientRollingPaperApi';
 import useFetchData from '../../hooks/useFetchData';
-import * as S from './RecipientsPageStyle';
+import useIntersectionObserver from '../../hooks/useIntersectionObserver';
+import useToggle from '../../hooks/useToggle';
 import ServiceHeader from '../../components/ServiceHeader/ServiceHeader';
 import PostCard from '../../components/PostCard/PostCard';
-import { COLORS } from '../../constants/colors';
 import AddPostCard from '../../components/PostCard/AddPostCard';
-import useToggle from '../../hooks/useToggle';
 import CardModal from '../../components/CardModal/CardModal';
+import * as S from './RecipientsPageStyle';
+import { COLORS } from '../../constants/colors';
 
 const RecipientsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [isOpen, toggleIsOpen] = useToggle();
   const [selectedCardData, setSelectedCardData] = useState(null);
-  const {
-    data: recipientData,
-    isLoading: isLoadingRecipient,
-    error: recipientError,
-  } = useFetchData(getRecipientRollingPapers, [id]);
+  const LIMIT = 8;
+  const [offset, setOffset] = useState(0);
+  const [count, setCount] = useState(null);
+  const [data, setData] = useState([]);
 
-  const {
-    data: messagesData,
-    isLoading: isLoadingMessages,
-    error: messagesError,
-  } = useFetchData(getRecipientRollingPaperMessages, [id]);
+  const { data: recipientData, error: recipientError } = useFetchData(
+    getRecipientRollingPapers,
+    [id],
+  );
+
+  const { data: messagesData, isLoading: messageLoading } = useFetchData(
+    getRecipientRollingPaperMessages,
+    [id, LIMIT, offset],
+  );
+
+  const getMoreCardData = () => {
+    if (!messageLoading) {
+      setOffset((prevOffset) => prevOffset + LIMIT);
+    }
+  };
+
+  const observedRef = useIntersectionObserver(
+    getMoreCardData,
+    { threshold: 0.5 },
+    messagesData?.results.length >= LIMIT,
+  );
+
+  const fetchData = async () => {
+    if (offset >= count) {
+      return;
+    }
+    setCount(messagesData.count);
+  };
 
   useEffect(() => {
-    if (messagesError || recipientError) {
+    if (messagesData) {
+      setData((prevData) => [...prevData, ...messagesData.results]);
+    }
+  }, [messagesData]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  useEffect(() => {
+    if (recipientError) {
       navigate('/');
     }
-  }, [messagesError, recipientError, navigate]);
-
-  if (isLoadingMessages || isLoadingRecipient) {
-    return <div>데이터 로딩 중...</div>;
-  }
+  }, [recipientError, navigate]);
 
   const backgroundColor = recipientData
     ? COLORS[recipientData.backgroundColor]
     : '';
-  const rollingPapers = messagesData ? messagesData.results : [];
-
   const handleCardClick = (cardData) => {
     setSelectedCardData(cardData);
     toggleIsOpen();
@@ -58,13 +86,14 @@ const RecipientsPage = () => {
         $backgroundImageURL={recipientData?.backgroundImageURL}
       >
         <AddPostCard />
-        {rollingPapers.map((postCard) => (
+        {data?.map((postCard) => (
           <PostCard
             onClick={() => handleCardClick(postCard)}
             key={postCard.id}
             cardData={postCard}
           />
         ))}
+        <S.TargetedLine ref={observedRef} />
         {isOpen && (
           <CardModal cardData={selectedCardData} onClose={toggleIsOpen} />
         )}

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { getfontStyle } from '../../FontStyle';
 
 export const PostCardContainer = styled.div`
   position: relative;
@@ -9,6 +10,22 @@ export const PostCardContainer = styled.div`
   background: var(--white);
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
   cursor: pointer;
+
+  &:hover button {
+    background-color: var(--gray-600);
+  }
+
+  &:active button {
+    background-color: var(--gray-700);
+  }
+
+  &:focus button {
+    background-color: var(--gray-800);
+  }
+
+  &:disabled button {
+    background-color: var(--gray-300);
+  }
 
   @media (min-width: 768px) {
     width: 22rem;
@@ -37,20 +54,19 @@ export const PostCardProfile = styled.div`
   gap: 0.875rem;
 `;
 
-export const ProfileImgContainer = styled.div`
+export const ProfileImg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 3.5rem;
   height: 3.5rem;
   border: 1px solid var(--gray-200);
-  border-radius: 100px;
+  border-radius: 6.25rem;
   background-color: var(--white);
-`;
-
-export const ProfileImg = styled.img`
-  width: 100%;
-  border-radius: 100%;
+  background-image: ${(props) =>
+    props.$profileImageURL ? `url(${props.$profileImageURL})` : 'none'};
+  background-size: cover;
+  background-position: center;
 `;
 
 export const AuthorContainer = styled.div`
@@ -112,6 +128,7 @@ export const Content = styled.p`
   width: 100%;
   color: var(--gray-600, #4a4a4a);
   font-size: var(--font-15);
+  ${(props) => getfontStyle(props.$font)}
   line-height: 1.5rem;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -15,9 +15,7 @@ const PostCard = ({ cardData, onClick }) => {
           <S.DeleteContainer>
             <S.DeleteButton src={deleteImg} alt="카드를 삭제하는 버튼" />
           </S.DeleteContainer>
-          <S.ProfileImgContainer>
-            <S.ProfileImg src={profileImageURL} />
-          </S.ProfileImgContainer>
+          <S.ProfileImg $profileImageURL={profileImageURL} />
           <S.AuthorContainer>
             <S.AuthorTitle>
               <S.AuthorFrom>From.</S.AuthorFrom>
@@ -28,7 +26,7 @@ const PostCard = ({ cardData, onClick }) => {
         </S.PostCardProfile>
       </S.PostCardTop>
       <S.ContentContainer>
-        <S.Content>{content}</S.Content>
+        <S.Content $font={font}>{content}</S.Content>
       </S.ContentContainer>
       <S.PostCardDate>{formatKSTDate(createdAt)}</S.PostCardDate>
     </S.PostCardContainer>

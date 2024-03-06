@@ -40,16 +40,19 @@ const TextEditor = ({ handleContentOnchange, contents }) => {
   }, []);
 
   return (
-    <S.TextEditor
-      theme="snow"
-      modules={modules}
-      formats={formats}
-      value={quillValue || ''}
-      placeholder="메세지를 입력해주세요"
-      onChange={handleQuillChange}
-      onBlur={() => setIsBlank(contents.length <= 1)}
-      $isError={isBlank}
-    />
+    <S.Container>
+      <S.TextEditor
+        theme="snow"
+        modules={modules}
+        formats={formats}
+        value={quillValue || ''}
+        placeholder="메세지를 입력해주세요"
+        onChange={handleQuillChange}
+        onBlur={() => setIsBlank(contents.length <= 1)}
+        $isError={isBlank}
+      />
+      {isBlank && <S.ErrorMessage>내용을 입력해주세요</S.ErrorMessage>}
+    </S.Container>
   );
 };
 

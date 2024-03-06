@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   getRecipientRollingPapers,
@@ -10,10 +10,14 @@ import ServiceHeader from '../../components/ServiceHeader/ServiceHeader';
 import PostCard from '../../components/PostCard/PostCard';
 import { COLORS } from '../../constants/colors';
 import AddPostCard from '../../components/PostCard/AddPostCard';
+import useToggle from '../../hooks/useToggle';
+import CardModal from '../../components/CardModal/CardModal';
 
 const RecipientsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [isOpen, toggleIsOpen] = useToggle();
+  const [selectedCardData, setSelectedCardData] = useState(null);
   const {
     data: recipientData,
     isLoading: isLoadingRecipient,
@@ -41,6 +45,11 @@ const RecipientsPage = () => {
     : '';
   const rollingPapers = messagesData ? messagesData.results : [];
 
+  const handleCardClick = (cardData) => {
+    setSelectedCardData(cardData);
+    toggleIsOpen();
+  };
+
   return (
     <>
       <ServiceHeader recipientData={recipientData} />
@@ -50,8 +59,15 @@ const RecipientsPage = () => {
       >
         <AddPostCard />
         {rollingPapers.map((postCard) => (
-          <PostCard key={postCard.id} cardData={postCard} />
+          <PostCard
+            onClick={() => handleCardClick(postCard)}
+            key={postCard.id}
+            cardData={postCard}
+          />
         ))}
+        {isOpen && (
+          <CardModal cardData={selectedCardData} onClose={toggleIsOpen} />
+        )}
       </S.RecipientsCardsContainer>
     </>
   );

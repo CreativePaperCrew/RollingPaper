@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function usePostData(apiFunction, params = []) {
-  const [data, setData] = useState(null);
+  const [res, setRes] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -9,7 +9,7 @@ function usePostData(apiFunction, params = []) {
     setIsLoading(true);
     try {
       const response = await apiFunction(...params, body);
-      setData(response);
+      setRes(response);
     } catch (error) {
       setError(error);
     } finally {
@@ -17,7 +17,7 @@ function usePostData(apiFunction, params = []) {
     }
   };
 
-  return { handlePost, data, isLoading, error };
+  return { handlePost, res, isLoading, error };
 }
 
 export default usePostData;

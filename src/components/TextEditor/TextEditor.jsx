@@ -18,7 +18,7 @@ const TextEditor = ({ handleContentOnchange, contents }) => {
 
   const handleQuillChange = (content, delta, source, editor) => {
     setQuillValue(editor.getContents());
-    setIsBlank(contents.length < 1);
+    setIsBlank(false);
     handleContentOnchange(editor.getText());
   };
 

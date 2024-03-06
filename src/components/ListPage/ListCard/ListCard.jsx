@@ -5,6 +5,7 @@ import patternImgBlue from '../../../assets/images/cardPattern3.svg';
 import patternImgGreen from '../../../assets/images/cardPattern4.svg';
 import TopReactions from '../../TopReactions/TopReactions';
 import { COLORS } from '../../../constants/colors';
+import ProfileCircles from '../../ProfileCircles/ProfileCircles';
 
 const patternImages = {
   beige: patternImgBeige,
@@ -22,6 +23,7 @@ const ListCard = ({ cardData }) => {
     backgroundImageURL,
     backgroundColor,
     topReactions,
+    recentMessages,
   } = cardData;
 
   return (
@@ -34,7 +36,13 @@ const ListCard = ({ cardData }) => {
           <S.Recipient $backgroundImageURL={backgroundImageURL}>
             To. {name}
           </S.Recipient>
-          <p>추가예정</p>
+          <S.ProfileCirclesContainer>
+            <ProfileCircles
+              messageCount={messageCount}
+              recentMessages={recentMessages}
+            />
+          </S.ProfileCirclesContainer>
+
           <S.MessageCountContainer>
             <S.MessageCount $backgroundImageURL={backgroundImageURL}>
               {messageCount}

@@ -91,6 +91,9 @@ export const MessageCountText = styled.p`
     letter-spacing: -0.0044rem;
   }
 `;
+export const ProfileCirclesContainer = styled.div`
+  margin-left: 0.625rem;
+`;
 
 export const EmojiContainer = styled.div`
   display: flex;

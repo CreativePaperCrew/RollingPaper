@@ -9,16 +9,16 @@ const SelectionDropdown = ({
   type,
   children,
 }) => {
-  const [isClickedDown, setIsClickedDown] = useState('false');
+  const [isExpanded, setIsExpanded] = useState('false');
 
   const handleArrowClick = () => {
-    setIsClickedDown(!isClickedDown);
+    setIsExpanded(!isExpanded);
   };
 
   return (
     <S.SelectedOption onClick={handleArrowClick}>
       {children}
-      {!isClickedDown ? (
+      {!isExpanded ? (
         <div>
           <img src={arrowTop} alt="arrow-top" />
           <S.OptionList>

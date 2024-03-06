@@ -14,7 +14,7 @@ const PostWritingPage = () => {
   const [senderName, setSenderName] = useState('');
   const [profileImageUrls, setProfileImageUrls] = useState([]);
   const [selectedImageUrl, setSelectedImageUrl] = useState(null);
-  const [contents, setContents] = useState();
+  const [contents, setContents] = useState('');
   const [selectedInfo, setSelectedInfo] = useState({
     relationship: '지인',
     font: 'Noto Sans',
@@ -114,7 +114,10 @@ const PostWritingPage = () => {
         </S.SectionFrame>
         <S.SectionFrame>
           <S.Title>내용을 입력해 주세요</S.Title>
-          <TextEditor handleContentOnchange={handleContentOnchange} />
+          <TextEditor
+            handleContentOnchange={handleContentOnchange}
+            contents={contents}
+          />
         </S.SectionFrame>
         <S.SectionFrame>
           <S.Title>폰트 선택</S.Title>
@@ -128,7 +131,8 @@ const PostWritingPage = () => {
         </S.SectionFrame>
         <S.MarginFrame>
           <Button
-            isDisabled={!senderName}
+            size="large"
+            isDisabled={!senderName || contents.length <= 1}
             handleButtonClick={() =>
               handleCreateButtonClick(
                 senderName,

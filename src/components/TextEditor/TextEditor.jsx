@@ -12,8 +12,9 @@ const formats = [
   'color',
 ];
 
-const TextEditor = ({ handleContentOnchange }) => {
+const TextEditor = ({ handleContentOnchange, contents }) => {
   const [quillValue, setQuillValue] = useState({});
+  const [isBlank, setIsBlank] = useState(false);
 
   const handleQuillChange = (content, delta, source, editor) => {
     setQuillValue(editor.getContents());
@@ -46,6 +47,8 @@ const TextEditor = ({ handleContentOnchange }) => {
       value={quillValue || ''}
       placeholder="메세지를 입력해주세요"
       onChange={handleQuillChange}
+      onBlur={() => setIsBlank(contents.length <= 1)}
+      $isError={isBlank}
     />
   );
 };

@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
+import { useParams } from 'react-router-dom';
 import useToggle from '../../hooks/useToggle';
+import usePostData from '../../hooks/usePostData';
+import { postRecipientRollingPaperReactions } from '../../apis/recipientRollingPaperApi';
 import Picker from 'emoji-picker-react';
 import * as S from './EmojiPickerStyle';
 
 import emojiPickerImage from '../../assets/icons/emojiPicker.svg';
 
 const EmojiPicker = () => {
+  const { id } = useParams();
   const [isToggleOpen, changeToggle] = useToggle();
-  const handleEmojiPick = (emojiObject) => {
-    alert(emojiObject.emoji + emojiObject.names.join(', '));
+  const { handlePost, data } = usePostData(postRecipientRollingPaperReactions, [
+    id,
+  ]);
+  const handleEmojiPick = async (emojiObject) => {
     changeToggle();
+    await handlePost({ emoji: emojiObject.emoji, type: 'increase' });
+    window.location.reload();
+    // if (data) {
+    //   window.location.reload();
+    // }
   };
-
   return (
     <S.EmojiPickerContainer>
       <S.EmojiPickerButton onClick={changeToggle}>

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-
 import { useParams } from 'react-router-dom';
 import useToggle from '../../hooks/useToggle';
 import usePostData from '../../hooks/usePostData';
@@ -12,17 +11,18 @@ import emojiPickerImage from '../../assets/icons/emojiPicker.svg';
 const EmojiPicker = () => {
   const { id } = useParams();
   const [isToggleOpen, changeToggle] = useToggle();
-  const { handlePost, data } = usePostData(postRecipientRollingPaperReactions, [
+  const { handlePost, res } = usePostData(postRecipientRollingPaperReactions, [
     id,
   ]);
   const handleEmojiPick = async (emojiObject) => {
     changeToggle();
     await handlePost({ emoji: emojiObject.emoji, type: 'increase' });
-    window.location.reload();
-    // if (data) {
-    //   window.location.reload();
-    // }
   };
+  useEffect(() => {
+    if (res) {
+      window.location.reload();
+    }
+  }, [res]);
   return (
     <S.EmojiPickerContainer>
       <S.EmojiPickerButton onClick={changeToggle}>

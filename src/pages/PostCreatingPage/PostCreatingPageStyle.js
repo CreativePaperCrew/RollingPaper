@@ -7,6 +7,14 @@ export const Container = styled.div`
   margin-top: 3.5625rem;
 `;
 
+export const LeftAlignFrame = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 45rem;
+  margin-bottom: 21rem;
+`;
+
 export const Receiver = styled.div`
   display: flex;
   flex-direction: column;
@@ -26,7 +34,6 @@ export const BackgroundSelection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  width: 45rem;
   margin-bottom: 1.5rem;
 `;
 

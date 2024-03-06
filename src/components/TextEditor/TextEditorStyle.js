@@ -5,6 +5,12 @@ const ErrorBorder = css`
   border: 1px solid var(--error);
 `;
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
 export const TextEditor = styled(ReactQuill)`
   &.quill {
     width: 100%;
@@ -22,6 +28,7 @@ export const TextEditor = styled(ReactQuill)`
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     height: 13.125rem;
+    margin-bottom: 0.25rem;
     ${({ $isError }) => $isError && ErrorBorder}
   }
 
@@ -30,4 +37,12 @@ export const TextEditor = styled(ReactQuill)`
     font-style: normal;
     color: var(--gray-400);
   }
+`;
+
+export const ErrorMessage = styled.p`
+  height: 0;
+  color: var(--error);
+  font-size: var(--font-14);
+  line-height: 1.125rem;
+  letter-spacing: -0.0037rem;
 `;

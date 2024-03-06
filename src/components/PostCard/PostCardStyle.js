@@ -11,6 +11,22 @@ export const PostCardContainer = styled.div`
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
   cursor: pointer;
 
+  &:hover button {
+    background-color: var(--gray-600);
+  }
+
+  &:active button {
+    background-color: var(--gray-700);
+  }
+
+  &:focus button {
+    background-color: var(--gray-800);
+  }
+
+  &:disabled button {
+    background-color: var(--gray-300);
+  }
+
   @media (min-width: 768px) {
     width: 22rem;
     height: 17.75rem;
@@ -38,20 +54,19 @@ export const PostCardProfile = styled.div`
   gap: 0.875rem;
 `;
 
-export const ProfileImgContainer = styled.div`
+export const ProfileImg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 3.5rem;
   height: 3.5rem;
   border: 1px solid var(--gray-200);
-  border-radius: 100px;
+  border-radius: 6.25rem;
   background-color: var(--white);
-`;
-
-export const ProfileImg = styled.img`
-  width: 100%;
-  border-radius: 100%;
+  background-image: ${(props) =>
+    props.$profileImageURL ? `url(${props.$profileImageURL})` : 'none'};
+  background-size: cover;
+  background-position: center;
 `;
 
 export const AuthorContainer = styled.div`

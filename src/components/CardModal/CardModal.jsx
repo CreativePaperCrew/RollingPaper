@@ -26,7 +26,7 @@ const CardModal = ({ cardData, onClose }) => {
           </S.CardProfile>
         </S.CardTop>
         <S.ContentContainer>
-          <S.Content>{content}</S.Content>
+          <S.Content $font={font}>{content}</S.Content>
         </S.ContentContainer>
         <S.ModalCloseButton onClick={onClose}>확인</S.ModalCloseButton>
       </S.ModalContent>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { getfontStyle } from '../../FontStyle';
 
 export const PostCardContainer = styled.div`
   position: relative;
@@ -112,6 +113,7 @@ export const Content = styled.p`
   width: 100%;
   color: var(--gray-600, #4a4a4a);
   font-size: var(--font-15);
+  ${(props) => getfontStyle(props.$font)}
   line-height: 1.5rem;
   overflow: hidden;
   text-overflow: ellipsis;

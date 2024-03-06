@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { getfontStyle } from '../../FontStyle';
 import { Button } from '../BackgroundTypeSelectButton/BackgroundTypeSelectButtonStyle';
 
 export const ModalBackground = styled.div`
@@ -140,6 +141,7 @@ export const Content = styled.p`
   padding-right: 0.5rem;
   color: var(--gray-600);
   font-size: var(--font-15);
+  ${(props) => getfontStyle(props.$font)}
   line-height: 1.5rem;
   overflow: auto;
 

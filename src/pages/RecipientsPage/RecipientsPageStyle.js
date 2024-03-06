@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const RecipientsCardsContainer = styled.div`
   position: absolute;
-  top: 10.6875rem;
+  top: 6.5rem;
   display: grid;
   grid-template-columns: repeat(1, 20rem);
   grid-template-rows: repeat(auto-fit, 14.375rem);

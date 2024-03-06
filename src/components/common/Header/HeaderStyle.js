@@ -1,11 +1,16 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../../constants/viewportSize';
 
 export const HeaderContentContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    display: none;
+  }
 `;
 
 export const HeaderContent = styled.div`

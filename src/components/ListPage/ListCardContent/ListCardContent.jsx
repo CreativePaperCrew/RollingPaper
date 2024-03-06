@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import useRecipientData from '../../../hooks/useFetchRecipient';
 import {
   LeftArrowButton,
   RightArrowButton,
@@ -5,15 +7,43 @@ import {
 import ListCard from '../ListCard/ListCard';
 import * as S from './ListCardContentStyle';
 
-const ListCardContent = ({
-  isScrollable,
-  listData,
-  handlePrevious,
-  handleNext,
-  offset,
-}) => {
-  const isLeftArrowVisible = !isScrollable && offset > 0;
-  const isRightArrowVisible = !isScrollable && offset + 4 < 8;
+const ListCardContent = ({ isSortLike }) => {
+  const [isScrollable, setIsScrollable] = useState(false);
+  const [limit, setLimit] = useState(4);
+  const [offset, setOffset] = useState(0);
+
+  const { data: listData, error } = useRecipientData(limit, offset, isSortLike);
+
+  useEffect(() => {
+    updateScroll();
+    window.addEventListener('resize', updateScroll);
+
+    return () => window.removeEventListener('resize', updateScroll);
+  }, []);
+
+  const updateScroll = () => {
+    const isSmallScreen = window.innerWidth < 1200;
+    setIsScrollable(isSmallScreen);
+    if (isSmallScreen) {
+      setLimit(8);
+      setOffset(0);
+    } else {
+      setLimit(4);
+    }
+  };
+
+  const handlePrevious = () => {
+    setOffset(offset - 1);
+  };
+
+  const handleNext = () => {
+    setOffset(offset + 1);
+  };
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
   return (
     <S.ListCardsContainer $isScrollable={isScrollable}>
       {listData.map((element) => (
@@ -21,12 +51,12 @@ const ListCardContent = ({
           <ListCard cardData={element} />
         </S.LinkStyle>
       ))}
-      {isLeftArrowVisible && (
+      {!isScrollable && offset > 0 && (
         <S.LeftArrowButtonContainer>
           <LeftArrowButton onClick={handlePrevious} />
         </S.LeftArrowButtonContainer>
       )}
-      {isRightArrowVisible && (
+      {!isScrollable && offset + 4 < 8 && (
         <S.RightArrowButtonContainer>
           <RightArrowButton onClick={handleNext} />
         </S.RightArrowButtonContainer>
@@ -34,5 +64,4 @@ const ListCardContent = ({
     </S.ListCardsContainer>
   );
 };
-
 export default ListCardContent;

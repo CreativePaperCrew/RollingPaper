@@ -1,10 +1,16 @@
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const Container = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin-top: 2.8125rem;
   margin-bottom: 4.3125rem;
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const ColorBox = styled.div`
@@ -17,6 +23,11 @@ export const ColorBox = styled.div`
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    width: 9.625rem;
+    height: 9.625rem;
   }
 `;
 
@@ -47,6 +58,11 @@ export const ImageBox = styled.div`
 
   &.selected::after {
     opacity: 0.5;
+  }
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    width: 9.625rem;
+    height: 9.625rem;
   }
 `;
 

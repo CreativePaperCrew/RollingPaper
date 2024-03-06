@@ -37,11 +37,16 @@ export const Button = styled.button`
   text-align: center;
   cursor: pointer;
 
-  padding: ${(props) => BUTTON_SIZE[props.size].padding};
-  border-radius: ${(props) => BUTTON_SIZE[props.size].borderRadius};
-  font-size: ${(props) => BUTTON_SIZE[props.size].fontSize};
-  font-weight: ${(props) => BUTTON_SIZE[props.size].fontWeight};
-  letter-spacing: ${(props) => BUTTON_SIZE[props.size].letterSpacing};
+  padding: ${(props) =>
+    props.size ? BUTTON_SIZE[props.size].padding : '0.875rem 1.5rem'};
+  border-radius: ${(props) =>
+    props.size ? BUTTON_SIZE[props.size].borderRadius : '0.75rem'};
+  font-size: ${(props) =>
+    props.size ? BUTTON_SIZE[props.size].fontSize : 'var(--font-18'};
+  font-weight: ${(props) =>
+    props.size ? BUTTON_SIZE[props.size].fontWeight : 'var(--font-bold)'};
+  letter-spacing: ${(props) =>
+    props.size ? BUTTON_SIZE[props.size].letterSpacing : '-0.0112rem'};
   width: ${(props) => (props.size ? BUTTON_SIZE[props.size].width : '100%')};
 
   &:hover {

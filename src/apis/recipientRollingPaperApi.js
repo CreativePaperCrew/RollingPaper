@@ -19,10 +19,15 @@ export const getRecipientRollingPapers = async (recipientId) => {
  * @param {string} recipientId - 조회할 수신자의 ID
  * @returns {Promise} - 롤링페이퍼 메시지 정보를 포함하는 Promise 객체
  */
-export const getRecipientRollingPaperMessages = async (recipientId) => {
+export const getRecipientRollingPaperMessages = async (
+  recipientId,
+  limit = 8,
+  offset = 0,
+) => {
   try {
+    const query = `limit=${limit}&offset=${offset}`;
     const response = await teamApiClient.get(
-      `/recipients/${recipientId}/messages/`,
+      `/recipients/${recipientId}/messages/?${query}`, // API 엔드포인트 수정
     );
     return response.data;
   } catch (error) {

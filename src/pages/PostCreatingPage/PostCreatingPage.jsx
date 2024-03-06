@@ -7,7 +7,6 @@ import getBackgroundImages from '../../apis/getBackgroundImages';
 import Button from '../../components/common/Buttons/Button/Button';
 import { postRecipient } from '../../apis/recipientRollingPaperApi';
 import { useNavigate } from 'react-router-dom';
-import { isDisabled } from '@testing-library/user-event/dist/utils';
 
 const PostCreatingPage = () => {
   const [recipient, setRecipient] = useState('');

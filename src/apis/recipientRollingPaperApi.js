@@ -62,3 +62,27 @@ export const postRecipientRollingPaperReactions = async (recipientId, body) => {
     throw new Error('대상자에게 리액션을 남기는데 실패했습니다');
   }
 };
+/*
+ * 롤링페이퍼 수신자 생성
+ * @param {string} name - 생성할 수신자의 이름
+ * @param {string} backgroundColor - 생성할 수신자 롤링페이퍼 페이지 배경 색
+ * @param {string} backgroundImageURL - 생성할 수신자 롤링페이퍼 페이지 배경 이미지
+ * @returns
+ */
+export const postRecipient = async (
+  name,
+  backgroundColor,
+  backgroundImageURL,
+) => {
+  try {
+    const response = await teamApiClient.post('/recipients/', {
+      team: '4-5',
+      name: name,
+      backgroundColor: backgroundColor,
+      backgroundImageURL: backgroundImageURL,
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error('롤링페이퍼 데이터를 생성하는데 실패했습니다');
+  }
+};

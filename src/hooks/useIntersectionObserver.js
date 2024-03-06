@@ -16,11 +16,9 @@ const useIntersectionObserver = (callback, options, condition = true) => {
     }
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          callback();
-        }
-      });
+      if (entries[0].isIntersecting) {
+        callback();
+      }
     }, options);
 
     const currentTarget = observedRef.current;

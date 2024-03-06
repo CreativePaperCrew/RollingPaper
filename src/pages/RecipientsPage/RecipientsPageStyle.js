@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
 export const RecipientsCardsContainer = styled.div`
+  position: absolute;
+  top: 10.6875rem;
   display: grid;
   grid-template-columns: repeat(1, 20rem);
   grid-template-rows: repeat(auto-fit, 14.375rem);
   justify-content: center;
   gap: 1rem;
   align-items: center;
-  height: 100vh;
+  width: 100%;
   padding: 7.06rem 0 2.375rem;
   background-color: ${(props) => `var(${props.$backgroundColor}, transparent)`};
   background-image: ${(props) =>
@@ -17,12 +19,14 @@ export const RecipientsCardsContainer = styled.div`
   background-attachment: fixed;
 
   @media (min-width: 768px) {
+    top: 8.25rem;
     grid-template-columns: repeat(2, 22.125rem);
     grid-template-rows: repeat(auto-fit, 17.75rem);
     padding-bottom: 5.6875rem;
   }
 
   @media (min-width: 1248px) {
+    top: 8.25rem;
     grid-template-columns: repeat(3, 24rem);
     grid-template-rows: repeat(auto-fit, 17.5rem);
     padding-bottom: 15.375rem;

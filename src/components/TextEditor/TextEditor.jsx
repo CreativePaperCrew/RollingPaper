@@ -18,8 +18,8 @@ const TextEditor = ({ handleContentOnchange, contents }) => {
 
   const handleQuillChange = (content, delta, source, editor) => {
     setQuillValue(editor.getContents());
-    const text = editor.getText();
-    handleContentOnchange(text);
+    setIsBlank(contents.length < 1);
+    handleContentOnchange(editor.getText());
   };
 
   const modules = useMemo(() => {

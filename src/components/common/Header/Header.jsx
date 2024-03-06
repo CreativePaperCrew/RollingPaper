@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import * as S from './HeaderStyle';
-import LogoImg from '../../../assets/icons/icon.svg';
+import logoImg from '../../../assets/icons/mainIcon.svg';
 
 const Header = () => {
   const location = useLocation();
@@ -14,7 +14,7 @@ const Header = () => {
       <S.HeaderContent>
         <S.ButtonLink to="/">
           <S.LogoContainer>
-            <img src={LogoImg} alt="로고 이미지" />
+            <img src={logoImg} alt="로고 이미지" />
             <S.LogoContent>Rolling</S.LogoContent>
           </S.LogoContainer>
         </S.ButtonLink>

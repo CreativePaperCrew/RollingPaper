@@ -128,3 +128,13 @@ export const postRecipientRollingPaperMessage = async (
     throw new Error('대상자의 롤링페이퍼 메세지를 생성하는데 실패했습니다');
   }
 };
+
+export const getRecipients = async ({ limit, offset, isSortLike }) => {
+  const query = `limit=${limit}&offset=${offset}&sort=${isSortLike}`;
+  try {
+    const response = await teamApiClient.get(`/recipients/?${query}`);
+    return response.data.results;
+  } catch (error) {
+    throw new Error('롤링페이퍼 대상자를 불러오는데 실패했습니다');
+  }
+};

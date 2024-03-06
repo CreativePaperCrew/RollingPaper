@@ -1,27 +1,48 @@
 import styled from 'styled-components';
-import { BUTTON_SIZE } from '../../../../constants/buttonSize';
+
+const BUTTON_SIZE = {
+  small: {
+    padding: '0.4375rem 1rem',
+    borderRadius: '0.375rem',
+    fontSize: 'var(--font-16)',
+    fontWeight: 'var(--font-regular)',
+    letterSpacing: '-0.01rem',
+    width: '5.75rem',
+  },
+  medium: {
+    padding: '0.875rem 1.5rem',
+    borderRadius: '0.75rem',
+    fontSize: 'var(--font-18)',
+    fontWeight: 'var(--font-bold)',
+    letterSpacing: '-0.0112rem',
+    width: '17.5rem',
+  },
+  large: {
+    padding: '0.875rem 1.5rem',
+    borderRadius: '0.75rem',
+    fontSize: 'var(--font-18)',
+    fontWeight: 'var(--font-bold)',
+    letterSpacing: '-0.0112rem',
+    width: '45rem',
+  },
+};
 
 export const Button = styled.button`
   display: flex;
-  padding: ${(props) =>
-    props.size === 'small' ? '0.4375rem 1rem' : '0.875rem 1.5rem'};
   justify-content: center;
   align-items: center;
-  border-radius: ${(props) =>
-    props.size === 'small' ? '0.375rem' : '0.75rem'};
   border: none;
   background: var(--purple-600);
   color: var(--white);
   text-align: center;
-  font-size: ${(props) =>
-    props.size === 'small' ? 'var(--font-16)' : 'var(--font-18)'};
-  font-weight: ${(props) =>
-    props.size === 'small' ? 'var(--font-regular)' : 'var(--font-bold)'};
-  line-height: ${(props) => (props.size === 'small' ? '1.625rem' : '1.75rem')};
-  letter-spacing: ${(props) =>
-    props.size === 'small' ? '-0.01rem' : '-0.0112rem'};
-  width: ${(props) => (props.size ? `${BUTTON_SIZE[props.size]}rem` : 'auto')};
   cursor: pointer;
+
+  padding: ${(props) => BUTTON_SIZE[props.size].padding};
+  border-radius: ${(props) => BUTTON_SIZE[props.size].borderRadius};
+  font-size: ${(props) => BUTTON_SIZE[props.size].fontSize};
+  font-weight: ${(props) => BUTTON_SIZE[props.size].fontWeight};
+  letter-spacing: ${(props) => BUTTON_SIZE[props.size].letterSpacing};
+  width: ${(props) => (props.size ? BUTTON_SIZE[props.size].width : '100%')};
 
   &:hover {
     background: var(--purple-700);

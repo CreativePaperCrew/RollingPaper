@@ -7,10 +7,6 @@ export const HeaderContentContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-
-  @media (${VIEWPORT_SIZE.mobile}) {
-    display: none;
-  }
 `;
 
 export const HeaderContent = styled.div`

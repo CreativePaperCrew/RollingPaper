@@ -28,7 +28,7 @@ const PostCard = ({ cardData, onClick }) => {
         </S.PostCardProfile>
       </S.PostCardTop>
       <S.ContentContainer>
-        <S.Content>{content}</S.Content>
+        <S.Content $font={font}>{content}</S.Content>
       </S.ContentContainer>
       <S.PostCardDate>{formatKSTDate(createdAt)}</S.PostCardDate>
     </S.PostCardContainer>

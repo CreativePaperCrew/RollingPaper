@@ -26,7 +26,7 @@ const PostCreatingPage = () => {
   }, []);
 
   useEffect(() => {
-    if (imageUrls && select === 'image') {
+    if (select === 'image') {
       setSeletedImage(imageUrls[0]);
     } else {
       setSeletedImage(null);

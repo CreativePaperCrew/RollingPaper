@@ -3,6 +3,7 @@ import Badge from '../Badge/Badge';
 import * as S from './PostCardStyle';
 import deleteImg from '../../assets/icons/deleted.svg';
 import { formatKSTDate } from '../../utils/formatKSTDate';
+import InnerHtml from '../InnerHtml/InnerHtml';
 
 const PostCard = ({ cardData, onClick, onDelete, isDelete }) => {
   const {
@@ -40,7 +41,7 @@ const PostCard = ({ cardData, onClick, onDelete, isDelete }) => {
         </S.PostCardProfile>
       </S.PostCardTop>
       <S.ContentContainer>
-        <S.Content $font={font}>{content}</S.Content>
+        <InnerHtml content={content} font={font} />
       </S.ContentContainer>
       <S.PostCardDate>{formatKSTDate(createdAt)}</S.PostCardDate>
     </S.PostCardContainer>

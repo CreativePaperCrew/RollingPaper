@@ -10,7 +10,7 @@ export const RecipientsCardsContainer = styled.div`
   gap: 1rem;
   align-items: center;
   width: 100%;
-  padding: 7.06rem 0 2.375rem;
+  padding: 7.06rem 0 5.6875rem;
   background-color: ${(props) => `var(${props.$backgroundColor}, transparent)`};
   background-image: ${(props) =>
     props.$backgroundImageURL ? `url(${props.$backgroundImageURL})` : 'none'};
@@ -22,14 +22,12 @@ export const RecipientsCardsContainer = styled.div`
     top: 8.25rem;
     grid-template-columns: repeat(2, 22.125rem);
     grid-template-rows: repeat(auto-fit, 17.75rem);
-    padding-bottom: 5.6875rem;
   }
 
   @media (min-width: 1248px) {
     top: 8.25rem;
     grid-template-columns: repeat(3, 24rem);
     grid-template-rows: repeat(auto-fit, 17.5rem);
-    padding-bottom: 15.375rem;
   }
 `;
 

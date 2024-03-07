@@ -24,7 +24,7 @@ export const ListCardContentContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  max-width: 72.5rem;
+  max-width: 75rem;
   gap: 1rem;
 `;
 

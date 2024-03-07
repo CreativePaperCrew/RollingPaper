@@ -1,7 +1,7 @@
 import * as S from './ProfileCirclesStyle';
 
 export default function ProfileCircles({ messageCount, recentMessages }) {
-  if (!messageCount || !recentMessages) {
+  if (!messageCount) {
     return (
       <S.ProfileCirclesContainer>
         <S.EmptyProfile />

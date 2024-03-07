@@ -41,8 +41,13 @@ export const ToastContainer = styled.div`
         `};
   z-index: 999;
 
+  @media screen and (max-width: 1199px) {
+    bottom: 6.25rem;
+  }
+
   @media screen and (max-width: 767px) {
-    width: 90%;
+    width: 17.5rem;
+    bottom: 5.5rem;
   }
 `;
 

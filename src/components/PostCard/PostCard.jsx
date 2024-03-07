@@ -3,18 +3,33 @@ import Badge from '../Badge/Badge';
 import * as S from './PostCardStyle';
 import deleteImg from '../../assets/icons/deleted.svg';
 import { formatKSTDate } from '../../utils/formatKSTDate';
+import InnerHtml from '../InnerHtml/InnerHtml';
 
-const PostCard = ({ cardData, onClick }) => {
-  const { content, createdAt, font, profileImageURL, relationship, sender } =
-    cardData;
+const PostCard = ({ cardData, onClick, onDelete, isDelete }) => {
+  const {
+    id,
+    content,
+    createdAt,
+    font,
+    profileImageURL,
+    relationship,
+    sender,
+  } = cardData;
+
+  const handleDelete = (e) => {
+    e.stopPropagation();
+    onDelete(id);
+  };
 
   return (
     <S.PostCardContainer onClick={onClick}>
       <S.PostCardTop>
         <S.PostCardProfile>
-          <S.DeleteContainer>
-            <S.DeleteButton src={deleteImg} alt="카드를 삭제하는 버튼" />
-          </S.DeleteContainer>
+          {isDelete && (
+            <S.DeleteContainer onClick={handleDelete}>
+              <S.DeleteButton src={deleteImg} alt="카드를 삭제하는 버튼" />
+            </S.DeleteContainer>
+          )}
           <S.ProfileImg $profileImageURL={profileImageURL} />
           <S.AuthorContainer>
             <S.AuthorTitle>
@@ -26,7 +41,7 @@ const PostCard = ({ cardData, onClick }) => {
         </S.PostCardProfile>
       </S.PostCardTop>
       <S.ContentContainer>
-        <S.Content $font={font}>{content}</S.Content>
+        <InnerHtml content={content} font={font} />
       </S.ContentContainer>
       <S.PostCardDate>{formatKSTDate(createdAt)}</S.PostCardDate>
     </S.PostCardContainer>

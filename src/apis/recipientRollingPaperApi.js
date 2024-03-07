@@ -138,3 +138,16 @@ export const getRecipients = async ({ limit, offset, isSortLike }) => {
     throw new Error('롤링페이퍼 대상자를 불러오는데 실패했습니다');
   }
 };
+
+/**
+ * 메세지 삭제 API
+ * @param {number}
+ * @returns {Promise}
+ */
+export async function deleteRollingPaperMessage(recipientId) {
+  try {
+    await teamApiClient.delete(`/messages/${recipientId}/`);
+  } catch (error) {
+    throw new Error('대상자의 롤링페이퍼 메세지를 삭제하는데 실패했습니다');
+  }
+}

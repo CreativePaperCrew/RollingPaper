@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
-export const MainContentContainer = styled.div`
+export const MainContentContainer = styled.main`
   display: flex;
   width: 100%;
   max-width: 75rem;
@@ -20,7 +20,7 @@ export const MainContentContainer = styled.div`
   }
 `;
 
-export const FirstContent = styled.div`
+export const FirstContent = styled.section`
   display: flex;
   padding: 3.75rem 0 3.75rem 3.75rem;
   border-radius: 1rem;
@@ -132,7 +132,7 @@ export const MainImg2 = styled.img`
   }
 `;
 
-export const SecondContent = styled.div`
+export const SecondContent = styled.section`
   display: flex;
   padding: 3.75rem 12rem 3.75rem 0;
   align-items: flex-start;

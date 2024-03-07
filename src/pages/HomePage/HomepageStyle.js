@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Button } from '../../components/common/Buttons/Button/ButtonStyle';
 import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
-export const MainContentContainer = styled.div`
+export const MainContentContainer = styled.main`
   display: flex;
   width: 100%;
   justify-content: center;

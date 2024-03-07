@@ -23,7 +23,7 @@ const ShareButton = ({ recipientsId }) => {
   const handleShareURLClick = async () => {
     try {
       await navigator.clipboard.writeText(shareLink);
-      showToast(true, 'URL이 클립보드에 복사되었습니다!');
+      showToast(true, 'URL이 복사 되었습니다!');
     } catch (error) {
       showToast(false, 'URL 복사에 실패하였습니다.');
     }

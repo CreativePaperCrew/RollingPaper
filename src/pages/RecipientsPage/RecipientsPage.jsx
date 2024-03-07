@@ -1,9 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   getRecipientRollingPapers,
   getRecipientRollingPaperMessages,
+  deleteRollingPaperMessage,
 } from '../../apis/recipientRollingPaperApi';
 import useFetchData from '../../hooks/useFetchData';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
@@ -24,6 +25,8 @@ const RecipientsPage = () => {
   const [offset, setOffset] = useState(0);
   const [count, setCount] = useState(null);
   const [data, setData] = useState([]);
+  const [isDelete, setIsDelete] = useState(false);
+  const [deleteButtonText, setDeleteButtonText] = useState('삭제하기');
 
   const { data: recipientData, error: recipientError } = useFetchData(
     getRecipientRollingPapers,
@@ -70,9 +73,23 @@ const RecipientsPage = () => {
     }
   }, [recipientError, navigate]);
 
+  const onDelete = useCallback(
+    async (id) => {
+      await deleteRollingPaperMessage(id);
+      setData((prevData) => prevData.filter((message) => message.id !== id));
+    },
+    [setData],
+  );
+
+  const toggleDelete = () => {
+    setIsDelete(!isDelete);
+    setDeleteButtonText(isDelete ? '삭제하기' : '저장하기');
+  };
+
   const backgroundColor = recipientData
     ? COLORS[recipientData.backgroundColor]
     : '';
+
   const handleCardClick = (cardData) => {
     setSelectedCardData(cardData);
     toggleIsOpen();
@@ -81,6 +98,11 @@ const RecipientsPage = () => {
   return (
     <>
       <ServiceHeader recipientData={recipientData} />
+      <S.EditContainer onClick={toggleDelete}>
+        <S.DeleteContainer>
+          <S.DeleteButton size="medium">{deleteButtonText}</S.DeleteButton>
+        </S.DeleteContainer>
+      </S.EditContainer>
       <S.RecipientsCardsContainer
         $backgroundColor={backgroundColor}
         $backgroundImageURL={recipientData?.backgroundImageURL}
@@ -88,9 +110,11 @@ const RecipientsPage = () => {
         <AddPostCard />
         {data?.map((postCard) => (
           <PostCard
+            onDelete={() => onDelete(postCard.id)}
             onClick={() => handleCardClick(postCard)}
             key={postCard.id}
             cardData={postCard}
+            isDelete={isDelete}
           />
         ))}
         <S.TargetedLine ref={observedRef} />

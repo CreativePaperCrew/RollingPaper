@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const Container = styled.div`
   display: flex;
@@ -13,6 +14,10 @@ export const LeftAlignFrame = styled.div`
   align-items: left;
   width: 45rem;
   margin-bottom: 21rem;
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    width: 330px;
+  }
 `;
 
 export const Receiver = styled.div`

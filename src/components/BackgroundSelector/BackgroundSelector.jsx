@@ -13,7 +13,7 @@ const BackgroundSelector = ({
   return (
     <S.Container>
       {select === 'color'
-        ? Object.entries(COLORS).map(([name, value]) => (
+        ? Object.entries(COLORS)?.map(([name, value]) => (
             <S.ColorBox
               color={value}
               key={name}
@@ -22,7 +22,7 @@ const BackgroundSelector = ({
               {selectedColor === name && <S.CheckIcon src={checkIcon} />}
             </S.ColorBox>
           ))
-        : imageUrls.map((imageUrl) => (
+        : imageUrls?.map((imageUrl) => (
             <S.ImageBox
               $url={imageUrl}
               key={imageUrl}

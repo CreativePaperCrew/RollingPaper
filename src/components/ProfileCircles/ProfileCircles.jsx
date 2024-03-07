@@ -7,7 +7,7 @@ export default function ProfileCircles({ messageCount, recentMessages }) {
       {recentMessages?.map((msg) => (
         <S.ProfileCircle key={msg.id} $imgUrl={msg.profileImageURL} />
       ))}
-      {howmanymore > 1 ? <S.LastCircle>{`+${howmanymore}`}</S.LastCircle> : ''}
+      {howmanymore >= 1 ? <S.LastCircle>{`+${howmanymore}`}</S.LastCircle> : ''}
     </S.ProfileCirclesContainer>
   );
 }

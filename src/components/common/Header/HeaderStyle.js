@@ -7,6 +7,7 @@ export const HeaderContentContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  box-shadow: 0px 4px 8px #ededed;
 
   @media (${VIEWPORT_SIZE.mobile}) {
     display: none;
@@ -22,7 +23,7 @@ export const HeaderContent = styled.div`
   padding: 0 1.5rem;
 
   @media (min-width: 1200px) {
-    max-width: 75.4375rem;
+    max-width: 75rem;
     padding: 0;
   }
 `;

@@ -4,4 +4,5 @@ export const TopReactionsContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  z-index: 15;
 `;

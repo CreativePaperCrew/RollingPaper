@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const MainContentContainer = styled.div`
   display: flex;
@@ -9,11 +10,11 @@ export const MainContentContainer = styled.div`
   flex-direction: column;
   margin: 0.375rem 0;
   gap: 1.875rem;
-  @media screen and (max-width: 1199px) {
+  @media (${VIEWPORT_SIZE.tablet}) {
     min-width: 45rem;
     margin: 3.0625rem 1.5rem;
   }
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     max-width: 20rem;
     margin: 2.625rem 1.5rem 2.3125rem;
   }
@@ -26,13 +27,13 @@ export const FirstContent = styled.div`
   background: var(--surface);
   gap: 9.5rem;
   overflow: hidden;
-  @media screen and (max-width: 1199px) {
+  @media (${VIEWPORT_SIZE.tablet}) {
     flex-direction: column;
     align-items: center;
     padding: 0;
     gap: 2.25rem;
   }
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     max-width: 20rem;
     gap: 3.125rem;
   }
@@ -43,11 +44,11 @@ export const TextContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-  @media screen and (max-width: 1199px) {
+  @media (${VIEWPORT_SIZE.tablet}) {
     width: 80%;
     margin: 2.5rem 6.25rem 0 2.5rem;
   }
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     margin: 1.5rem 1.5rem 0 1.5rem;
   }
 `;
@@ -68,7 +69,7 @@ export const PointButton = styled.button`
   font-weight: var(--font-bold);
   line-height: 1.25rem;
   letter-spacing: -0.0044rem;
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     padding: 0.25rem 0.75rem;
   }
 `;
@@ -87,7 +88,7 @@ export const MainDescription = styled.span`
   line-height: 2.25rem;
   letter-spacing: -0.015rem;
   white-space: normal;
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     font-size: var(--font-18);
     line-height: 1.75rem;
     letter-spacing: -0.0112rem;
@@ -95,7 +96,7 @@ export const MainDescription = styled.span`
 `;
 
 export const LineBreak = styled.br`
-  @media screen and (max-width: 1199px) {
+  @media (${VIEWPORT_SIZE.tablet}) {
     display: none;
   }
 `;
@@ -111,7 +112,7 @@ export const SubDescription = styled.p`
   line-height: 1.75rem;
   letter-spacing: -0.0112rem;
   white-space: nowrap;
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     font-size: var(--font-15);
     line-height: 1.375rem;
     letter-spacing: -0.0094rem;
@@ -119,14 +120,14 @@ export const SubDescription = styled.p`
 `;
 export const MainImg1 = styled.img`
   max-width: 45rem;
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     width: 27.125rem;
   }
 `;
 
 export const MainImg2 = styled.img`
   max-width: 45rem;
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     width: 20rem;
   }
 `;
@@ -137,13 +138,13 @@ export const SecondContent = styled.div`
   align-items: flex-start;
   border-radius: 1rem;
   background: var(--surface);
-  @media screen and (max-width: 1199px) {
+  @media (${VIEWPORT_SIZE.tablet}) {
     flex-direction: column-reverse;
     align-items: center;
     padding: 0;
     gap: 2.25rem;
   }
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     max-width: 20rem;
     gap: 3rem;
   }

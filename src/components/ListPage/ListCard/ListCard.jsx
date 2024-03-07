@@ -42,7 +42,6 @@ const ListCard = ({ cardData }) => {
               recentMessages={recentMessages}
             />
           </S.ProfileCirclesContainer>
-
           <S.MessageCountContainer>
             <S.MessageCount $backgroundImageURL={backgroundImageURL}>
               {messageCount}

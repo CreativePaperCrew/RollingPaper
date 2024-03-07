@@ -129,7 +129,7 @@ export const postRecipientRollingPaperMessage = async (
   }
 };
 
-export const getRecipients = async ({ limit, offset, isSortLike }) => {
+export const getRecipients = async (limit, offset, isSortLike) => {
   const query = `limit=${limit}&offset=${offset}&sort=${isSortLike}`;
   try {
     const response = await teamApiClient.get(`/recipients/?${query}`);

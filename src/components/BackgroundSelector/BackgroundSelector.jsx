@@ -27,7 +27,7 @@ const BackgroundSelector = ({
               $url={imageUrl}
               key={imageUrl}
               onClick={() => handleImageBoxClick(imageUrl)}
-              className={selectedImage === imageUrl && 'selected'}
+              className={selectedImage === imageUrl ? 'selected' : ''}
             >
               {selectedImage === imageUrl && <S.CheckIcon src={checkIcon} />}
             </S.ImageBox>

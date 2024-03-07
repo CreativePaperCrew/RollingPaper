@@ -1,6 +1,7 @@
 import { QuillDeltaToHtmlConverter } from 'quill-delta-to-html';
 import * as S from './InnerHtmlStyle';
 import InnerHtmlAttributes from './InnerHtmlAttributes';
+import DOMPurify from 'dompurify';
 
 const InnerHtml = ({ content, font }) => {
   const cfg = {
@@ -30,7 +31,10 @@ const InnerHtml = ({ content, font }) => {
   const html = converter.convert();
 
   return (
-    <S.HtmlContent $font={font} dangerouslySetInnerHTML={{ __html: html }} />
+    <S.HtmlContent
+      $font={font}
+      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
+    />
   );
 };
 

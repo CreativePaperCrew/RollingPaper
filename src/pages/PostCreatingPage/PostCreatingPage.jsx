@@ -77,7 +77,6 @@ const PostCreatingPage = () => {
         <S.Receiver>
           <S.Title>To.</S.Title>
           <Input
-            width="long"
             placeholder="받는 사람 이름을 입력해주세요."
             saveValue={saveRecipient}
             value={recipient}
@@ -103,7 +102,6 @@ const PostCreatingPage = () => {
           imageUrls={imageUrls}
         />
         <Button
-          size="large"
           isDisabled={!recipient && true}
           handleButtonClick={() =>
             handleCreateButtonClick(recipient, selectedColor, selectedImage)

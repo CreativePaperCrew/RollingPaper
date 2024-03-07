@@ -20,7 +20,7 @@ export const ServiceHeaderContainer = styled.div`
 `;
 
 export const HorizontalBar = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 0.0625rem;
   background-color: #ededed;
   flex-shrink: 0;

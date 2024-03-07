@@ -1,9 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
   getRecipientRollingPapers,
   getRecipientRollingPaperMessages,
+  deleteRollingPaperMessage,
 } from '../../apis/recipientRollingPaperApi';
 import useFetchData from '../../hooks/useFetchData';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
@@ -70,9 +71,18 @@ const RecipientsPage = () => {
     }
   }, [recipientError, navigate]);
 
+  const onDelete = useCallback(
+    async (id) => {
+      await deleteRollingPaperMessage(id);
+      setData((prevData) => prevData.filter((message) => message.id !== id));
+    },
+    [setData],
+  );
+
   const backgroundColor = recipientData
     ? COLORS[recipientData.backgroundColor]
     : '';
+
   const handleCardClick = (cardData) => {
     setSelectedCardData(cardData);
     toggleIsOpen();
@@ -88,6 +98,7 @@ const RecipientsPage = () => {
         <AddPostCard />
         {data?.map((postCard) => (
           <PostCard
+            onDelete={() => onDelete(postCard.id)}
             onClick={() => handleCardClick(postCard)}
             key={postCard.id}
             cardData={postCard}

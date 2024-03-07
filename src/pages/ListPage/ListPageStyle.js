@@ -25,7 +25,7 @@ export const ListCardContentContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  max-width: 72.5rem;
+  max-width: 75rem;
   gap: 1rem;
 `;
 
@@ -38,6 +38,7 @@ export const ListCardTitle = styled.h2`
   line-height: 2.25rem;
   letter-spacing: -0.015rem;
   @media (${VIEWPORT_SIZE.mobile}) {
+    font-size: var(--font-20);
     font-weight: 600;
   }
 `;

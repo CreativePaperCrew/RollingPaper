@@ -3,7 +3,7 @@ import { VIEWPORT_SIZE } from '../../../constants/viewportSize';
 
 export const CardContainer = styled.div`
   position: relative;
-  width: 17.1875rem;
+  width: 17.8125rem;
   height: 16.25rem;
   flex-shrink: 0;
   border-radius: 1rem;

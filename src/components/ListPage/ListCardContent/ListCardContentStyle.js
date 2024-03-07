@@ -13,7 +13,7 @@ export const ListCardsContainer = styled.div`
 `;
 
 export const LinkStyle = styled(Link)`
-  width: 17.1875rem;
+  width: 17.8125rem;
 `;
 
 export const LeftArrowButtonContainer = styled.div`

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../../constants/viewportSize';
 
 export const CardContainer = styled.div`
   position: relative;
@@ -19,7 +20,7 @@ export const CardContainer = styled.div`
   background-position: center;
   box-shadow: 0 0.125rem 0.75rem 0 rgba(0, 0, 0, 0.08);
   padding: 1.875rem 1.5rem 1.25rem;
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     width: 13rem;
     height: 14.5rem;
   }
@@ -52,7 +53,7 @@ export const Recipient = styled.h2`
   font-weight: var(--font-bold);
   line-height: 2.25rem;
   letter-spacing: -0.015rem;
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     font-size: var(--font-18);
     line-height: 1.75rem;
     letter-spacing: -0.0112rem;
@@ -71,7 +72,7 @@ export const MessageCount = styled.span`
   font-weight: var(--font-bold);
   line-height: 1.625rem;
   letter-spacing: -0.01rem;
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     font-size: var(--font-14);
     line-height: 1.25rem;
     letter-spacing: -0.0044rem;
@@ -85,7 +86,7 @@ export const MessageCountText = styled.p`
   font-weight: var(--font-regular);
   line-height: 1.625rem;
   letter-spacing: -0.01rem;
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     font-size: var(--font-14);
     line-height: 1.25rem;
     letter-spacing: -0.0044rem;
@@ -107,7 +108,7 @@ export const Divider = styled.div`
   height: 0.0625rem;
   background: rgba(0, 0, 0, 0.12);
   z-index: 10;
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     width: 10.125rem;
   }
 `;
@@ -116,7 +117,7 @@ export const CardPattern = styled.img`
   position: absolute;
   bottom: 0;
   right: 0;
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     width: 6.6875rem;
   }
 `;

@@ -78,7 +78,6 @@ const PostWritingPage = () => {
         <S.SectionFrame>
           <S.Title>From.</S.Title>
           <Input
-            width="long"
             saveValue={saveRecipient}
             value={senderName}
             placeholder="보내는 사람 이름을 입력해주세요"
@@ -91,7 +90,7 @@ const PostWritingPage = () => {
             <S.ImageSelector>
               <S.ProfileMessage>프로필 이미지를 선택해주세요</S.ProfileMessage>
               <S.ImageList>
-                {profileImageUrls.map((url) => (
+                {profileImageUrls?.map((url) => (
                   <S.AvaliableImages
                     src={url}
                     key={url}
@@ -131,7 +130,6 @@ const PostWritingPage = () => {
         </S.SectionFrame>
         <S.MarginFrame>
           <Button
-            size="large"
             isDisabled={!senderName || contents.length <= 1}
             handleButtonClick={() =>
               handleCreateButtonClick(

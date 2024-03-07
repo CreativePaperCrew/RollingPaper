@@ -16,7 +16,7 @@ const ListPage = () => {
       </S.Container>
       <S.ButtonContainer>
         <S.ButtonLink to="/post">
-          <S.CustomButton size="medium">나도해보기</S.CustomButton>
+          <S.CustomButton size="medium">나도 만들어보기</S.CustomButton>
         </S.ButtonLink>
       </S.ButtonContainer>
     </>

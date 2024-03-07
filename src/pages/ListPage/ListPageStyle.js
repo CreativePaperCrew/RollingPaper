@@ -37,6 +37,7 @@ export const ListCardTitle = styled.h2`
   line-height: 2.25rem;
   letter-spacing: -0.015rem;
   @media screen and (max-width: 767px) {
+    font-size: var(--font-20);
     font-weight: 600;
   }
 `;

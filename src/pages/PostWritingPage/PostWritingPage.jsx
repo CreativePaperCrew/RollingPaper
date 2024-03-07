@@ -91,7 +91,7 @@ const PostWritingPage = () => {
             <S.ImageSelector>
               <S.ProfileMessage>프로필 이미지를 선택해주세요</S.ProfileMessage>
               <S.ImageList>
-                {profileImageUrls.map((url) => (
+                {profileImageUrls?.map((url) => (
                   <S.AvaliableImages
                     src={url}
                     key={url}

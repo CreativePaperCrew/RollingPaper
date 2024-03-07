@@ -13,7 +13,7 @@ const BackgroundSelector = ({
   return (
     <S.Container>
       {select === 'color'
-        ? Object.entries(COLORS).map(([name, value]) => (
+        ? Object.entries(COLORS)?.map(([name, value]) => (
             <S.ColorBox
               color={value}
               key={name}

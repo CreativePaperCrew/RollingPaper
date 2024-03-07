@@ -3,7 +3,7 @@ import { Button } from '../../components/common/Buttons/Button/ButtonStyle';
 import { Link } from 'react-router-dom';
 import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
-export const Container = styled.div`
+export const Container = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +20,7 @@ export const Container = styled.div`
   }
 `;
 
-export const ListCardContentContainer = styled.div`
+export const ListCardContentContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -29,7 +29,7 @@ export const ListCardContentContainer = styled.div`
   gap: 1rem;
 `;
 
-export const ListCardTitle = styled.h2`
+export const ListCardTitle = styled.header`
   display: flex;
   justify-content: flex-start;
   color: var(--black);

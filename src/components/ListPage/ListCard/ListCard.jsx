@@ -4,8 +4,8 @@ import patternImgBeige from '../../../assets/images/cardPattern2.svg';
 import patternImgBlue from '../../../assets/images/cardPattern3.svg';
 import patternImgGreen from '../../../assets/images/cardPattern4.svg';
 import TopReactions from '../../TopReactions/TopReactions';
-import { COLORS } from '../../../constants/colors';
 import ProfileCircles from '../../ProfileCircles/ProfileCircles';
+import { COLORS } from '../../../constants/colors';
 
 const patternImages = {
   beige: patternImgBeige,

@@ -42,7 +42,7 @@ export const Button = styled.button`
   border-radius: ${(props) =>
     props.size ? BUTTON_SIZE[props.size].borderRadius : '0.75rem'};
   font-size: ${(props) =>
-    props.size ? BUTTON_SIZE[props.size].fontSize : 'var(--font-18'};
+    props.size ? BUTTON_SIZE[props.size].fontSize : 'var(--font-18)'};
   font-weight: ${(props) =>
     props.size ? BUTTON_SIZE[props.size].fontWeight : 'var(--font-bold)'};
   letter-spacing: ${(props) =>

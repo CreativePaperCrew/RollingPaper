@@ -17,9 +17,10 @@ const TextEditor = ({ handleContentOnchange, contents }) => {
   const [isBlank, setIsBlank] = useState(false);
 
   const handleQuillChange = (content, delta, source, editor) => {
-    setQuillValue(editor.getContents());
+    const deltaData = editor.getContents();
+    setQuillValue(deltaData);
     setIsBlank(contents.length < 1);
-    handleContentOnchange(editor.getText());
+    handleContentOnchange(JSON.stringify(deltaData));
   };
 
   const modules = useMemo(() => {

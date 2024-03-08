@@ -10,12 +10,12 @@ import emojiPickerImage from '../../assets/icons/emojiPicker.svg';
 
 const EmojiPicker = () => {
   const { id } = useParams();
-  const [isToggleOpen, changeToggle] = useToggle();
+  const { isOpen, toggleRef, handleToggle, handleClose } = useToggle();
   const { handlePost, res } = usePostData(postRecipientRollingPaperReactions, [
     id,
   ]);
   const handleEmojiPick = async (emojiObject) => {
-    changeToggle();
+    handleClose();
     await handlePost({ emoji: emojiObject.emoji, type: 'increase' });
   };
   useEffect(() => {
@@ -24,8 +24,8 @@ const EmojiPicker = () => {
     }
   }, [res]);
   return (
-    <S.EmojiPickerContainer>
-      <S.EmojiPickerButton onClick={changeToggle}>
+    <S.EmojiPickerContainer ref={toggleRef}>
+      <S.EmojiPickerButton onClick={handleToggle}>
         <S.EmojiPickerButtonIcon
           src={emojiPickerImage}
           alt="smiling face icon to add emoji"
@@ -35,7 +35,7 @@ const EmojiPicker = () => {
 
       <Picker
         emojiStyle="native"
-        open={isToggleOpen}
+        open={isOpen}
         width={300}
         height={400}
         onEmojiClick={handleEmojiPick}

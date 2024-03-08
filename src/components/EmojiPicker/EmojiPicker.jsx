@@ -7,7 +7,7 @@ import emojiPickerImage from '../../assets/icons/emojiPicker.svg';
 const EmojiPicker = ({ onEmojiPick }) => {
   const { isOpen, toggleRef, handleToggle, handleClose } = useToggle();
 
-  const handleEmojiSelect = (emojiObject, event) => {
+  const handleEmojiSelect = (emojiObject) => {
     onEmojiPick(emojiObject);
     handleClose();
   };

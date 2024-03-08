@@ -12,7 +12,6 @@ import {
   postRecipientRollingPaperReactions,
 } from '../../apis/recipientRollingPaperApi';
 import usePostData from '../../hooks/usePostData';
-import useToggle from '../../hooks/useToggle';
 
 const ServiceHeader = ({ recipientData }) => {
   const { id } = useParams();
@@ -22,7 +21,6 @@ const ServiceHeader = ({ recipientData }) => {
     refetch,
   } = useFetchData(getRecipientRollingPaperReactions, [id]);
   const { handlePost } = usePostData(postRecipientRollingPaperReactions, [id]);
-  const { handleClose } = useToggle();
 
   useEffect(() => {
     if (reactionsError) {
@@ -36,10 +34,9 @@ const ServiceHeader = ({ recipientData }) => {
       refetch();
     } catch (error) {
       alert('이모지 전송에 실패하였습니다.');
-    } finally {
-      handleClose();
     }
   };
+
   const topReactions = reactionsData ? reactionsData.slice(0, 3) : [];
   const title = `To. ${recipientData?.name}`;
   return (

@@ -7,6 +7,11 @@ export const ProfileCirclesContainer = styled.div`
   align-items: center;
 `;
 
+export const EmptyProfile = styled.div`
+  width: 100%;
+  height: 1.75rem;
+`;
+
 export const ProfileCircle = styled.div`
   display: flex;
   justify-content: center;

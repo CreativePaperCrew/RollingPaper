@@ -73,13 +73,17 @@ const RecipientsPage = () => {
     }
   }, [recipientError, navigate]);
 
-  const onDelete = useCallback(
+  const handleDelete = useCallback(
     async (id) => {
       await deleteRollingPaperMessage(id);
       setData((prevData) => prevData.filter((message) => message.id !== id));
     },
     [setData],
   );
+
+  const handleEdit = (postid) => {
+    navigate(`/post/${recipientData.id}/message/${postid}`);
+  };
 
   const toggleDelete = () => {
     setIsDelete(!isDelete);
@@ -110,7 +114,8 @@ const RecipientsPage = () => {
         <AddPostCard />
         {data?.map((postCard) => (
           <PostCard
-            onDelete={() => onDelete(postCard.id)}
+            onEdit={() => handleEdit(postCard.id)}
+            onDelete={() => handleDelete(postCard.id)}
             onClick={() => handleCardClick(postCard)}
             key={postCard.id}
             cardData={postCard}

@@ -17,6 +17,10 @@ const Router = () => (
         <Route path="post" element={<PostCreatingPage />} />
         <Route path="post/:id" element={<RecipientsPage />} />
         <Route path="post/:id/message" element={<PostWritingPage />} />
+        <Route
+          path="post/:id/message/:postid"
+          element={<PostWritingPage edit={true} />}
+        />
       </Route>
       <Route path="/*" element={<ErrorPage />} />
     </Routes>

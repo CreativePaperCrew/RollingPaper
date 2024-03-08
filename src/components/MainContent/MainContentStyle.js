@@ -11,11 +11,9 @@ export const MainContentContainer = styled.main`
   margin: 0.375rem 0;
   gap: 1.875rem;
   @media (${VIEWPORT_SIZE.tablet}) {
-    min-width: 45rem;
     margin: 3.0625rem 1.5rem;
   }
   @media (${VIEWPORT_SIZE.mobile}) {
-    max-width: 20rem;
     margin: 2.625rem 1.5rem 2.3125rem;
   }
 `;

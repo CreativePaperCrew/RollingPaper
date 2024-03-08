@@ -15,12 +15,13 @@ const ShareButton = ({ recipientsId }) => {
     startHidingToast,
     message,
   } = useToast();
-  const [isToggleOpen, changeToggle] = useToggle();
+  const { isOpen, toggleRef, handleToggle, handleClose } = useToggle();
 
   const hostAddress = window.location.origin;
   const shareLink = `${hostAddress}/post/${recipientsId}`;
 
   const handleShareURLClick = async () => {
+    handleClose();
     try {
       await navigator.clipboard.writeText(shareLink);
       showToast(true, 'URL이 복사 되었습니다!');
@@ -30,6 +31,7 @@ const ShareButton = ({ recipientsId }) => {
   };
 
   const handleShareKakaoClick = () => {
+    handleClose();
     if (window.Kakao === undefined) {
       return;
     }
@@ -59,9 +61,9 @@ const ShareButton = ({ recipientsId }) => {
 
   return (
     <>
-      <S.ShareButtonContainer onClick={changeToggle}>
+      <S.ShareButtonContainer onClick={handleToggle} ref={toggleRef}>
         <S.ShareIcon src={shareIconSvg} alt="share icon" />
-        {isToggleOpen && (
+        {isOpen && (
           <S.ShareDropdown>
             <S.ShareOption onClick={() => handleShareKakaoClick()}>
               카카오톡 공유

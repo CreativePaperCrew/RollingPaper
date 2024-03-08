@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 
 const ReactionDropdown = () => {
   const { id } = useParams();
-  const [isToggleOpen, changeToggle] = useToggle();
+  const { isOpen, toggleRef, handleToggle } = useToggle();
   const {
     data: reactionsData,
     isLoading: isLoadingReactions,
@@ -25,9 +25,9 @@ const ReactionDropdown = () => {
   const reactions = reactionsData ? reactionsData.slice(0, 8) : [];
 
   return (
-    <S.ArrowDownButton onClick={changeToggle}>
+    <S.ArrowDownButton onClick={handleToggle} ref={toggleRef}>
       <S.ArrowDownImage src={ArrowDownSvg} alt="see more reactions" />
-      {isToggleOpen && (
+      {isOpen && (
         <S.EmojiBadgesExpanded>
           {reactions.map((reaction, i) => (
             <EmojiBadge

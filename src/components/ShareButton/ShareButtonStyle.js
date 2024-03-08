@@ -18,7 +18,7 @@ export const ShareDropdown = styled.div`
   position: absolute;
   top: 120%;
   right: 10%;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   padding: 0.625rem 0;

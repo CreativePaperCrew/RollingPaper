@@ -1,6 +1,7 @@
 import React from 'react';
 import Badge from '../Badge/Badge';
 import * as S from './CardModalStyle';
+import * as PS from '../PostCard/PostCardStyle';
 import { formatKSTDate } from '../../utils/formatKSTDate';
 
 const CardModal = ({ cardData, onClose }) => {
@@ -9,27 +10,29 @@ const CardModal = ({ cardData, onClose }) => {
 
   return (
     <S.ModalBackground onClick={onClose}>
-      <S.ModalContent onClick={(e) => e.stopPropagation()}>
-        <S.CardTop>
-          <S.CardProfile>
+      <S.ModalContainer onClick={(e) => e.stopPropagation()}>
+        <PS.PostCardTop>
+          <PS.PostCardProfile>
             <S.ProfileImgContainer>
               <S.ProfileImg src={profileImageURL} />
             </S.ProfileImgContainer>
-            <S.AuthorContainer>
-              <S.AuthorTitle>
-                <S.AuthorFrom>From.</S.AuthorFrom>
-                <S.Author>{sender}</S.Author>
+            <PS.AuthorContainer>
+              <PS.AuthorTitle>
+                <PS.AuthorFrom>From.</PS.AuthorFrom>
+                <PS.Author>{sender}</PS.Author>
                 <S.CardDate>{formatKSTDate(createdAt)}</S.CardDate>
-              </S.AuthorTitle>
+              </PS.AuthorTitle>
               <Badge relationship={relationship} />
-            </S.AuthorContainer>
-          </S.CardProfile>
-        </S.CardTop>
+            </PS.AuthorContainer>
+          </PS.PostCardProfile>
+        </PS.PostCardTop>
         <S.ContentContainer>
           <S.Content $font={font}>{content}</S.Content>
         </S.ContentContainer>
-        <S.ModalCloseButton onClick={onClose}>확인</S.ModalCloseButton>
-      </S.ModalContent>
+        <S.ModalCloseButton onClick={onClose} size="medium">
+          확인
+        </S.ModalCloseButton>
+      </S.ModalContainer>
     </S.ModalBackground>
   );
 };

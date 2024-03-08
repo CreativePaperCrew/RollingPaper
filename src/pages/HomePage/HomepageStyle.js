@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Button } from '../../components/common/Buttons/Button/ButtonStyle';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
-export const MainContentContainer = styled.div`
+export const MainContentContainer = styled.main`
   display: flex;
   width: 100%;
   justify-content: center;
@@ -16,19 +17,19 @@ export const ButtonContainer = styled.div`
   width: 100%;
   justify-content: center;
   padding: 1.5rem 0;
-  @media screen and (max-width: 1199px) {
+  @media (${VIEWPORT_SIZE.tablet}) {
     padding: 1.5rem 1.5rem;
   }
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     padding: 1.5rem 1.25rem;
   }
 `;
 
 export const CustomButton = styled(Button)`
-  @media screen and (max-width: 1199px) {
+  @media (${VIEWPORT_SIZE.tablet}) {
     width: 45rem;
   }
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     width: 20rem;
   }
 `;

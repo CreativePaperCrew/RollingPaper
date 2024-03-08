@@ -122,6 +122,24 @@ export const ContentContainer = styled.div`
   }
 `;
 
+export const Content = styled.p`
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 100%;
+  color: var(--gray-600, #4a4a4a);
+  font-size: var(--font-15);
+  ${(props) => getfontStyle(props.$font)}
+  line-height: 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media (min-width: 768px) {
+    -webkit-line-clamp: 3;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+`;
+
 export const PostCardDate = styled.span`
   color: var(--gray-400, #999);
   font-size: 0.75rem;

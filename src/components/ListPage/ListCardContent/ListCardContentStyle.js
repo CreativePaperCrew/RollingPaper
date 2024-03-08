@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const ListCardsContainer = styled.div`
+export const ListCardsContainer = styled.section`
   position: relative;
   display: flex;
   width: 100%;

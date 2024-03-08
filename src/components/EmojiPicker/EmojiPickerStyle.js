@@ -6,7 +6,7 @@ export const EmojiPickerContainer = styled.div`
     position: absolute;
     top: 120%;
     right: 20%;
-    z-index: 2;
+    z-index: 3;
     --epr-emoji-size: 1.5rem !important;
     --epr-category-navigation-button-size: 1.5rem !important;
     --epr-preview-text-size: 0.75rem !important;

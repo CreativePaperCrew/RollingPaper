@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import useRecipientData from '../../../hooks/useFetchRecipient';
+import useFetchData from '../../../hooks/useFetchData';
+import { getRecipients } from '../../../apis/recipientRollingPaperApi';
 import {
   LeftArrowButton,
   RightArrowButton,
@@ -12,7 +13,11 @@ const ListCardContent = ({ isSortLike }) => {
   const [limit, setLimit] = useState(4);
   const [offset, setOffset] = useState(0);
 
-  const { data: listData, error } = useRecipientData(limit, offset, isSortLike);
+  const { data: listData, error } = useFetchData(getRecipients, [
+    limit,
+    offset,
+    isSortLike,
+  ]);
 
   useEffect(() => {
     updateScroll();

@@ -39,7 +39,7 @@ export const EditContainer = styled.div`
   justify-content: center;
   width: 100%;
   height: 3.5rem;
-  z-index: 10;
+  z-index: 1;
 
   @media (min-width: 1248px) {
     position: absolute;

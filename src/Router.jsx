@@ -6,6 +6,7 @@ import PostCreatingPage from './pages/PostCreatingPage/PostCreatingPage';
 import AppLayout from './AppLayout';
 import PostWritingPage from './pages/PostWritingPage/PostWritingPage';
 import RecipientsPage from './pages/RecipientsPage/RecipientsPage';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 const Router = () => (
   <BrowserRouter>
@@ -17,6 +18,7 @@ const Router = () => (
         <Route path="post/:id" element={<RecipientsPage />} />
         <Route path="post/:id/message" element={<PostWritingPage />} />
       </Route>
+      <Route path="/*" element={<ErrorPage />} />
     </Routes>
   </BrowserRouter>
 );

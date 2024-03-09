@@ -1,6 +1,19 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { getfontStyle } from '../../FontStyle';
 import InnerHtml from '../InnerHtml/InnerHtml';
+
+const fadeInUpKeyframes = css`
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
 
 export const PostCardContainer = styled.div`
   position: relative;
@@ -11,6 +24,22 @@ export const PostCardContainer = styled.div`
   background: var(--white);
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
   cursor: pointer;
+  ${fadeInUpKeyframes}
+  animation: ${(props) =>
+    props.runAnimation ? 'fadeInUp 1s ease-in-out forwards' : 'none'};
+
+  &:hover {
+    animation: zoom 0.15s ease-in forwards;
+  }
+
+  @keyframes zoom {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.03);
+    }
+  }
 
   &:hover button {
     background-color: var(--gray-600);

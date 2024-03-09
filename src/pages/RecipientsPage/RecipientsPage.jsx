@@ -46,7 +46,9 @@ const RecipientsPage = () => {
 
   const observedRef = useIntersectionObserver(
     getMoreCardData,
-    { threshold: 0.5 },
+    {
+      threshold: 0.5,
+    },
     messagesData?.results.length >= LIMIT,
   );
 
@@ -103,25 +105,30 @@ const RecipientsPage = () => {
           <S.DeleteButton size="medium">{deleteButtonText}</S.DeleteButton>
         </S.DeleteContainer>
       </S.EditContainer>
-      <S.RecipientsCardsContainer
+      <S.RecipientsBackground
         $backgroundColor={backgroundColor}
         $backgroundImageURL={recipientData?.backgroundImageURL}
       >
-        <AddPostCard />
-        {data?.map((postCard) => (
-          <PostCard
-            onDelete={() => onDelete(postCard.id)}
-            onClick={() => handleCardClick(postCard)}
-            key={postCard.id}
-            cardData={postCard}
-            isDelete={isDelete}
-          />
-        ))}
-        <S.TargetedLine ref={observedRef} />
+        <S.ArrowContainer>
+          <S.ArrowDown />
+        </S.ArrowContainer>
+        <S.RecipientsCardsContainer>
+          <AddPostCard />
+          {data?.map((postCard) => (
+            <PostCard
+              onDelete={() => onDelete(postCard.id)}
+              onClick={() => handleCardClick(postCard)}
+              key={postCard.id}
+              cardData={postCard}
+              isDelete={isDelete}
+            />
+          ))}
+          <S.TargetedLine ref={observedRef} />
+        </S.RecipientsCardsContainer>
         {isOpen && (
           <CardModal cardData={selectedCardData} onClose={handleClose} />
         )}
-      </S.RecipientsCardsContainer>
+      </S.RecipientsBackground>
     </>
   );
 };

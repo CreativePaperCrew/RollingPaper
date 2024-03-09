@@ -7,7 +7,7 @@ import InnerHtml from '../InnerHtml/InnerHtml';
 
 const PostCard = ({ cardData, onClick, onDelete, isDelete }) => {
   const [isJson, setIsJson] = useState(false);
-
+  const [runAnimation, setRunAnimation] = useState(true);
   const {
     id,
     content,
@@ -32,8 +32,16 @@ const PostCard = ({ cardData, onClick, onDelete, isDelete }) => {
     }
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setRunAnimation(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <S.PostCardContainer onClick={onClick}>
+    <S.PostCardContainer onClick={onClick} runAnimation={runAnimation}>
       <S.PostCardTop>
         <S.PostCardProfile>
           {isDelete && (

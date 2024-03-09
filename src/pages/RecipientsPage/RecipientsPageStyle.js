@@ -1,16 +1,10 @@
 import styled from 'styled-components';
 import { Button } from '../../components/common/Buttons/Button/ButtonStyle';
 
-export const RecipientsCardsContainer = styled.div`
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(1, 20rem);
-  grid-template-rows: repeat(auto-fit, 14.375rem);
+export const RecipientsBackground = styled.div`
+  min-height: 100%;
+  display: flex;
   justify-content: center;
-  gap: 1rem;
-  align-items: center;
-  width: 100%;
-  min-height: 100vh;
   padding: 7.06rem 0 5.6875rem;
   background-color: ${(props) => `var(${props.$backgroundColor}, transparent)`};
   background-image: ${(props) =>
@@ -18,16 +12,6 @@ export const RecipientsCardsContainer = styled.div`
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 22.125rem);
-    grid-template-rows: repeat(auto-fit, 17.75rem);
-  }
-
-  @media (min-width: 1248px) {
-    grid-template-columns: repeat(3, 24rem);
-    grid-template-rows: repeat(auto-fit, 17.5rem);
-  }
 `;
 
 export const EditContainer = styled.div`
@@ -72,7 +56,98 @@ export const DeleteButton = styled(Button)`
   }
 `;
 
+export const RecipientsCardsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 20rem);
+  grid-template-rows: repeat(auto-fit, 14.375rem);
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  animation: fadeInUp 0.5s ease-out forwards;
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 22.125rem);
+    grid-template-rows: repeat(auto-fit, 17.75rem);
+  }
+
+  @media (min-width: 1248px) {
+    padding: 6.3rem 2.4rem 0;
+    grid-template-columns: repeat(3, 24rem);
+    grid-template-rows: repeat(auto-fit, 17.5rem);
+  }
+`;
+
 export const TargetedLine = styled.div`
   width: 100%;
   height: 10px;
+`;
+
+export const ArrowContainer = styled.div`
+  position: fixed;
+  right: 2%;
+  bottom: 130px;
+  width: 100%;
+  -webkit-animation: bounce 800ms infinite;
+  animation: bounce 800ms infinite;
+  z-index: 1;
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 1248px) {
+    bottom: 100px;
+  }
+`;
+
+export const ArrowDown = styled.div`
+  position: fixed;
+  width: 1.875rem;
+  height: 0.4375rem;
+  left: 50%;
+  background: black;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  border-radius: 1px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 100%;
+    border-radius: 1px;
+    background: black;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+  }
+
+  @-webkit-keyframes bounce {
+    50% {
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes bounce {
+    50% {
+      -webkit-transform: translateY(-10px);
+      transform: translateY(5px);
+    }
+  }
 `;

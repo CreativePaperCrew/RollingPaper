@@ -117,14 +117,16 @@ export const SubDescription = styled.p`
   }
 `;
 export const MainImg1 = styled.img`
-  max-width: 45rem;
+  width: 45rem;
+  height: auto;
   @media (${VIEWPORT_SIZE.mobile}) {
     width: 27.125rem;
   }
 `;
 
 export const MainImg2 = styled.img`
-  max-width: 45rem;
+  width: 45rem;
+  height: auto;
   @media (${VIEWPORT_SIZE.mobile}) {
     width: 20rem;
   }

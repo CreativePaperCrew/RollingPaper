@@ -1,6 +1,6 @@
 import * as S from './MainContentStyle';
-import mainimg1 from '../../assets/images/mainImg1.png';
-import mainimg2 from '../../assets/images/mainImg2.png';
+import mainimg1 from '../../assets/images/mainImg1.webp';
+import mainimg2 from '../../assets/images/mainImg2.webp';
 
 const MainContent = () => {
   return (

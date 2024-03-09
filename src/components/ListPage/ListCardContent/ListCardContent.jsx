@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import useFetchData from '../../../hooks/useFetchData';
 import { getRecipients } from '../../../apis/recipientRollingPaperApi';
-import {
-  LeftArrowButton,
-  RightArrowButton,
-} from '../../common/Buttons/ArrowButton/ArrowButton';
 import ListCard from '../ListCard/ListCard';
+import arrowLeftImg from '../../../assets/icons/arrowLeft.svg';
+import arrowRightImg from '../../../assets/icons/arrowRight.svg';
 import * as S from './ListCardContentStyle';
+import { ArrowButton } from '../../common/Buttons/ArrowButton/ArrowButton';
 
 const ListCardContent = ({ isSortLike }) => {
   const [isScrollable, setIsScrollable] = useState(false);
@@ -59,12 +58,12 @@ const ListCardContent = ({ isSortLike }) => {
         ))}
       {!isScrollable && offset > 0 && (
         <S.LeftArrowButtonContainer>
-          <LeftArrowButton onClick={handlePrevious} />
+          <ArrowButton image={arrowLeftImg} onClick={handlePrevious} />
         </S.LeftArrowButtonContainer>
       )}
       {!isScrollable && offset + 4 < 8 && (
         <S.RightArrowButtonContainer>
-          <RightArrowButton onClick={handleNext} />
+          <ArrowButton image={arrowRightImg} onClick={handleNext} />
         </S.RightArrowButtonContainer>
       )}
     </S.ListCardsContainer>

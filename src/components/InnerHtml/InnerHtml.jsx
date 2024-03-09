@@ -3,11 +3,11 @@ import * as S from './InnerHtmlStyle';
 import DOMPurify from 'dompurify';
 
 const InnerHtml = ({ content, font }) => {
+  const jsonData = JSON.parse(content).ops;
+
   const cfg = {
     inlineStyles: true,
   };
-
-  const jsonData = JSON.parse(content).ops;
 
   const converter = new QuillDeltaToHtmlConverter(jsonData, cfg);
 

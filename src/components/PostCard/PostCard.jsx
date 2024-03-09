@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Badge from '../Badge/Badge';
 import * as S from './PostCardStyle';
 import deleteImg from '../../assets/icons/deleted.svg';
@@ -6,6 +6,8 @@ import { formatKSTDate } from '../../utils/formatKSTDate';
 import InnerHtml from '../InnerHtml/InnerHtml';
 
 const PostCard = ({ cardData, onClick, onDelete, isDelete }) => {
+  const [isJson, setIsJson] = useState(false);
+
   const {
     id,
     content,
@@ -20,6 +22,15 @@ const PostCard = ({ cardData, onClick, onDelete, isDelete }) => {
     e.stopPropagation();
     onDelete(id);
   };
+
+  useEffect(() => {
+    try {
+      JSON.parse(content);
+      setIsJson(true);
+    } catch (error) {
+      setIsJson(false);
+    }
+  }, []);
 
   return (
     <S.PostCardContainer onClick={onClick}>
@@ -41,7 +52,11 @@ const PostCard = ({ cardData, onClick, onDelete, isDelete }) => {
         </S.PostCardProfile>
       </S.PostCardTop>
       <S.ContentContainer>
-        <InnerHtml content={content} font={font} />
+        {isJson ? (
+          <InnerHtml content={content} font={font} />
+        ) : (
+          <S.Content $font={font}>{content}</S.Content>
+        )}
       </S.ContentContainer>
       <S.PostCardDate>{formatKSTDate(createdAt)}</S.PostCardDate>
     </S.PostCardContainer>

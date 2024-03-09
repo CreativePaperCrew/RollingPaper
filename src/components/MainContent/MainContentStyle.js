@@ -3,8 +3,7 @@ import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const MainContentContainer = styled.main`
   display: flex;
-  width: 100%;
-  max-width: 75rem;
+  width: 75rem;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -98,9 +97,6 @@ export const LineBreak = styled.br`
     display: none;
   }
 `;
-export const EmojiDescription = styled(MainDescription)`
-  width: 14.8125rem;
-`;
 
 export const SubDescription = styled.p`
   color: var(--gray-500);
@@ -118,7 +114,7 @@ export const SubDescription = styled.p`
 `;
 export const MainImg1 = styled.img`
   width: 45rem;
-  height: auto;
+  height: 12.75rem;
   @media (${VIEWPORT_SIZE.mobile}) {
     width: 27.125rem;
   }
@@ -126,7 +122,7 @@ export const MainImg1 = styled.img`
 
 export const MainImg2 = styled.img`
   width: 45rem;
-  height: auto;
+  height: 13.75rem;
   @media (${VIEWPORT_SIZE.mobile}) {
     width: 20rem;
   }

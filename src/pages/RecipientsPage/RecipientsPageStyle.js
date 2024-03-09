@@ -10,6 +10,7 @@ export const RecipientsCardsContainer = styled.div`
   gap: 1rem;
   align-items: center;
   width: 100%;
+  min-height: 100vh;
   padding: 7.06rem 0 5.6875rem;
   background-color: ${(props) => `var(${props.$backgroundColor}, transparent)`};
   background-image: ${(props) =>

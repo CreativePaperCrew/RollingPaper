@@ -82,7 +82,7 @@ export const RecipientsCardsContainer = styled.div`
   }
 
   @media (min-width: 1248px) {
-    padding: 6.3rem 2.4rem 0;
+    padding: 0 2.4rem;
     grid-template-columns: repeat(3, 24rem);
     grid-template-rows: repeat(auto-fit, 17.5rem);
   }

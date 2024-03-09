@@ -7,10 +7,15 @@ import arrowRightImg from '../../../assets/icons/arrowRight.svg';
 import * as S from './ListCardContentStyle';
 import { ArrowButton } from '../../common/Buttons/ArrowButton/ArrowButton';
 
+const MAX_SCREEN_WIDTH = 1200;
+const MAX_LIST_LENGTH = 8;
+const DEFAULT_LIMIT = 4;
+const DEFAULT_OFFSET = 0;
+
 const ListCardContent = ({ isSortLike }) => {
   const [isScrollable, setIsScrollable] = useState(false);
-  const [limit, setLimit] = useState(4);
-  const [offset, setOffset] = useState(0);
+  const [limit, setLimit] = useState(DEFAULT_LIMIT);
+  const [offset, setOffset] = useState(DEFAULT_OFFSET);
 
   const { data: listData, error } = useFetchData(getRecipients, [
     limit,
@@ -26,13 +31,13 @@ const ListCardContent = ({ isSortLike }) => {
   }, []);
 
   const updateScroll = () => {
-    const isSmallScreen = window.innerWidth < 1200;
+    const isSmallScreen = window.innerWidth < MAX_SCREEN_WIDTH;
     setIsScrollable(isSmallScreen);
     if (isSmallScreen) {
-      setLimit(8);
-      setOffset(0);
+      setLimit(MAX_LIST_LENGTH);
+      setOffset(DEFAULT_OFFSET);
     } else {
-      setLimit(4);
+      setLimit(DEFAULT_LIMIT);
     }
   };
 

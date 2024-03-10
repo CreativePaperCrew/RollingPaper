@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { getfontStyle } from '../../FontStyle';
-import InnerHtml from '../InnerHtml/InnerHtml';
 
 export const PostCardContainer = styled.div`
   position: relative;

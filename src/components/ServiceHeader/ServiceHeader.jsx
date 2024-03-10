@@ -10,9 +10,9 @@ const ServiceHeader = ({ recipientData }) => {
   const title = `To. ${recipientData?.name}`;
   return (
     recipientData && (
-      <>
+      <S.ServiceHeaderContainer>
         <S.HorizontalBar />
-        <S.ServiceHeaderContainer>
+        <S.ServiceHeaderContent>
           <S.NameArea>{title}</S.NameArea>
           <S.HorizontalBar $onlyMobile={true} />
           <S.OptionArea>
@@ -32,9 +32,9 @@ const ServiceHeader = ({ recipientData }) => {
               recipientsId={recipientData.id}
             />
           </S.OptionArea>
-        </S.ServiceHeaderContainer>
+        </S.ServiceHeaderContent>
         <S.HorizontalBar />
-      </>
+      </S.ServiceHeaderContainer>
     )
   );
 };

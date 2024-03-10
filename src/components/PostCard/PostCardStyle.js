@@ -29,15 +29,19 @@ export const PostCardContainer = styled.div`
     props.$runAnimation ? 'fadeInUp 1s ease-in-out forwards' : 'none'};
 
   &:hover {
-    animation: zoom 0.15s ease-in forwards;
+    animation: zoom 0.5s ease-in forwards;
   }
 
   @keyframes zoom {
-    from {
+    0% {
       transform: scale(1);
     }
-    to {
+    50% {
       transform: scale(1.03);
+    }
+
+    100% {
+      transform: scale(1);
     }
   }
 

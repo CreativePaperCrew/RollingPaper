@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { VIEWPORT_SIZE } from '../../constants/viewportSize';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 export const Container = styled.div`
   display: flex;
@@ -75,10 +77,11 @@ export const ImageList = styled.div`
   }
 `;
 
-export const AvaliableImages = styled.img`
+export const AvailableImage = styled.img`
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 70%;
+  display: ${({ $loading }) => $loading};
 
   &:hover {
     cursor: pointer;
@@ -99,4 +102,10 @@ export const MarginFrame = styled.div`
     margin-top: 12.875rem;
     margin-bottom: 1.5rem;
   }
+`;
+
+export const SkeletonImage = styled(Skeleton)`
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 70%;
 `;

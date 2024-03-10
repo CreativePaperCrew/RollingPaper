@@ -41,7 +41,7 @@ const PostCard = ({ cardData, onClick, onDelete, isDelete }) => {
   }, []);
 
   return (
-    <S.PostCardContainer onClick={onClick} runAnimation={runAnimation}>
+    <S.PostCardContainer onClick={onClick} $runAnimation={runAnimation}>
       <S.PostCardTop>
         <S.PostCardProfile>
           {isDelete && (

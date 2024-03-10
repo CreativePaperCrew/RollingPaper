@@ -12,7 +12,7 @@ const PostCreatingPage = () => {
   const [recipient, setRecipient] = useState('');
   const [select, setSelect] = useState('color');
   const [selectedColor, setSelectedColor] = useState('beige');
-  const [selectedImage, setSeletedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
 
   const navigate = useNavigate();
@@ -27,9 +27,9 @@ const PostCreatingPage = () => {
 
   useEffect(() => {
     if (select === 'image') {
-      setSeletedImage(imageUrls[0]);
+      setSelectedImage(imageUrls[0]);
     } else {
-      setSeletedImage(null);
+      setSelectedImage(null);
     }
   }, [select, imageUrls]);
 
@@ -47,11 +47,11 @@ const PostCreatingPage = () => {
 
   const handleColorBoxClick = (color) => {
     setSelectedColor(color);
-    setSeletedImage(null);
+    setSelectedImage(null);
   };
 
   const handleImageBoxClick = (image) => {
-    setSeletedImage(image);
+    setSelectedImage(image);
   };
 
   const handleCreateButtonClick = async (

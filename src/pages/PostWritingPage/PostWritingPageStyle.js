@@ -10,13 +10,13 @@ export const Container = styled.div`
 
 export const LeftAlignFrame = styled.div`
   display: flex;
-  gap: 3.125rem;
   flex-direction: column;
   align-items: left;
   width: 45rem;
+  gap: 3.125rem;
 
   @media (${VIEWPORT_SIZE.mobile}) {
-    width: 330px;
+    width: 20.625rem;
   }
 `;
 

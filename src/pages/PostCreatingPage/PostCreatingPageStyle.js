@@ -13,10 +13,10 @@ export const LeftAlignFrame = styled.div`
   flex-direction: column;
   align-items: left;
   width: 45rem;
-  margin-bottom: 21rem;
+  margin-bottom: 3.75rem;
 
   @media (${VIEWPORT_SIZE.mobile}) {
-    width: 330px;
+    width: 20.625rem;
   }
 `;
 

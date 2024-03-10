@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { getfontStyle } from '../../FontStyle';
 import { Button } from '../BackgroundTypeSelectButton/BackgroundTypeSelectButtonStyle';
-import InnerHtml from '../InnerHtml/InnerHtml';
 import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const ModalBackground = styled.div`

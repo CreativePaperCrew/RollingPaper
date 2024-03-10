@@ -31,7 +31,8 @@ const ListCardContent = ({ isSortLike }) => {
   }, []);
 
   const updateScroll = () => {
-    const isSmallScreen = window.innerWidth < MAX_SCREEN_WIDTH;
+    const isSmallScreen =
+      document.documentElement.clientWidth < MAX_SCREEN_WIDTH;
     setIsScrollable(isSmallScreen);
     if (isSmallScreen) {
       setLimit(MAX_LIST_LENGTH);

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Button } from '../../components/common/Buttons/Button/ButtonStyle';
 
 export const RecipientsBackground = styled.div`
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   padding: 7.06rem 0 5.6875rem;

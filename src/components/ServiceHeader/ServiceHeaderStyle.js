@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 export const ServiceHeaderContainer = styled.div`
+  width: 100%;
+  background-color: var(--white);
+`;
+
+export const ServiceHeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;

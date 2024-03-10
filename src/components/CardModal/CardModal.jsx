@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Badge from '../Badge/Badge';
 import * as S from './CardModalStyle';
 import * as PS from '../PostCard/PostCardStyle';
 import { formatKSTDate } from '../../utils/formatKSTDate';
+import InnerHtml from '../InnerHtml/InnerHtml';
 
 const CardModal = ({ cardData, onClose }) => {
+  const [isJson, setIsJson] = useState(false);
+
   const { content, createdAt, font, profileImageURL, relationship, sender } =
     cardData;
+
+  useEffect(() => {
+    try {
+      JSON.parse(content);
+      setIsJson(true);
+    } catch (error) {
+      setIsJson(false);
+    }
+  }, []);
 
   return (
     <S.ModalBackground onClick={onClose}>
@@ -27,7 +39,11 @@ const CardModal = ({ cardData, onClose }) => {
           </PS.PostCardProfile>
         </PS.PostCardTop>
         <S.ContentContainer>
-          <S.Content $font={font}>{content}</S.Content>
+          {isJson ? (
+            <InnerHtml content={content} font={font} isCard={false} />
+          ) : (
+            <S.Content $font={font}>{content}</S.Content>
+          )}
         </S.ContentContainer>
         <S.ModalCloseButton onClick={onClose} size="medium">
           확인

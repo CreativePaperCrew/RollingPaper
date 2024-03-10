@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { getfontStyle } from '../../FontStyle';
 import { Button } from '../BackgroundTypeSelectButton/BackgroundTypeSelectButtonStyle';
+import InnerHtml from '../InnerHtml/InnerHtml';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const ModalBackground = styled.div`
   position: fixed;
@@ -74,6 +76,10 @@ export const ProfileImg = styled.img`
 
 export const ContentContainer = styled.div`
   height: 15rem;
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    height: 7rem;
+  }
 `;
 
 export const Content = styled.p`

@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './ErrorPageStyle';
 import { Link } from 'react-router-dom';
-import ErrorLogo from '../../assets/images/error.png';
+import ErrorLogo from '../../assets/images/error.webp';
 import Button from '../../components/common/Buttons/Button/Button';
 
 const ErrorPage = () => {

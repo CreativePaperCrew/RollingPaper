@@ -8,18 +8,18 @@ import {
 } from '../../apis/recipientRollingPaperApi';
 import useFetchData from '../../hooks/useFetchData';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
-import useToggle from '../../hooks/useToggle';
 import ServiceHeader from '../../components/ServiceHeader/ServiceHeader';
 import PostCard from '../../components/PostCard/PostCard';
 import AddPostCard from '../../components/PostCard/AddPostCard';
 import CardModal from '../../components/CardModal/CardModal';
 import * as S from './RecipientsPageStyle';
 import { COLORS } from '../../constants/colors';
+import useToggle from '../../hooks/useToggle';
 
 const RecipientsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [isOpen, toggleIsOpen] = useToggle();
+  const { isOpen, handleOpen, handleClose } = useToggle();
   const [selectedCardData, setSelectedCardData] = useState(null);
   const LIMIT = 8;
   const [offset, setOffset] = useState(0);
@@ -92,7 +92,7 @@ const RecipientsPage = () => {
 
   const handleCardClick = (cardData) => {
     setSelectedCardData(cardData);
-    toggleIsOpen();
+    handleOpen(true);
   };
 
   return (
@@ -119,7 +119,7 @@ const RecipientsPage = () => {
         ))}
         <S.TargetedLine ref={observedRef} />
         {isOpen && (
-          <CardModal cardData={selectedCardData} onClose={toggleIsOpen} />
+          <CardModal cardData={selectedCardData} onClose={handleClose} />
         )}
       </S.RecipientsCardsContainer>
     </>

@@ -12,15 +12,17 @@ const formats = [
   'color',
 ];
 
-const TextEditor = ({ handleContentOnchange, contents }) => {
+const TextEditor = ({ handleContentOnchange }) => {
   const [quillValue, setQuillValue] = useState({});
+  const [textValue, setTextValue] = useState('');
   const [isBlank, setIsBlank] = useState(false);
 
   const handleQuillChange = (content, delta, source, editor) => {
     const deltaData = editor.getContents();
     setQuillValue(deltaData);
-    setIsBlank(contents.length < 1);
     handleContentOnchange(JSON.stringify(deltaData));
+    setTextValue(editor.getText());
+    setIsBlank(false);
   };
 
   const modules = useMemo(() => {
@@ -49,7 +51,7 @@ const TextEditor = ({ handleContentOnchange, contents }) => {
         value={quillValue || ''}
         placeholder="메세지를 입력해주세요"
         onChange={handleQuillChange}
-        onBlur={() => setIsBlank(contents.length <= 1)}
+        onBlur={() => setIsBlank(textValue.length <= 1)}
         $isError={isBlank}
       />
       {isBlank && <S.ErrorMessage>내용을 입력해주세요</S.ErrorMessage>}

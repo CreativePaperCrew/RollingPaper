@@ -23,10 +23,10 @@ const RecipientsPage = () => {
   const [selectedCardData, setSelectedCardData] = useState(null);
   const LIMIT = 8;
   const [offset, setOffset] = useState(0);
-  const [count, setCount] = useState(null);
   const [data, setData] = useState([]);
   const [isDelete, setIsDelete] = useState(false);
   const [deleteButtonText, setDeleteButtonText] = useState('삭제하기');
+  const [showArrow, setShowArrow] = useState(true);
 
   const { data: recipientData, error: recipientError } = useFetchData(
     getRecipientRollingPapers,
@@ -44,19 +44,21 @@ const RecipientsPage = () => {
     }
   };
 
+  const FETCHED_CARD_COUNT = messagesData?.results.length;
   const observedRef = useIntersectionObserver(
     getMoreCardData,
     {
       threshold: 0.5,
     },
-    messagesData?.results.length >= LIMIT,
+    FETCHED_CARD_COUNT >= LIMIT,
   );
 
   const fetchData = async () => {
-    if (offset >= count) {
+    const CHANGE_COUNT = messagesData?.count - LIMIT;
+    if (CHANGE_COUNT <= offset) {
+      setShowArrow(false);
       return;
     }
-    setCount(messagesData.count);
   };
 
   useEffect(() => {
@@ -109,9 +111,11 @@ const RecipientsPage = () => {
         $backgroundColor={backgroundColor}
         $backgroundImageURL={recipientData?.backgroundImageURL}
       >
-        <S.ArrowContainer>
-          <S.ArrowDown />
-        </S.ArrowContainer>
+        {showArrow && (
+          <S.ArrowContainer>
+            <S.ArrowDown />
+          </S.ArrowContainer>
+        )}
         <S.RecipientsCardsContainer>
           <AddPostCard />
           {data?.map((postCard) => (

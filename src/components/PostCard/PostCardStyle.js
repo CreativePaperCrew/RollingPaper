@@ -14,7 +14,7 @@ const fadeInUpKeyframes = css`
   }
 `;
 
-export const PostCardContainer = styled.div`
+export const PostCardContainer = styled.article`
   position: relative;
   width: 24rem;
   height: 17.5rem;

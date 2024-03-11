@@ -149,7 +149,7 @@ export const PostCardDate = styled.span`
   line-height: 1.125rem;
 `;
 
-export const DeleteContainer = styled.div`
+export const ButtonContainer = styled.div`
   position: absolute;
   top: 1.75rem;
   right: 1.5rem;
@@ -163,7 +163,7 @@ export const DeleteContainer = styled.div`
   border-radius: 6px;
 `;
 
-export const DeleteButton = styled.img`
+export const Button = styled.img`
   width: 1.5rem;
   height: 1.5rem;
 `;

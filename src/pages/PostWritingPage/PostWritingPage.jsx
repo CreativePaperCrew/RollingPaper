@@ -10,7 +10,7 @@ import Input from '../../components/Input/Input';
 import SelectionDropdown from '../../components/SelectionDropdown/SelectionDropdown';
 import TextEditor from '../../components/TextEditor/TextEditor';
 
-const PostWritingPage = () => {
+const PostWritingPage = ({ edit = false }) => {
   const [senderName, setSenderName] = useState('');
   const [profileImageUrls, setProfileImageUrls] = useState([]);
   const [imageLoading, setImageLoading] = useState({});
@@ -21,7 +21,7 @@ const PostWritingPage = () => {
     font: 'Noto Sans',
   });
 
-  const { id } = useParams();
+  const { id, postid } = useParams();
   const navigate = useNavigate();
 
   const saveRecipient = (e) => {
@@ -78,6 +78,12 @@ const PostWritingPage = () => {
         });
       })
       .catch((error) => alert(error.message));
+  }, []);
+
+  useEffect(() => {
+    if (edit) {
+      console.log('edit mode ready');
+    }
   }, []);
 
   return (

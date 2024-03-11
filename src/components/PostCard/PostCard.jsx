@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Badge from '../Badge/Badge';
 import * as S from './PostCardStyle';
 import deleteImg from '../../assets/icons/deleted.svg';
+import editImg from '../../assets/icons/edit.png';
 import { formatKSTDate } from '../../utils/formatKSTDate';
 import InnerHtml from '../InnerHtml/InnerHtml';
 
-const PostCard = ({ cardData, onClick, onDelete, isDelete }) => {
+const PostCard = ({ cardData, onClick, onEdit, onDelete, isDelete }) => {
   const [isJson, setIsJson] = useState(false);
   const [runAnimation, setRunAnimation] = useState(true);
   const {
@@ -17,10 +18,15 @@ const PostCard = ({ cardData, onClick, onDelete, isDelete }) => {
     relationship,
     sender,
   } = cardData;
-
+  
   const handleDelete = (e) => {
     e.stopPropagation();
-    onDelete(id);
+    onDelete();
+  };
+
+  const handleEdit = (e) => {
+    e.stopPropagation();
+    onEdit();
   };
 
   useEffect(() => {
@@ -44,10 +50,14 @@ const PostCard = ({ cardData, onClick, onDelete, isDelete }) => {
     <S.PostCardContainer onClick={onClick} $runAnimation={runAnimation}>
       <S.PostCardTop>
         <S.PostCardProfile>
-          {isDelete && (
-            <S.DeleteContainer onClick={handleDelete}>
-              <S.DeleteButton src={deleteImg} alt="카드를 삭제하는 버튼" />
-            </S.DeleteContainer>
+          {isDelete ? (
+            <S.ButtonContainer onClick={handleDelete}>
+              <S.Button src={deleteImg} alt="카드를 삭제하는 버튼" />
+            </S.ButtonContainer>
+          ) : (
+            <S.ButtonContainer onClick={handleEdit}>
+              <S.Button src={editImg} alt="카드를 수정하는 버튼" />
+            </S.ButtonContainer>
           )}
           <S.ProfileImg $profileImageURL={profileImageURL} />
           <S.AuthorContainer>

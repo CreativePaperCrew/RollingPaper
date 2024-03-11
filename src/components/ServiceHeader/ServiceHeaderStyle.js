@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
-export const ServiceHeaderContainer = styled.div`
+export const ServiceHeaderContainer = styled.nav`
   width: 100%;
   background-color: var(--white);
 `;

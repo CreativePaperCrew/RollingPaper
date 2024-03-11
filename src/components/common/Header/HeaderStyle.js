@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { VIEWPORT_SIZE } from '../../../constants/viewportSize';
 
-export const HeaderContentContainer = styled.div`
+export const HeaderContentContainer = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;

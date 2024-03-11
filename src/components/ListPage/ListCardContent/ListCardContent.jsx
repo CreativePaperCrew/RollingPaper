@@ -7,7 +7,7 @@ import arrowRightImg from '../../../assets/icons/arrowRight.svg';
 import * as S from './ListCardContentStyle';
 import { ArrowButton } from '../../common/Buttons/ArrowButton/ArrowButton';
 
-const MAX_SCREEN_WIDTH = 1200;
+const MAX_SCREEN_WIDTH = 1248;
 const MAX_LIST_LENGTH = 8;
 const DEFAULT_LIMIT = 4;
 const DEFAULT_OFFSET = 0;

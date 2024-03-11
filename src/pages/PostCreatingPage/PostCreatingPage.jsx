@@ -7,8 +7,10 @@ import getBackgroundImages from '../../apis/getBackgroundImages';
 import Button from '../../components/common/Buttons/Button/Button';
 import { postRecipient } from '../../apis/recipientRollingPaperApi';
 import { useNavigate } from 'react-router-dom';
+import { useToastContext } from '../../contexts/ToastContext';
 
 const PostCreatingPage = () => {
+  const { showToast } = useToastContext();
   const [recipient, setRecipient] = useState('');
   const [select, setSelect] = useState('color');
   const [selectedColor, setSelectedColor] = useState('beige');
@@ -65,9 +67,10 @@ const PostCreatingPage = () => {
         backgroundColor,
         backgroundImageURL,
       );
+      showToast(true, '롤링페이퍼가 생성되었습니다!');
       navigate('/post/' + response.id);
     } catch (error) {
-      alert(error.message);
+      showToast(false, error.message);
     }
   };
 

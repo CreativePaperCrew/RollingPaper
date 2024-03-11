@@ -82,7 +82,7 @@ export const ProfileImg = styled.div`
   width: 3.5rem;
   height: 3.5rem;
   border: 1px solid var(--gray-200);
-  border-radius: 6.25rem;
+  border-radius: 100%;
   background-color: var(--white);
   background-image: ${(props) =>
     props.$profileImageURL ? `url(${props.$profileImageURL})` : 'none'};

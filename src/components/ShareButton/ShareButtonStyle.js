@@ -7,7 +7,7 @@ export const ShareButtonContainer = styled.button`
   justify-content: center;
   align-items: center;
   padding: 0.375rem 1rem;
-  border-radius: 0.375rem;
+  border-radius: 6px;
   border: 1px solid var(--gray-300, #ccc);
   background: var(--white, #fff);
   @media (${VIEWPORT_SIZE.mobile}) {
@@ -25,8 +25,8 @@ export const ShareDropdown = styled.div`
   padding: 0.625rem 0;
   align-items: center;
   background-color: var(--white);
-  border-radius: 0.5rem;
-  border: 0.0625rem solid var(--gray-300);
+  border-radius: 8px;
+  border: 1px solid var(--gray-300);
   background: var(--white);
   box-shadow: 0 0.125rem 0.75rem 0 rgba(0, 0, 0, 0.08);
 `;

@@ -35,8 +35,8 @@ export const ImageBox = styled.div`
   position: relative;
   width: 10.5rem;
   height: 10.5rem;
-  border: 0.0625rem solid rgba(0, 0, 0, 0.08);
-  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
   overflow: hidden;
 
   &:hover {

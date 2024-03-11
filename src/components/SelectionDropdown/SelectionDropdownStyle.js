@@ -5,8 +5,8 @@ export const SelectedOption = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 0.0625rem solid var(--gray-300);
-  border-radius: 0.5rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
   padding: 0.75rem 1rem;
   width: 20rem;
   color: var(--gray-900);
@@ -26,10 +26,10 @@ export const OptionList = styled.li`
   top: 3.25rem;
   padding: 0.625rem 0;
   width: 320px;
-  border-radius: 0.5rem;
-  border: 0.0625rem solid var(--gray-300);
+  border-radius: 8px;
+  border: 1px solid var(--gray-300);
   background: var(--white);
-  box-shadow: 0rem 0.125rem 0.75rem 0rem rgba(0, 0, 0, 0.08);
+  box-shadow: 0rem 2px 12px 0rem rgba(0, 0, 0, 0.08);
   list-style: none;
 `;
 

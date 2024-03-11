@@ -12,9 +12,9 @@ export const EmojiBadgesExpanded = styled.div`
   row-gap: 0.625rem;
   column-gap: 0.5rem;
   background-color: var(--white);
-  border-radius: 0.5rem;
-  border: 0.0625rem solid #b6b6b6;
-  box-shadow: 0 0.125rem 0.75rem 0 rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  border: 1px solid #b6b6b6;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
 
   @media (${VIEWPORT_SIZE.mobile}) {
     grid: '. . .';

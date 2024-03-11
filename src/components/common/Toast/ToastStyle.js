@@ -1,7 +1,7 @@
 import styled, { keyframes, css } from 'styled-components';
+import { ReactComponent as CloseSvg } from '../../../assets/icons/toast/close.svg';
 import { ReactComponent as CompletedSvg } from '../../../assets/icons/toast/completed.svg';
 import { ReactComponent as FailedSvg } from '../../../assets/icons/toast/failed.svg';
-import { ReactComponent as CloseSvg } from '../../../assets/icons/toast/close.svg';
 import { VIEWPORT_SIZE } from '../../../constants/viewportSize';
 
 const slideUp = keyframes`

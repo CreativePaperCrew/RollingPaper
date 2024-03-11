@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 import { getfontStyle } from '../../FontStyle';
 import { Button } from '../BackgroundTypeSelectButton/BackgroundTypeSelectButtonStyle';
-import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const ModalBackground = styled.div`
   position: fixed;

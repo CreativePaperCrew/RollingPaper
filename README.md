@@ -73,7 +73,7 @@
 
 ### ✔️ Library
 
-Emoji Picker / React Quill / Quill delta to HTML converter / React-Loading-Skeleton
+Emoji-Picker-React / React Quill / Quill delta to HTML converter / React-Loading-Skeleton
 
 </div>
 

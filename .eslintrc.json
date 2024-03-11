@@ -15,6 +15,7 @@
     "react/jsx-key": "warn",
     "react/self-closing-comp": "warn",
     "react/jsx-curly-brace-presence": "warn",
+    "react-hooks/exhaustive-deps": "off",
     "prettier/prettier": [
       "error",
       {

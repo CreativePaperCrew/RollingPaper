@@ -1,20 +1,12 @@
 import useToggle from '../../hooks/useToggle';
-import Toast from '../common/Toast/Toast';
 import shareIconSvg from '../../assets/icons/share.svg';
 import * as S from './ShareButtonStyle';
-import useToast from '../../hooks/useToast';
 import { useEffect } from 'react';
+import { useToastContext } from '../../contexts/ToastContext';
 
 const ShareButton = ({ recipientsId }) => {
+  const { showToast } = useToastContext();
   const KAKAOJSKEY = process.env.REACT_APP_KAKAOJSKEY;
-  const {
-    shouldRender,
-    isShown,
-    isSuccess,
-    showToast,
-    startHidingToast,
-    message,
-  } = useToast();
   const { isOpen, toggleRef, handleToggle, handleClose } = useToggle();
 
   const hostAddress = window.location.origin;
@@ -60,30 +52,19 @@ const ShareButton = ({ recipientsId }) => {
   }, []);
 
   return (
-    <>
-      <S.ShareButtonContainer onClick={handleToggle} ref={toggleRef}>
-        <S.ShareIcon src={shareIconSvg} alt="share icon" />
-        {isOpen && (
-          <S.ShareDropdown>
-            <S.ShareOption onClick={() => handleShareKakaoClick()}>
-              카카오톡 공유
-            </S.ShareOption>
-            <S.ShareOption onClick={() => handleShareURLClick()}>
-              URL 공유
-            </S.ShareOption>
-          </S.ShareDropdown>
-        )}
-      </S.ShareButtonContainer>
-      {shouldRender && (
-        <Toast
-          shouldRender={shouldRender}
-          isShown={isShown}
-          isSuccess={isSuccess}
-          message={message}
-          startHidingToast={startHidingToast}
-        />
+    <S.ShareButtonContainer onClick={handleToggle} ref={toggleRef}>
+      <S.ShareIcon src={shareIconSvg} alt="share icon" />
+      {isOpen && (
+        <S.ShareDropdown>
+          <S.ShareOption onClick={() => handleShareKakaoClick()}>
+            카카오톡 공유
+          </S.ShareOption>
+          <S.ShareOption onClick={() => handleShareURLClick()}>
+            URL 공유
+          </S.ShareOption>
+        </S.ShareDropdown>
       )}
-    </>
+    </S.ShareButtonContainer>
   );
 };
 

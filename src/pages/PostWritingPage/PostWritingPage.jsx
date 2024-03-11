@@ -9,8 +9,10 @@ import Button from '../../components/common/Buttons/Button/Button';
 import Input from '../../components/Input/Input';
 import SelectionDropdown from '../../components/SelectionDropdown/SelectionDropdown';
 import TextEditor from '../../components/TextEditor/TextEditor';
+import { useToastContext } from '../../contexts/ToastContext';
 
 const PostWritingPage = () => {
+  const { showToast } = useToastContext();
   const [senderName, setSenderName] = useState('');
   const [profileImageUrls, setProfileImageUrls] = useState([]);
   const [imageLoading, setImageLoading] = useState({});
@@ -62,9 +64,10 @@ const PostWritingPage = () => {
         content,
         font,
       );
+      showToast(true, `${sender}에 대한 롤링페이퍼를 생성하였습니다.`);
       navigate('/post/' + id);
     } catch (error) {
-      alert(error.message);
+      showToast(false, error.message);
     }
   };
 

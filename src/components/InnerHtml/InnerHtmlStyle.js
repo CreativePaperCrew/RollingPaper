@@ -4,10 +4,14 @@ import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 const CardHtmlContent = css`
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    -webkit-line-clamp: 2;
+  }
 `;
 
 const ModalHtmlContent = css`

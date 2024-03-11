@@ -2,27 +2,34 @@
 
 # CreativePaperCrew
 
+```
 추억의 롤링 페이퍼를 웹 상에서도 즐길 수 있는 플랫폼인 '롤링 페이퍼' 서비스
-<br/>
-[CreativePaperCrew 노션 방문하기](https://www.notion.so/PROJECT-Rolling-7dfd660644394cefbfbd0ede6d9b999f)
+```
 
 # 🔗 프로젝트 링크
 
-> [Rolling Paper 방문하기](http://rolling-paper-pi.vercel.app)
+> http://rolling-paper-pi.vercel.app
 
 # 📅 개발 기간
 
-24.02.24~24.03.11
+> 24.02.24 ~ 24.03.11
 
 # 💁🏻‍♀팀원 소개💁🏻‍♂
 
-<table>
+<table border ="1"> 
   <tr>
-    <td height="160px" align="center"><a href="https://github.com/Trophy198"><img src="https://avatars.githubusercontent.com/u/100824183?v=4" width="160px"/><br/>FE_구승모</a></td> 
-    <td height="160px" align="center"><a href="https://github.com/NJ97S"><img src="https://avatars.githubusercontent.com/u/79499733?v=4" width="160px"/><br/>FE_소남주</a></td> 
-    <td height="160px" align="center"><a href="https://github.com/yeona813"><img src="https://avatars.githubusercontent.com/u/129318957?v=4" width="160px"/><br/>FE_안연아</a></td> 
-    <td height="160px" align="center"><a href="https://github.com/vinoankr"><img src="https://avatars.githubusercontent.com/u/88578367?v=4" width="160px"/><br/>FE_안주언</a></td> 
-    <td height="160px" align="center"><a href="https://github.com/JaeBeen95"><img src="https://avatars.githubusercontent.com/u/108844881?v=4" width="160px"/><br/>FE_이재빈</a></td> 
+    <td height="160px" align="center"><img src="https://avatars.githubusercontent.com/u/100824183?v=4" width="160px"/></td> 
+    <td height="160px" align="center"><img src="https://avatars.githubusercontent.com/u/79499733?v=4" width="160px"/></td> 
+    <td height="160px" align="center"><img src="https://avatars.githubusercontent.com/u/129318957?v=4" width="160px"/></td> 
+    <td height="160px" align="center"><img src="https://avatars.githubusercontent.com/u/88578367?v=4" width="160px"/></td> 
+    <td height="160px" align="center"><img src="https://avatars.githubusercontent.com/u/108844881?v=4" width="160px"/></td> 
+  </tr>
+    <tr>
+    <td align="center"><a href="https://github.com/Trophy198">FE_구승모</a></td> 
+    <td align="center"><a href="https://github.com/NJ97S">FE_소남주</a></td> 
+    <td align="center"><a href="https://github.com/yeona813">FE_안연아</a></td> 
+    <td align="center"><a href="https://github.com/vinoankr">FE_안주언</a></td> 
+    <td align="center"><a href="https://github.com/JaeBeen95">FE_이재빈</a></td> 
   </tr>
 </table>
 
@@ -30,19 +37,29 @@
 
 ### ✔️ Frontend
 
+<div align="center">
+
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> 
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+
+</br>
+
 <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white">
 <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white">
 <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white">
 
+</div>
+
 ### ✔️ Tools
 
-<img src="https://img.shields.io/badge/visual%20studio%20code-0074cc?style=for-the-badge&logo=visualstudiocode&logoColor=white">
+<div align="center">
+
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
 <img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white">
+
+</div>
 
 ### ✔️ Library
 
@@ -82,14 +99,47 @@
   </tr>
 </table>
 
-# 🛠 주요 기능
+# ⚒️ 주요 기능
 
-### Card Slide
+## Card Slide
 
-### Emoji Library
+<img src ="https://cdn.discordapp.com/attachments/1048586775553130587/1216661509468590160/bandicam_2024-03-11_16-38-01-950-ezgif.com-video-to-gif-converter.gif?ex=66013354&is=65eebe54&hm=4994d8231be03ec03cd2752cbf57d6a753ee5c6a6c9951b5435cb0a5cccd3cca&"/>
+<img src ="https://cdn.discordapp.com/attachments/1048586775553130587/1216661586786254908/bandicam_2024-03-11_16-39-34-707-ezgif.com-video-to-gif-converter.gif?ex=66013366&is=65eebe66&hm=d724bea1c581065e25622f849695f326100b919146457a197f0031f6a0cdb9fe&"/>
 
-### Toast
+## Emoji Library
 
-### Infinite Scroll
+<img src ="https://media.discordapp.net/attachments/1048586775553130587/1216661584571662406/bandicam_2024-03-11_16-44-44-609-ezgif.com-video-to-gif-converter.gif?ex=66013366&is=65eebe66&hm=b989754f29bb3260d0b644303ba29335694db8762f3e8a604e29554ae0af1311&=&width=750&height=322"/>
 
-### Text editor
+## Toast
+
+<img src ="https://media.discordapp.net/attachments/1048586775553130587/1216661586148855868/bandicam_2024-03-11_16-41-55-254-ezgif.com-video-to-gif-converter.gif?ex=66013366&is=65eebe66&hm=9c74f24407ab46e28bf37596ecb4b6f201f8cc06b8efb0bd2968252f10fbecdc&=&width=750&height=443"/>
+
+## Infinite Scroll
+
+<img src ="https://media.discordapp.net/attachments/1048586775553130587/1216661585603334244/4085a81481122185-ezgif.com-video-to-gif-converter.gif?ex=66013366&is=65eebe66&hm=f9da2131e4cf340448d099ff72bf0d7d52f0b1a23a00b2d354573f0df97e5fea&=&width=750&height=532"/>
+
+## Text editor
+
+<img src ="https://media.discordapp.net/attachments/1048586775553130587/1216661583883669546/bandicam_2024-03-11_16-53-30-354-ezgif.com-video-to-gif-converter.gif?ex=66013366&is=65eebe66&hm=55edfc0e34884b6c500a0aa4c915f2be6fec3201496df806a0a8fc938f830eaa&=&width=750&height=428"/>
+
+# 🙏 팀 문화
+
+1. 매일 팀 미팅을 가져요
+
+- 오전 11시에 디스코드에 모여 미팅으로 하루를 시작해요
+- 오늘 업무와 업무 진행 사항을 이야기 해요
+
+2. 매주 함께 회고해요
+
+- 매주 일요일까지 주간 회고를 작성해요
+- KPT를 작성하여 회고를 진행해요
+
+3. 데일리 스크럼을 작성해요
+
+- 요일 별 각자 할 일과 연락이 안되는 시간을 작성해요
+
+4. 의견을 자유롭게 이야기하고, 피드백을 적극 반영해요
+
+- 추가 구현 사항이나 코드 개선 사항을 이야기해요
+
+> [CreativePaperCrew 노션 방문하기](https://www.notion.so/PROJECT-Rolling-7dfd660644394cefbfbd0ede6d9b999f)

@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { getfontStyle } from '../../FontStyle';
 import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 const fadeInUpKeyframes = css`

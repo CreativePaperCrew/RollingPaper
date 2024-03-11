@@ -8,7 +8,7 @@ export const ArrowContainer = styled.div`
   background: rgba(255, 255, 255, 0.9);
   border-radius: 50%;
   border: 1px solid var(--gray-300);
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 `;
 
 export const ArrowImg = styled.img`

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 import { getFontStyle } from '../../FontStyle';
 import { Button } from '../BackgroundTypeSelectButton/BackgroundTypeSelectButtonStyle';
-import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const ModalBackground = styled.div`
   position: fixed;
@@ -39,7 +39,7 @@ export const ModalContainer = styled.div`
 export const ModalCloseButton = styled(Button)`
   position: absolute;
   left: 15rem;
-  bottom: 2.5rem;
+  bottom: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +64,7 @@ export const ProfileImgContainer = styled.div`
   width: 3.5rem;
   height: 3.5rem;
   border: 1px solid var(--gray-200);
-  border-radius: 100px;
+  border-radius: 100%;
   background-color: var(--white);
 `;
 

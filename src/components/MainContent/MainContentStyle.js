@@ -20,7 +20,7 @@ export const MainContentContainer = styled.main`
 export const FirstContent = styled.section`
   display: flex;
   padding: 3.75rem 0 3.75rem 3.75rem;
-  border-radius: 1rem;
+  border-radius: 16px;
   background: var(--surface);
   gap: 9.5rem;
   overflow: hidden;

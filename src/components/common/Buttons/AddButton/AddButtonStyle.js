@@ -11,6 +11,6 @@ export const AddButtonContainer = styled.button`
   width: 3.5rem;
   height: 3.5rem;
   border: none;
-  border-radius: 6.25rem;
+  border-radius: 100%;
   background: var(--gray-500);
 `;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const BUTTON_SIZE = {
   small: {
     padding: '0.4375rem 1rem',
-    borderRadius: '0.375rem',
+    borderRadius: '6px',
     fontSize: 'var(--font-16)',
     fontWeight: 'var(--font-regular)',
     letterSpacing: '-0.01rem',
@@ -11,7 +11,7 @@ const BUTTON_SIZE = {
   },
   medium: {
     padding: '0.875rem 1.5rem',
-    borderRadius: '0.75rem',
+    borderRadius: '12px',
     fontSize: 'var(--font-18)',
     fontWeight: 'var(--font-bold)',
     letterSpacing: '-0.0112rem',
@@ -19,7 +19,7 @@ const BUTTON_SIZE = {
   },
   large: {
     padding: '0.875rem 1.5rem',
-    borderRadius: '0.75rem',
+    borderRadius: '12px',
     fontSize: 'var(--font-18)',
     fontWeight: 'var(--font-bold)',
     letterSpacing: '-0.0112rem',

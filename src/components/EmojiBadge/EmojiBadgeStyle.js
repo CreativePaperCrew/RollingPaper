@@ -7,7 +7,7 @@ export const EmojiBadgeContainer = styled.div`
   padding: 0.5rem 0.75rem;
   align-items: center;
   gap: 0.125rem;
-  border-radius: 2rem;
+  border-radius: 32px;
   background: rgba(0, 0, 0, 0.54);
 
   @media (${VIEWPORT_SIZE.mobile}) {

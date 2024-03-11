@@ -6,7 +6,7 @@ export const CardContainer = styled.article`
   width: 17.8125rem;
   height: 16.25rem;
   flex-shrink: 0;
-  border-radius: 1rem;
+  border-radius: 16px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   ${(props) =>
     props.$backgroundImageURL
@@ -18,7 +18,7 @@ export const CardContainer = styled.article`
       : `background: ${props.color};`}
   background-size: cover;
   background-position: center;
-  box-shadow: 0 0.125rem 0.75rem 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
   padding: 1.875rem 1.5rem 1.25rem;
   @media (${VIEWPORT_SIZE.mobile}) {
     width: 13rem;

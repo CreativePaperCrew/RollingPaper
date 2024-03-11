@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
@@ -27,6 +26,7 @@ const RecipientsPage = () => {
   const [isDelete, setIsDelete] = useState(false);
   const [deleteButtonText, setDeleteButtonText] = useState('삭제하기');
   const [showArrow, setShowArrow] = useState(true);
+  const [messageCount, setMessageCount] = useState(0);
 
   const { data: recipientData, error: recipientError } = useFetchData(
     getRecipientRollingPapers,
@@ -77,10 +77,17 @@ const RecipientsPage = () => {
     }
   }, [recipientError, navigate]);
 
+  useEffect(() => {
+    if (recipientData) {
+      setMessageCount(recipientData.messageCount);
+    }
+  }, [recipientData]);
+
   const onDelete = useCallback(
     async (id) => {
       await deleteRollingPaperMessage(id);
       setData((prevData) => prevData.filter((message) => message.id !== id));
+      setMessageCount((prevCount) => prevCount - 1);
     },
     [setData],
   );
@@ -101,10 +108,15 @@ const RecipientsPage = () => {
 
   return (
     <>
-      <ServiceHeader recipientData={recipientData} />
-      <S.EditContainer onClick={toggleDelete}>
+      <ServiceHeader
+        recipientData={recipientData}
+        messageCount={messageCount}
+      />
+      <S.EditContainer>
         <S.DeleteContainer>
-          <S.DeleteButton size="medium">{deleteButtonText}</S.DeleteButton>
+          <S.DeleteButton size="small" onClick={toggleDelete}>
+            {deleteButtonText}
+          </S.DeleteButton>
         </S.DeleteContainer>
       </S.EditContainer>
       <S.RecipientsBackground

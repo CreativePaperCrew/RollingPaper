@@ -108,4 +108,9 @@ export const SkeletonImage = styled(Skeleton)`
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 70%;
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 `;

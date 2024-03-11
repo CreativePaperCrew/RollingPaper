@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getfontStyle } from '../../FontStyle';
+import { getFontStyle } from '../../FontStyle';
 import { Button } from '../BackgroundTypeSelectButton/BackgroundTypeSelectButtonStyle';
 import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
@@ -89,7 +89,7 @@ export const Content = styled.p`
   color: var(--gray-600);
   font-size: var(--font-18);
   line-height: 1.75rem;
-  ${(props) => getfontStyle(props.$font)}
+  ${(props) => getFontStyle(props.$font)}
   overflow: scroll;
   overflow-x: hidden;
 

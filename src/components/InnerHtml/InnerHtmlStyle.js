@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { getfontStyle } from '../../FontStyle';
+import { getFontStyle } from '../../FontStyle';
 import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 const CardHtmlContent = css`
@@ -48,7 +48,7 @@ export const HtmlContent = styled.div`
   ${({ $isCard }) => ($isCard ? CardHtmlContent : ModalHtmlContent)}
 
   & * {
-    ${(props) => getfontStyle(props.$font)}
+    ${(props) => getFontStyle(props.$font)}
   }
 
   @media (${VIEWPORT_SIZE.mobile}) {

@@ -127,7 +127,7 @@ Emoji-Picker-React / React Quill / Quill delta to HTML converter / React-Loading
 
 ## Infinite Scroll
 
-<img src ="https://media.discordapp.net/attachments/1048586775553130587/1216661585603334244/4085a81481122185-ezgif.com-video-to-gif-converter.gif?ex=66013366&is=65eebe66&hm=f9da2131e4cf340448d099ff72bf0d7d52f0b1a23a00b2d354573f0df97e5fea&=&width=750&height=532"/>
+<img src ="https://cdn.discordapp.com/attachments/1210043991345725460/1216743287566762044/image.gif?ex=66017f7d&is=65ef0a7d&hm=ddbbf57cb0cacb52cbcae0641b417bb6f1e4e17286e659beffe040387f9d2d3a&"/>
 
 ## Text editor
 

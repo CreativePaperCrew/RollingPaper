@@ -13,7 +13,7 @@ import {
 } from '../../apis/recipientRollingPaperApi';
 import usePostData from '../../hooks/usePostData';
 
-const ServiceHeader = ({ recipientData }) => {
+const ServiceHeader = ({ recipientData, messageCount }) => {
   const { id } = useParams();
   const {
     data: reactionsData,
@@ -48,7 +48,7 @@ const ServiceHeader = ({ recipientData }) => {
           <S.HorizontalBar $onlyMobile={true} />
           <S.OptionArea>
             <WritersList
-              messageCount={recipientData.messageCount}
+              messageCount={messageCount}
               recentMessages={recipientData.recentMessages}
               $onlyDesktop={true}
             />

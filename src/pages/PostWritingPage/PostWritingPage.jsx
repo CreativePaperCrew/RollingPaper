@@ -13,6 +13,7 @@ import TextEditor from '../../components/TextEditor/TextEditor';
 const PostWritingPage = ({ edit = false }) => {
   const [senderName, setSenderName] = useState('');
   const [profileImageUrls, setProfileImageUrls] = useState([]);
+  const [imageLoading, setImageLoading] = useState({});
   const [selectedImageUrl, setSelectedImageUrl] = useState(null);
   const [contents, setContents] = useState('');
   const [selectedInfo, setSelectedInfo] = useState({
@@ -29,6 +30,10 @@ const PostWritingPage = ({ edit = false }) => {
 
   const handleImageClick = (url) => {
     setSelectedImageUrl(url);
+  };
+
+  const handleImageLoading = (url) => {
+    setImageLoading((prev) => ({ ...prev, [url]: false }));
   };
 
   const handleOptionClick = (type, option) => {
@@ -68,6 +73,9 @@ const PostWritingPage = ({ edit = false }) => {
       .then((res) => {
         setProfileImageUrls(res.imageUrls);
         setSelectedImageUrl(res.imageUrls[0]);
+        res.imageUrls.forEach((url) => {
+          setImageLoading((prev) => ({ ...prev, [url]: true }));
+        });
       })
       .catch((error) => alert(error.message));
   }, []);
@@ -97,11 +105,15 @@ const PostWritingPage = ({ edit = false }) => {
               <S.ProfileMessage>프로필 이미지를 선택해주세요</S.ProfileMessage>
               <S.ImageList>
                 {profileImageUrls?.map((url) => (
-                  <S.AvaliableImages
-                    src={url}
-                    key={url}
-                    onClick={() => handleImageClick(url)}
-                  />
+                  <S.EmptyBox key={url}>
+                    <S.AvailableImage
+                      src={url}
+                      onClick={() => handleImageClick(url)}
+                      onLoad={() => handleImageLoading(url)}
+                      $loading={imageLoading[url] && 'none'}
+                    />
+                    {imageLoading[url] && <S.SkeletonImage />}
+                  </S.EmptyBox>
                 ))}
               </S.ImageList>
             </S.ImageSelector>

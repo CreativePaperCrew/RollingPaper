@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { getfontStyle } from '../../FontStyle';
+import { getFontStyle } from '../../FontStyle';
 import { Button } from '../BackgroundTypeSelectButton/BackgroundTypeSelectButtonStyle';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const ModalBackground = styled.div`
   position: fixed;
@@ -15,26 +16,33 @@ export const ModalBackground = styled.div`
   z-index: 999;
 `;
 
-export const ModalContent = styled.div`
-  position: relative;
+export const ModalContainer = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--white);
   width: 37.5rem;
   height: 29.75rem;
-  display: flex;
   padding: 2.5rem;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  border-radius: 0.9375rem;
-  border: 1px solid #dee2e6;
-  background: #fff;
-  z-index: 1000;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  z-index: 999;
 
-  @media (max-width: 600px) {
-    width: 90%;
+  @media (${VIEWPORT_SIZE.mobile}) {
+    width: 21.25rem;
+    height: 18.4375rem;
+    padding: 1.25rem;
   }
 `;
 
 export const ModalCloseButton = styled(Button)`
+  position: absolute;
+  left: 15rem;
+  bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--white);
   background: var(--purple-600);
   font-size: var(--font-16);
@@ -42,42 +50,11 @@ export const ModalCloseButton = styled(Button)`
   &:hover {
     background: var(--purple-700);
   }
-`;
 
-export const PostCardContainer = styled.div`
-  width: 20rem;
-  height: 14.375rem;
-  padding: 1.75rem 1.5rem;
-  border-radius: 16px;
-  background: var(--white);
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
-  cursor: pointer;
-
-  @media (min-width: 768px) {
-    width: 22rem;
-    height: 17.75rem;
+  @media (${VIEWPORT_SIZE.mobile}) {
+    left: 6.6875rem;
+    bottom: 1.125rem;
   }
-
-  @media (min-width: 1248px) {
-    width: 24rem;
-    height: 17.5rem;
-  }
-`;
-
-export const CardTop = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  gap: 0.9375rem;
-  width: 100%;
-  padding-bottom: 0.9375rem;
-  border-bottom: 1px solid var(--gray-200);
-`;
-
-export const CardProfile = styled.div`
-  display: flex;
-  gap: 0.875rem;
 `;
 
 export const ProfileImgContainer = styled.div`
@@ -96,69 +73,53 @@ export const ProfileImg = styled.img`
   border-radius: 100%;
 `;
 
-export const AuthorContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.375rem;
-`;
-
-export const AuthorTitle = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 0.375rem;
-`;
-
-export const AuthorFrom = styled.span`
-  color: var(--black);
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.75rem;
-`;
-
-export const Author = styled.p`
-  width: 6.25rem;
-  color: var(--black);
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.625rem;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-
-  @media (min-width: 768px) {
-    width: 8.125rem;
-  }
-`;
-
 export const ContentContainer = styled.div`
   height: 15rem;
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    height: 7rem;
+  }
 `;
 
 export const Content = styled.p`
   width: 100%;
-  height: 100%;
-  padding-right: 0.5rem;
+  height: 15rem;
+  margin-top: 1rem;
+  padding-right: 0.9375rem;
   color: var(--gray-600);
-  font-size: var(--font-15);
-  ${(props) => getfontStyle(props.$font)}
-  line-height: 1.5rem;
-  overflow: auto;
+  font-size: var(--font-18);
+  line-height: 1.75rem;
+  ${(props) => getFontStyle(props.$font)}
+  overflow: scroll;
+  overflow-x: hidden;
 
-  @media (min-width: 768px) {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+  &::-webkit-scrollbar {
+    width: 0.3125rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--gray-300);
+    border-radius: 12px;
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    height: 6.625rem;
+    line-height: 1.5rem;
+    font-size: var(--font-15);
   }
 `;
 
 export const CardDate = styled.span`
   position: absolute;
-  top: 4.7rem;
-  right: 2.5rem;
+  top: 3.5rem;
+  right: 2rem;
   color: var(--gray-400);
-  font-size: var(--font-14);
+  font-size: var(--font-12);
   line-height: 1.125rem;
-  @media (max-width: 768px) {
-    right: 2rem;
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    right: 2.8125rem;
   }
 `;

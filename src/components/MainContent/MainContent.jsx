@@ -1,6 +1,6 @@
 import * as S from './MainContentStyle';
-import mainimg1 from '../../assets/images/mainImg1.png';
-import mainimg2 from '../../assets/images/mainImg2.png';
+import mainimg1 from '../../assets/images/mainImg1.webp';
+import mainimg2 from '../../assets/images/mainImg2.webp';
 
 const MainContent = () => {
   return (
@@ -23,9 +23,10 @@ const MainContent = () => {
         <S.TextContainer>
           <S.PointButton>Point. 02</S.PointButton>
           <S.DescriptionContainer>
-            <S.EmojiDescription>
-              서로에게 이모지로 감정을 표현해보세요
-            </S.EmojiDescription>
+            <S.MainDescription>
+              서로에게 이모지로 감정을
+              <S.LineBreak /> 표현해보세요
+            </S.MainDescription>
             <S.SubDescription>
               롤링 페이퍼에 이모지를 추가할 수 있어요.
             </S.SubDescription>

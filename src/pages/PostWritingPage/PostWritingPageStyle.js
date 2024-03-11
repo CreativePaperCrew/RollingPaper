@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { VIEWPORT_SIZE } from '../../constants/viewportSize';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 export const Container = styled.div`
   display: flex;
@@ -10,13 +12,13 @@ export const Container = styled.div`
 
 export const LeftAlignFrame = styled.div`
   display: flex;
-  gap: 3.125rem;
   flex-direction: column;
   align-items: left;
   width: 45rem;
+  gap: 3.125rem;
 
   @media (${VIEWPORT_SIZE.mobile}) {
-    width: 330px;
+    width: 20.625rem;
   }
 `;
 
@@ -75,10 +77,15 @@ export const ImageList = styled.div`
   }
 `;
 
-export const AvaliableImages = styled.img`
+export const EmptyBox = styled.div`
+  display: block;
+`;
+
+export const AvailableImage = styled.img`
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 70%;
+  display: ${({ $loading }) => $loading};
 
   &:hover {
     cursor: pointer;
@@ -98,5 +105,16 @@ export const MarginFrame = styled.div`
   @media (${VIEWPORT_SIZE.mobile}) {
     margin-top: 12.875rem;
     margin-bottom: 1.5rem;
+  }
+`;
+
+export const SkeletonImage = styled(Skeleton)`
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 70%;
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 `;

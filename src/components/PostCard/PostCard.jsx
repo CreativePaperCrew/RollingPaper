@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Badge from '../Badge/Badge';
 import * as S from './PostCardStyle';
 import deleteImg from '../../assets/icons/deleted.svg';
@@ -7,9 +7,18 @@ import { formatKSTDate } from '../../utils/formatKSTDate';
 import InnerHtml from '../InnerHtml/InnerHtml';
 
 const PostCard = ({ cardData, onClick, onEdit, onDelete, isDelete }) => {
-  const { content, createdAt, font, profileImageURL, relationship, sender } =
-    cardData;
-
+  const [isJson, setIsJson] = useState(false);
+  const [runAnimation, setRunAnimation] = useState(true);
+  const {
+    id,
+    content,
+    createdAt,
+    font,
+    profileImageURL,
+    relationship,
+    sender,
+  } = cardData;
+  
   const handleDelete = (e) => {
     e.stopPropagation();
     onDelete();
@@ -20,8 +29,25 @@ const PostCard = ({ cardData, onClick, onEdit, onDelete, isDelete }) => {
     onEdit();
   };
 
+  useEffect(() => {
+    try {
+      JSON.parse(content);
+      setIsJson(true);
+    } catch (error) {
+      setIsJson(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setRunAnimation(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <S.PostCardContainer onClick={onClick}>
+    <S.PostCardContainer onClick={onClick} $runAnimation={runAnimation}>
       <S.PostCardTop>
         <S.PostCardProfile>
           {isDelete ? (
@@ -44,7 +70,7 @@ const PostCard = ({ cardData, onClick, onEdit, onDelete, isDelete }) => {
         </S.PostCardProfile>
       </S.PostCardTop>
       <S.ContentContainer>
-        <InnerHtml content={content} font={font} />
+        {isJson && <InnerHtml content={content} font={font} isCard={true} />}
       </S.ContentContainer>
       <S.PostCardDate>{formatKSTDate(createdAt)}</S.PostCardDate>
     </S.PostCardContainer>

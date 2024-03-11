@@ -2,12 +2,12 @@ import { QuillDeltaToHtmlConverter } from 'quill-delta-to-html';
 import * as S from './InnerHtmlStyle';
 import DOMPurify from 'dompurify';
 
-const InnerHtml = ({ content, font }) => {
+const InnerHtml = ({ content, font, isCard }) => {
+  const jsonData = JSON.parse(content).ops;
+
   const cfg = {
     inlineStyles: true,
   };
-
-  const jsonData = JSON.parse(content).ops;
 
   const converter = new QuillDeltaToHtmlConverter(jsonData, cfg);
 
@@ -16,6 +16,7 @@ const InnerHtml = ({ content, font }) => {
   return (
     <S.HtmlContent
       $font={font}
+      $isCard={isCard}
       dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
     />
   );

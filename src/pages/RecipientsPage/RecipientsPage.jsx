@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
@@ -23,10 +22,10 @@ const RecipientsPage = () => {
   const [selectedCardData, setSelectedCardData] = useState(null);
   const LIMIT = 8;
   const [offset, setOffset] = useState(0);
-  const [count, setCount] = useState(null);
   const [data, setData] = useState([]);
   const [isDelete, setIsDelete] = useState(false);
   const [deleteButtonText, setDeleteButtonText] = useState('삭제하기');
+  const [showArrow, setShowArrow] = useState(true);
 
   const { data: recipientData, error: recipientError } = useFetchData(
     getRecipientRollingPapers,
@@ -44,17 +43,21 @@ const RecipientsPage = () => {
     }
   };
 
+  const FETCHED_CARD_COUNT = messagesData?.results.length;
   const observedRef = useIntersectionObserver(
     getMoreCardData,
-    { threshold: 0.5 },
-    messagesData?.results.length >= LIMIT,
+    {
+      threshold: 0.5,
+    },
+    FETCHED_CARD_COUNT >= LIMIT,
   );
 
   const fetchData = async () => {
-    if (offset >= count) {
+    const CHANGE_COUNT = messagesData?.count - LIMIT;
+    if (CHANGE_COUNT <= offset) {
+      setShowArrow(false);
       return;
     }
-    setCount(messagesData.count);
   };
 
   useEffect(() => {
@@ -104,29 +107,36 @@ const RecipientsPage = () => {
       <ServiceHeader recipientData={recipientData} />
       <S.EditContainer onClick={toggleDelete}>
         <S.DeleteContainer>
-          <S.DeleteButton size="medium">{deleteButtonText}</S.DeleteButton>
+          <S.DeleteButton size="small">{deleteButtonText}</S.DeleteButton>
         </S.DeleteContainer>
       </S.EditContainer>
-      <S.RecipientsCardsContainer
+      <S.RecipientsBackground
         $backgroundColor={backgroundColor}
         $backgroundImageURL={recipientData?.backgroundImageURL}
       >
-        <AddPostCard />
-        {data?.map((postCard) => (
-          <PostCard
-            onEdit={() => handleEdit(postCard.id)}
-            onDelete={() => handleDelete(postCard.id)}
-            onClick={() => handleCardClick(postCard)}
-            key={postCard.id}
-            cardData={postCard}
-            isDelete={isDelete}
-          />
-        ))}
-        <S.TargetedLine ref={observedRef} />
+        {showArrow && (
+          <S.ArrowContainer>
+            <S.ArrowDown />
+          </S.ArrowContainer>
+        )}
+        <S.RecipientsCardsContainer>
+          <AddPostCard />
+          {data?.map((postCard) => (
+            <PostCard
+              onEdit={() => handleEdit(postCard.id)}
+              onDelete={() => onDelete(postCard.id)}
+              onClick={() => handleCardClick(postCard)}
+              key={postCard.id}
+              cardData={postCard}
+              isDelete={isDelete}
+            />
+          ))}
+          <S.TargetedLine ref={observedRef} />
+        </S.RecipientsCardsContainer>
         {isOpen && (
           <CardModal cardData={selectedCardData} onClose={handleClose} />
         )}
-      </S.RecipientsCardsContainer>
+      </S.RecipientsBackground>
     </>
   );
 };

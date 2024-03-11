@@ -1,17 +1,23 @@
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const ServiceHeaderContainer = styled.div`
+  width: 100%;
+  background-color: var(--white);
+`;
+
+export const ServiceHeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 75rem;
   margin: 0.8125rem auto;
-  @media (max-width: 78rem) {
+  @media (${VIEWPORT_SIZE.tablet}) {
     width: 100%;
     padding: 0 1.5rem;
     margin: 0.8125rem 0;
   }
-  @media (max-width: 48rem) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     width: 100%;
     padding: 0 1.25rem;
     flex-direction: column;
@@ -25,7 +31,7 @@ export const HorizontalBar = styled.div`
   background-color: #ededed;
   flex-shrink: 0;
   ${(props) => (props.$onlyMobile ? 'display: none;' : '')}
-  @media (max-width: 48rem) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     ${(props) => (props.$onlyMobile ? 'display: block;' : '')}
   }
 `;
@@ -39,8 +45,7 @@ export const NameArea = styled.div`
   font-weight: 600;
   line-height: 2.625rem;
   letter-spacing: -0.0175rem;
-
-  @media (max-width: 48rem) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     width: 20rem;
     height: 3.25rem;
     justify-content: flex-start;
@@ -52,7 +57,7 @@ export const OptionArea = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 48rem) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     width: 20rem;
     height: 3.25rem;
     justify-content: flex-start;
@@ -65,7 +70,7 @@ export const VerticalBar = styled.div`
   background: var(--gray-200);
   margin: 0 ${(props) => props.$margin};
   ${(props) => (props.$onlyMobile ? 'display: none;' : 'display: block;')}
-  @media (max-width: 48rem) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     ${(props) => (props.$onlyMobile ? 'display: block;' : 'display: none;')}
   }
 `;

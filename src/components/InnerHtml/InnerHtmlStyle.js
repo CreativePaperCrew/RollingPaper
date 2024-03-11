@@ -1,25 +1,58 @@
-import styled from 'styled-components';
-import { getfontStyle } from '../../FontStyle';
+import styled, { css } from 'styled-components';
+import { getFontStyle } from '../../FontStyle';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
-export const HtmlContent = styled.div`
+const CardHtmlContent = css`
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  width: 100%;
-  color: var(--gray-600, #4a4a4a);
-  font-size: var(--font-15);
-  line-height: 1.5rem;
   overflow: hidden;
   text-overflow: ellipsis;
-  list-style: inside;
+`;
 
-  & * {
-    ${(props) => getfontStyle(props.$font)}
+const ModalHtmlContent = css`
+  width: 100%;
+  height: 15rem;
+  margin-top: 1rem;
+  padding-right: 0.9375rem;
+  overflow: scroll;
+  overflow-x: hidden;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+
+  &::-webkit-scrollbar {
+    width: 0.3125rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--gray-300);
+    border-radius: 12px;
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
   }
 
-  @media (min-width: 768px) {
-    -webkit-line-clamp: 3;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+  @media (${VIEWPORT_SIZE.mobile}) {
+    height: 100%;
+    font-size: var(--font-15);
+    line-height: 1.5rem;
+  }
+`;
+
+export const HtmlContent = styled.div`
+  width: 100%;
+  color: var(--gray-600, #4a4a4a);
+  font-size: var(--font-18);
+  line-height: 1.75rem;
+  list-style: inside;
+  -webkit-line-clamp: 3;
+  ${({ $isCard }) => ($isCard ? CardHtmlContent : ModalHtmlContent)}
+
+  & * {
+    ${(props) => getFontStyle(props.$font)}
+  }
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    font-size: var(--font-15);
+    line-height: 1.5rem;
   }
 `;

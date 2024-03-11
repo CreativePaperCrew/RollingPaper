@@ -15,5 +15,5 @@ const fontFamilies = {
   `,
 };
 
-export const getfontStyle = (fontName) =>
+export const getFontStyle = (fontName) =>
   fontFamilies[fontName] || fontFamilies.Pretendard;

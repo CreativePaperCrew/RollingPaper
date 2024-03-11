@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { VIEWPORT_SIZE } from '../../../constants/viewportSize';
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.article`
   position: relative;
   width: 17.8125rem;
   height: 16.25rem;

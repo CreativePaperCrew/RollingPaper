@@ -21,8 +21,6 @@ function useFetchData(apiFunction, params = []) {
     } finally {
       setIsLoading(false);
     }
-    // params의 변화에 따라 fetchData를 재실행하기 위해 의존성 배열에 포함
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [apiFunction, ...params]);
 
   useEffect(() => {

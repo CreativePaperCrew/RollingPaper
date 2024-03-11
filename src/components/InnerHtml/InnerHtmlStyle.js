@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { VIEWPORT_SIZE } from '../../constants/viewportSize';
-import { getfontStyle } from '../../FontStyle';
+import { getFontStyle } from '../../FontStyle';
 
 const CardHtmlContent = css`
   display: -webkit-box;
@@ -48,7 +48,7 @@ export const HtmlContent = styled.div`
   ${({ $isCard }) => ($isCard ? CardHtmlContent : ModalHtmlContent)}
 
   & * {
-    ${(props) => getfontStyle(props.$font)}
+    ${(props) => getFontStyle(props.$font)}
   }
 
   @media (${VIEWPORT_SIZE.mobile}) {

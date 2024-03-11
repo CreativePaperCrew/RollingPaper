@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import {
@@ -102,9 +101,11 @@ const RecipientsPage = () => {
   return (
     <>
       <ServiceHeader recipientData={recipientData} />
-      <S.EditContainer onClick={toggleDelete}>
+      <S.EditContainer>
         <S.DeleteContainer>
-          <S.DeleteButton size="medium">{deleteButtonText}</S.DeleteButton>
+          <S.DeleteButton size="small" onClick={toggleDelete}>
+            {deleteButtonText}
+          </S.DeleteButton>
         </S.DeleteContainer>
       </S.EditContainer>
       <S.RecipientsBackground

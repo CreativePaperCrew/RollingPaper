@@ -1,6 +1,6 @@
+import Skeleton from 'react-loading-skeleton';
 import styled from 'styled-components';
 import { VIEWPORT_SIZE } from '../../constants/viewportSize';
-import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 export const Container = styled.div`
@@ -77,6 +77,10 @@ export const ImageList = styled.div`
   }
 `;
 
+export const EmptyBox = styled.div`
+  display: block;
+`;
+
 export const AvailableImage = styled.img`
   width: 3.5rem;
   height: 3.5rem;
@@ -108,4 +112,9 @@ export const SkeletonImage = styled(Skeleton)`
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 70%;
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 `;

@@ -20,7 +20,7 @@ export const MainContentContainer = styled.main`
 export const FirstContent = styled.section`
   display: flex;
   padding: 3.75rem 0 3.75rem 3.75rem;
-  border-radius: 1rem;
+  border-radius: 16px;
   background: var(--surface);
   gap: 9.5rem;
   overflow: hidden;
@@ -32,7 +32,7 @@ export const FirstContent = styled.section`
   }
   @media (${VIEWPORT_SIZE.mobile}) {
     max-width: 20rem;
-    gap: 3.125rem;
+    gap: 0;
   }
 `;
 
@@ -116,7 +116,8 @@ export const MainImg1 = styled.img`
   width: 45rem;
   height: 12.75rem;
   @media (${VIEWPORT_SIZE.mobile}) {
-    width: 27.125rem;
+    width: 25rem;
+    object-fit: contain;
   }
 `;
 
@@ -124,7 +125,8 @@ export const MainImg2 = styled.img`
   width: 45rem;
   height: 13.75rem;
   @media (${VIEWPORT_SIZE.mobile}) {
-    width: 20rem;
+    width: 27rem;
+    object-fit: contain;
   }
 `;
 
@@ -142,6 +144,6 @@ export const SecondContent = styled.section`
   }
   @media (${VIEWPORT_SIZE.mobile}) {
     max-width: 20rem;
-    gap: 3rem;
+    gap: 0;
   }
 `;

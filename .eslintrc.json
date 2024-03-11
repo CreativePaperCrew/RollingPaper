@@ -15,11 +15,39 @@
     "react/jsx-key": "warn",
     "react/self-closing-comp": "warn",
     "react/jsx-curly-brace-presence": "warn",
+    "react-hooks/exhaustive-deps": "off",
     "prettier/prettier": [
       "error",
       {
         "endOfLine": "auto"
       }
     ]
-  }
+  },
+
+  "plugins": ["import"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "import/order": [
+          "warn",
+          {
+            "groups": [
+              ["builtin", "external", "internal"],
+              ["parent", "sibling", "index"],
+              "unknown"
+            ],
+            "alphabetize": { "order": "asc", "caseInsensitive": true }
+          }
+        ]
+      }
+    }
+  ]
 }

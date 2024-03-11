@@ -7,7 +7,7 @@ export const BadgeContainer = styled.div`
   gap: 0.625rem;
   padding: 0 0.5rem;
   background: var(${({ $background }) => $background});
-  border-radius: 0.25rem;
+  border-radius: 4px;
 `;
 
 export const Relationship = styled.p`

@@ -1,6 +1,6 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Button } from '../../components/common/Buttons/Button/ButtonStyle';
-import { Link } from 'react-router-dom';
 import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const Container = styled.main`

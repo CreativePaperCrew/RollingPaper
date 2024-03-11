@@ -99,16 +99,15 @@ const PostWritingPage = () => {
               <S.ProfileMessage>프로필 이미지를 선택해주세요</S.ProfileMessage>
               <S.ImageList>
                 {profileImageUrls?.map((url) => (
-                  <div>
+                  <S.EmptyBox key={url}>
                     <S.AvailableImage
                       src={url}
-                      key={url}
                       onClick={() => handleImageClick(url)}
                       onLoad={() => handleImageLoading(url)}
                       $loading={imageLoading[url] && 'none'}
                     />
                     {imageLoading[url] && <S.SkeletonImage />}
-                  </div>
+                  </S.EmptyBox>
                 ))}
               </S.ImageList>
             </S.ImageSelector>

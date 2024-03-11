@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '../../components/common/Buttons/Button/ButtonStyle';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const RecipientsBackground = styled.div`
   min-height: 100vh;
@@ -15,32 +16,34 @@ export const RecipientsBackground = styled.div`
 `;
 
 export const EditContainer = styled.div`
-  position: fixed;
+  position: absolute;
+  top: 187px;
   left: 50%;
   right: 50%;
   transform: translate(-50%);
-  bottom: 24px;
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 3.5rem;
+  width: 74rem;
+  height: 2.4375rem;
   z-index: 1;
 
-  @media (min-width: 1248px) {
-    position: absolute;
-    top: 187px;
-    width: 74rem;
-    height: 2.4375rem;
+  @media (${VIEWPORT_SIZE.tablet}) {
+    position: fixed;
+    top: 92%;
+    width: 100%;
+    height: 3.5rem;
   }
 `;
 
 export const DeleteContainer = styled.div`
   display: flex;
+  justify-content: flex-end;
+  height: 2.4375rem;
+  width: 74rem;
 
-  @media (min-width: 1248px) {
-    justify-content: flex-end;
-    height: 2.4375rem;
-    width: 74rem;
+  @media (${VIEWPORT_SIZE.tablet}) {
+    justify-content: center;
+    height: 3.4375rem;
   }
 `;
 
@@ -48,18 +51,26 @@ export const DeleteButton = styled(Button)`
   display: flex;
   white-space: nowrap;
 
-  @media (min-width: 768px) {
-    width: 45rem;
+  @media (${VIEWPORT_SIZE.tablet}) {
+    width: 45.25rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: 12px;
+    font-size: var(--font-18);
+    font-weight: var(--font-bold);
+    letter-spacing: -0.0112rem;
   }
-  @media (min-width: 1248px) {
-    width: 5.75rem;
+
+  @media (${VIEWPORT_SIZE.mobile}) {
+    width: 20rem;
   }
 `;
 
 export const RecipientsCardsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(1, 20rem);
-  grid-template-rows: repeat(auto-fit, 14.375rem);
+  padding: 0 2.4rem;
+  grid-template-columns: repeat(3, 24rem);
+  grid-template-rows: repeat(auto-fit, 17.5rem);
+
   justify-content: center;
   gap: 1rem;
   align-items: center;
@@ -76,15 +87,14 @@ export const RecipientsCardsContainer = styled.div`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (${VIEWPORT_SIZE.tablet}) {
     grid-template-columns: repeat(2, 22.125rem);
     grid-template-rows: repeat(auto-fit, 17.75rem);
   }
 
-  @media (min-width: 1248px) {
-    padding: 0 2.4rem;
-    grid-template-columns: repeat(3, 24rem);
-    grid-template-rows: repeat(auto-fit, 17.5rem);
+  @media (${VIEWPORT_SIZE.mobile}) {
+    grid-template-columns: repeat(1, 20rem);
+    grid-template-rows: repeat(auto-fit, 14.375rem);
   }
 `;
 
@@ -95,18 +105,21 @@ export const TargetedLine = styled.div`
 
 export const ArrowContainer = styled.div`
   position: fixed;
-  right: 2%;
-  bottom: 130px;
   width: 100%;
+  bottom: 6.25rem;
+
   -webkit-animation: bounce 800ms infinite;
   animation: bounce 800ms infinite;
   z-index: 1;
 
-  @media (min-width: 768px) {
+  @media (${VIEWPORT_SIZE.tablet}) {
+    right: 2%;
+    bottom: 9.375rem;
   }
 
-  @media (min-width: 1248px) {
-    bottom: 100px;
+  @media (${VIEWPORT_SIZE.mobile}) {
+    right: 4%;
+    bottom: 7.9rem;
   }
 `;
 

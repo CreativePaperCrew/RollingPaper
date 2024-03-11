@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const ShareButtonContainer = styled.button`
   position: relative;
@@ -6,10 +7,10 @@ export const ShareButtonContainer = styled.button`
   justify-content: center;
   align-items: center;
   padding: 0.375rem 1rem;
-  border-radius: 0.375rem;
+  border-radius: 6px;
   border: 1px solid var(--gray-300, #ccc);
   background: var(--white, #fff);
-  @media (max-width: 48rem) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     padding: 0.375rem 0.5rem;
   }
 `;
@@ -17,20 +18,17 @@ export const ShareButtonContainer = styled.button`
 export const ShareDropdown = styled.div`
   position: absolute;
   top: 120%;
-  right: 10%;
+  right: 0;
   z-index: 2;
   display: flex;
   flex-direction: column;
   padding: 0.625rem 0;
   align-items: center;
   background-color: var(--white);
-  border-radius: 0.5rem;
-  border: 0.0625rem solid var(--gray-300);
+  border-radius: 8px;
+  border: 1px solid var(--gray-300);
   background: var(--white);
   box-shadow: 0 0.125rem 0.75rem 0 rgba(0, 0, 0, 0.08);
-  @media (min-width: 100rem) {
-    right: -150%;
-  }
 `;
 
 export const ShareOption = styled.div`
@@ -52,7 +50,7 @@ export const ShareOption = styled.div`
 export const ShareIcon = styled.img`
   width: 1.5rem;
   height: 1.5rem;
-  @media (max-width: 48rem) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     width: 1.25rem;
     height: 1.25rem;
   }

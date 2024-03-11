@@ -22,5 +22,32 @@
         "endOfLine": "auto"
       }
     ]
-  }
+  },
+
+  "plugins": ["import"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.js"],
+      "rules": {
+        "import/order": [
+          "warn",
+          {
+            "groups": [
+              ["builtin", "external", "internal"],
+              ["parent", "sibling", "index"],
+              "unknown"
+            ],
+            "alphabetize": { "order": "asc", "caseInsensitive": true }
+          }
+        ]
+      }
+    }
+  ]
 }

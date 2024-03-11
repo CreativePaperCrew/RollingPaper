@@ -27,8 +27,8 @@ export const EmojiPickerButton = styled.button`
   align-items: center;
   gap: 0.25rem;
   padding: 0.375rem 1rem;
-  border-radius: 0.375rem;
-  border: 0.0625rem solid var(--gray-300);
+  border-radius: 6px;
+  border: 1px solid var(--gray-300);
   background: var(--white, #fff);
 
   @media (${VIEWPORT_SIZE.mobile}) {

@@ -26,7 +26,7 @@ export const ProfileCircle = styled.div`
   background-position: center;
 
   border-radius: 1.875rem;
-  border: 0.0625rem solid white;
+  border: 1px solid white;
   overflow: hidden;
   color: var(--gray-500);
 `;
@@ -37,7 +37,7 @@ export const LastCircle = styled(ProfileCircle)`
   line-height: 1.125rem;
   letter-spacing: -0.00375rem;
   background: var(--white);
-  border: 0.0625rem solid #e3e3e3;
+  border: 1px solid #e3e3e3;
   width: auto;
   padding: 0.3125rem 0.375rem;
 `;

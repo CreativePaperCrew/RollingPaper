@@ -54,7 +54,7 @@ export const DeleteButton = styled(Button)`
   @media (${VIEWPORT_SIZE.tablet}) {
     width: 45.25rem;
     padding: 0.875rem 1.5rem;
-    border-radius: 0.75rem;
+    border-radius: 12px;
     font-size: var(--font-18);
     font-weight: var(--font-bold);
     letter-spacing: -0.0112rem;

@@ -7,16 +7,16 @@ export const Container = styled.div`
 `;
 
 const ErrorBorder = css`
-  border: 0.0625rem solid var(--error);
+  border: 1px solid var(--error);
   color: var(--gray-900);
 `;
 
 export const Input = styled.input`
   margin-bottom: 0.25rem;
   padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   background: var(--white);
-  border: 0.0625rem solid var(--gray-300);
+  border: 1px solid var(--gray-300);
   color: var(--gray-500);
   font-size: 1rem;
   line-height: 1.625rem;

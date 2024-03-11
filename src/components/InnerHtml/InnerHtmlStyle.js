@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { getFontStyle } from '../../FontStyle';
 import { VIEWPORT_SIZE } from '../../constants/viewportSize';
+import { getFontStyle } from '../../FontStyle';
 
 const CardHtmlContent = css`
   display: -webkit-box;

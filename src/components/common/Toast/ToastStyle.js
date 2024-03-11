@@ -1,7 +1,7 @@
 import styled, { keyframes, css } from 'styled-components';
+import { ReactComponent as CloseSvg } from '../../../assets/icons/toast/close.svg';
 import { ReactComponent as CompletedSvg } from '../../../assets/icons/toast/completed.svg';
 import { ReactComponent as FailedSvg } from '../../../assets/icons/toast/failed.svg';
-import { ReactComponent as CloseSvg } from '../../../assets/icons/toast/close.svg';
 import { VIEWPORT_SIZE } from '../../../constants/viewportSize';
 
 const slideUp = keyframes`
@@ -28,7 +28,7 @@ export const ToastContainer = styled.div`
   height: 4rem;
   bottom: 2rem;
   left: 50%;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   background: rgba(0, 0, 0, 0.8);
   padding: 1.1875rem 1.875rem;
   display: flex;
@@ -53,7 +53,7 @@ export const ToastContainer = styled.div`
 `;
 
 const IconStyle = css`
-  margin-right: 8px;
+  margin-right: 0.5rem;
   width: 1.5rem;
   height: 1.5rem;
 `;

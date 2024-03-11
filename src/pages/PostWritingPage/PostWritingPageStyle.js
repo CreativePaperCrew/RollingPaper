@@ -77,6 +77,10 @@ export const ImageList = styled.div`
   }
 `;
 
+export const EmptyBox = styled.div`
+  display: block;
+`;
+
 export const AvailableImage = styled.img`
   width: 3.5rem;
   height: 3.5rem;

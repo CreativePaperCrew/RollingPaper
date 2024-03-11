@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const EmojiBadgesExpanded = styled.div`
   position: absolute;
@@ -14,7 +15,8 @@ export const EmojiBadgesExpanded = styled.div`
   border-radius: 0.5rem;
   border: 0.0625rem solid #b6b6b6;
   box-shadow: 0 0.125rem 0.75rem 0 rgba(0, 0, 0, 0.08);
-  @media (max-width: 48rem) {
+
+  @media (${VIEWPORT_SIZE.mobile}) {
     grid: '. . .';
     padding: 1rem;
   }
@@ -29,7 +31,7 @@ export const ArrowDownButton = styled.button`
   height: 2.25rem;
   padding: 0.375rem;
   margin-right: 0.5rem;
-  @media (max-width: 48rem) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     margin: 0;
   }
 `;

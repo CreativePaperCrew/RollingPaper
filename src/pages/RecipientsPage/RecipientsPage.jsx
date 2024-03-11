@@ -103,7 +103,7 @@ const RecipientsPage = () => {
       <ServiceHeader recipientData={recipientData} />
       <S.EditContainer onClick={toggleDelete}>
         <S.DeleteContainer>
-          <S.DeleteButton size="medium">{deleteButtonText}</S.DeleteButton>
+          <S.DeleteButton size="small">{deleteButtonText}</S.DeleteButton>
         </S.DeleteContainer>
       </S.EditContainer>
       <S.RecipientsBackground

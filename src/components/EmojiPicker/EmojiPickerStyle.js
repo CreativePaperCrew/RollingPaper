@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const EmojiPickerContainer = styled.div`
   position: relative;
@@ -29,7 +30,8 @@ export const EmojiPickerButton = styled.button`
   border-radius: 0.375rem;
   border: 0.0625rem solid var(--gray-300);
   background: var(--white, #fff);
-  @media (max-width: 48rem) {
+
+  @media (${VIEWPORT_SIZE.mobile}) {
     padding: 0.375rem 0.5rem;
   }
 `;
@@ -38,7 +40,8 @@ export const EmojiPickerButtonText = styled.span`
   color: var(--gray-900);
   font-weight: 500;
   line-height: 1.5rem;
-  @media (max-width: 48rem) {
+
+  @media (${VIEWPORT_SIZE.mobile}) {
     display: none;
   }
 `;
@@ -46,7 +49,8 @@ export const EmojiPickerButtonText = styled.span`
 export const EmojiPickerButtonIcon = styled.img`
   width: 1.5rem;
   height: 1.5rem;
-  @media (max-width: 48rem) {
+
+  @media (${VIEWPORT_SIZE.mobile}) {
     width: 1.25rem;
     height: 1.25rem;
   }

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const WritersListContainer = styled.div`
   display: flex;
@@ -6,7 +7,7 @@ export const WritersListContainer = styled.div`
   align-items: center;
   gap: 0.6875rem;
   ${(props) => (props.$onlyDesktop ? 'display: none;' : 'display: flex;')}
-  @media (max-width: 1200px) {
+  @media (${VIEWPORT_SIZE.tablet}) {
     ${(props) => (props.$onlyDesktop ? 'display: flex;' : 'display: none')}
   }
 `;

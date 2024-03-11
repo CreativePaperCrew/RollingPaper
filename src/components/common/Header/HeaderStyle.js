@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../../constants/viewportSize';
 
 export const HeaderContentContainer = styled.div`
   display: flex;
@@ -13,13 +14,12 @@ export const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 75rem;
   width: 100%;
   height: 4rem;
-  padding: 0 1.5rem;
 
-  @media (min-width: 1200px) {
-    max-width: 75rem;
-    padding: 0;
+  @media (${VIEWPORT_SIZE.tablet}) {
+    padding: 0 1.5rem;
   }
 `;
 

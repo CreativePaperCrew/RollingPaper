@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const EmojiBadgeContainer = styled.div`
   display: inline-flex;
@@ -8,7 +9,8 @@ export const EmojiBadgeContainer = styled.div`
   gap: 0.125rem;
   border-radius: 2rem;
   background: rgba(0, 0, 0, 0.54);
-  @media (max-width: 768px) {
+
+  @media (${VIEWPORT_SIZE.mobile}) {
     padding: 0.25rem 0.5rem;
   }
 `;
@@ -16,7 +18,8 @@ export const EmojiBadgeContainer = styled.div`
 export const EmojiContainer = styled.div`
   height: 1.3125rem;
   line-height: 1.3125rem;
-  @media (max-width: 768px) {
+
+  @media (${VIEWPORT_SIZE.mobile}) {
     font-size: 0.875rem;
   }
 `;
@@ -25,7 +28,8 @@ export const ReactionCount = styled.div`
   color: var(--white);
   font-size: 1rem;
   line-height: 1.25rem;
-  @media (max-width: 768px) {
+
+  @media (${VIEWPORT_SIZE.mobile}) {
     font-size: 0.875rem;
   }
 `;

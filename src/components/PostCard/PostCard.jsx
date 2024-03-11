@@ -60,11 +60,7 @@ const PostCard = ({ cardData, onClick, onDelete, isDelete }) => {
         </S.PostCardProfile>
       </S.PostCardTop>
       <S.ContentContainer>
-        {isJson ? (
-          <InnerHtml content={content} font={font} isCard={true} />
-        ) : (
-          <S.Content $font={font}>{content}</S.Content>
-        )}
+        {isJson && <InnerHtml content={content} font={font} isCard={true} />}
       </S.ContentContainer>
       <S.PostCardDate>{formatKSTDate(createdAt)}</S.PostCardDate>
     </S.PostCardContainer>

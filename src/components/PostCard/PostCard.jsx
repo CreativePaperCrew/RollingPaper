@@ -61,7 +61,7 @@ const PostCard = ({ cardData, onClick, onDelete, isDelete }) => {
       </S.PostCardTop>
       <S.ContentContainer>
         {isJson ? (
-          <InnerHtml content={content} font={font} />
+          <InnerHtml content={content} font={font} isCard={true} />
         ) : (
           <S.Content $font={font}>{content}</S.Content>
         )}

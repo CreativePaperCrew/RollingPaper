@@ -6,23 +6,29 @@
 추억의 롤링 페이퍼를 웹 상에서도 즐길 수 있는 플랫폼인 '롤링 페이퍼' 서비스
 ```
 
+<br/>
+
 # 🔗 프로젝트 링크
 
 > http://rolling-paper-pi.vercel.app
+
+<br/>
 
 # 📅 개발 기간
 
 > 24.02.24 ~ 24.03.11
 
+<br/>
+
 # 💁🏻‍♀팀원 소개💁🏻‍♂
 
 <table border ="1"> 
   <tr>
-    <td height="160px" align="center"><img src="https://avatars.githubusercontent.com/u/100824183?v=4" width="160px"/></td> 
-    <td height="160px" align="center"><img src="https://avatars.githubusercontent.com/u/79499733?v=4" width="160px"/></td> 
-    <td height="160px" align="center"><img src="https://avatars.githubusercontent.com/u/129318957?v=4" width="160px"/></td> 
-    <td height="160px" align="center"><img src="https://avatars.githubusercontent.com/u/88578367?v=4" width="160px"/></td> 
-    <td height="160px" align="center"><img src="https://avatars.githubusercontent.com/u/108844881?v=4" width="160px"/></td> 
+    <td align="center"><img src="https://avatars.githubusercontent.com/u/100824183?v=4"/></td> 
+    <td align="center"><img src="https://avatars.githubusercontent.com/u/79499733?v=4"/></td> 
+    <td align="center"><img src="https://avatars.githubusercontent.com/u/129318957?v=4"/></td> 
+    <td  align="center"><img src="https://avatars.githubusercontent.com/u/88578367?v=4"/></td> 
+    <td  align="center"><img src="https://avatars.githubusercontent.com/u/108844881?v=4"/></td> 
   </tr>
     <tr>
     <td align="center"><a href="https://github.com/Trophy198">FE_구승모</a></td> 
@@ -32,6 +38,8 @@
     <td align="center"><a href="https://github.com/JaeBeen95">FE_이재빈</a></td> 
   </tr>
 </table>
+
+<br/>
 
 # ⚙️ 기술 스택
 
@@ -100,6 +108,8 @@ Emoji Picker / React Quill / Quill delta to HTML converter / React-Loading-Skele
   </tr>
 </table>
 
+<br/>
+
 # ⚒️ 주요 기능
 
 ## Card Slide
@@ -122,6 +132,8 @@ Emoji Picker / React Quill / Quill delta to HTML converter / React-Loading-Skele
 ## Text editor
 
 <img src ="https://media.discordapp.net/attachments/1048586775553130587/1216661583883669546/bandicam_2024-03-11_16-53-30-354-ezgif.com-video-to-gif-converter.gif?ex=66013366&is=65eebe66&hm=55edfc0e34884b6c500a0aa4c915f2be6fec3201496df806a0a8fc938f830eaa&=&width=750&height=428"/>
+
+<br/>
 
 # 🙏 팀 문화
 

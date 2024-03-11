@@ -3,19 +3,16 @@ import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 export const MainContentContainer = styled.main`
   display: flex;
-  width: 100%;
-  max-width: 75rem;
+  width: 75rem;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin: 0.375rem 0;
   gap: 1.875rem;
   @media (${VIEWPORT_SIZE.tablet}) {
-    min-width: 45rem;
     margin: 3.0625rem 1.5rem;
   }
   @media (${VIEWPORT_SIZE.mobile}) {
-    max-width: 20rem;
     margin: 2.625rem 1.5rem 2.3125rem;
   }
 `;
@@ -100,9 +97,6 @@ export const LineBreak = styled.br`
     display: none;
   }
 `;
-export const EmojiDescription = styled(MainDescription)`
-  width: 14.8125rem;
-`;
 
 export const SubDescription = styled.p`
   color: var(--gray-500);
@@ -119,14 +113,16 @@ export const SubDescription = styled.p`
   }
 `;
 export const MainImg1 = styled.img`
-  max-width: 45rem;
+  width: 45rem;
+  height: 12.75rem;
   @media (${VIEWPORT_SIZE.mobile}) {
     width: 27.125rem;
   }
 `;
 
 export const MainImg2 = styled.img`
-  max-width: 45rem;
+  width: 45rem;
+  height: 13.75rem;
   @media (${VIEWPORT_SIZE.mobile}) {
     width: 20rem;
   }

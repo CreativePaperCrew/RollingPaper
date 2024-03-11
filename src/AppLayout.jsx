@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Header from './components/common/Header/Header';
 import { VIEWPORT_SIZE } from './constants/viewportSize';
+import { ToastProvider } from './contexts/ToastContext';
 
 const AppLayout = () => {
   const location = useLocation();
@@ -24,10 +25,10 @@ const AppLayout = () => {
   const shouldHideHeader = location.pathname.startsWith('/post') && isMobile;
 
   return (
-    <>
+    <ToastProvider>
       {!shouldHideHeader && <Header />}
       <Outlet />
-    </>
+    </ToastProvider>
   );
 };
 

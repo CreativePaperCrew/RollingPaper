@@ -143,10 +143,6 @@ export const ContentContainer = styled.div`
   }
 `;
 
-export const Content = styled.p`
-  ${(props) => getfontStyle(props.$font)}
-`;
-
 export const PostCardDate = styled.span`
   color: var(--gray-400);
   font-size: 0.75rem;

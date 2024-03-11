@@ -15,7 +15,7 @@ export const RecipientsBackground = styled.div`
   background-attachment: fixed;
 `;
 
-export const EditContainer = styled.div`
+export const EditContainer = styled.main`
   position: absolute;
   top: 187px;
   left: 50%;

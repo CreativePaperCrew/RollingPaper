@@ -2,6 +2,7 @@ import styled, { keyframes, css } from 'styled-components';
 import { ReactComponent as CompletedSvg } from '../../../assets/icons/toast/completed.svg';
 import { ReactComponent as FailedSvg } from '../../../assets/icons/toast/failed.svg';
 import { ReactComponent as CloseSvg } from '../../../assets/icons/toast/close.svg';
+import { VIEWPORT_SIZE } from '../../../constants/viewportSize';
 
 const slideUp = keyframes`
   from {
@@ -41,11 +42,11 @@ export const ToastContainer = styled.div`
         `};
   z-index: 999;
 
-  @media screen and (max-width: 1199px) {
+  @media (${VIEWPORT_SIZE.tablet}) {
     bottom: 6.25rem;
   }
 
-  @media screen and (max-width: 767px) {
+  @media (${VIEWPORT_SIZE.mobile}) {
     width: 17.5rem;
     bottom: 5.5rem;
   }

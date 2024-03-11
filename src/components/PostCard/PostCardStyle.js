@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { getfontStyle } from '../../FontStyle';
+import { VIEWPORT_SIZE } from '../../constants/viewportSize';
 
 const fadeInUpKeyframes = css`
   @keyframes fadeInUp {
@@ -16,8 +17,8 @@ const fadeInUpKeyframes = css`
 
 export const PostCardContainer = styled.div`
   position: relative;
-  width: 20rem;
-  height: 14.375rem;
+  width: 24rem;
+  height: 17.5rem;
   padding: 1.75rem 1.5rem;
   border-radius: 16px;
   background: var(--white);
@@ -48,14 +49,14 @@ export const PostCardContainer = styled.div`
     background-color: var(--gray-300);
   }
 
-  @media (min-width: 768px) {
+  @media (${VIEWPORT_SIZE.tablet}) {
     width: 22rem;
     height: 17.75rem;
   }
 
-  @media (min-width: 1248px) {
-    width: 24rem;
-    height: 17.5rem;
+  @media (${VIEWPORT_SIZE.mobile}) {
+    width: 20rem;
+    height: 14.375rem;
   }
 `;
 
@@ -111,7 +112,7 @@ export const AuthorFrom = styled.span`
 `;
 
 export const Author = styled.p`
-  width: 6.25rem;
+  width: 10rem;
   color: var(--black);
   font-size: 1rem;
   font-weight: 700;
@@ -120,48 +121,34 @@ export const Author = styled.p`
   white-space: nowrap;
   text-overflow: ellipsis;
 
-  @media (min-width: 768px) {
+  @media (${VIEWPORT_SIZE.tablet}) {
     width: 8.125rem;
   }
 
-  @media (min-width: 1248px) {
-    width: 10rem;
+  @media (${VIEWPORT_SIZE.mobile}) {
+    width: 6.25rem;
   }
 `;
 
 export const ContentContainer = styled.div`
-  height: 3.5rem;
+  height: 6.625rem;
   margin: 1rem 0;
 
-  @media (min-width: 768px) {
+  @media (${VIEWPORT_SIZE.tablet}) {
     height: 6.875rem;
   }
 
-  @media (min-width: 1248px) {
-    height: 6.625rem;
+  @media (${VIEWPORT_SIZE.mobile}) {
+    height: 3.5rem;
   }
 `;
 
 export const Content = styled.p`
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  width: 100%;
-  color: var(--gray-600, #4a4a4a);
-  font-size: var(--font-15);
   ${(props) => getfontStyle(props.$font)}
-  line-height: 1.5rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  @media (min-width: 768px) {
-    -webkit-line-clamp: 3;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
 `;
 
 export const PostCardDate = styled.span`
-  color: var(--gray-400, #999);
+  color: var(--gray-400);
   font-size: 0.75rem;
   line-height: 1.125rem;
 `;

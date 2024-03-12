@@ -26,6 +26,7 @@ const RecipientsPage = () => {
   const [isDelete, setIsDelete] = useState(false);
   const [deleteButtonText, setDeleteButtonText] = useState('삭제하기');
   const [showArrow, setShowArrow] = useState(true);
+  const [messageCount, setMessageCount] = useState(0);
 
   const { data: recipientData, error: recipientError } = useFetchData(
     getRecipientRollingPapers,
@@ -76,10 +77,17 @@ const RecipientsPage = () => {
     }
   }, [recipientError, navigate]);
 
+  useEffect(() => {
+    if (recipientData) {
+      setMessageCount(recipientData.messageCount);
+    }
+  }, [recipientData]);
+
   const onDelete = useCallback(
     async (id) => {
       await deleteRollingPaperMessage(id);
       setData((prevData) => prevData.filter((message) => message.id !== id));
+      setMessageCount((prevCount) => prevCount - 1);
     },
     [setData],
   );
@@ -100,7 +108,10 @@ const RecipientsPage = () => {
 
   return (
     <>
-      <ServiceHeader recipientData={recipientData} />
+      <ServiceHeader
+        recipientData={recipientData}
+        messageCount={messageCount}
+      />
       <S.EditContainer>
         <S.DeleteContainer>
           <S.DeleteButton size="small" onClick={toggleDelete}>

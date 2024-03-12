@@ -64,7 +64,7 @@ const PostWritingPage = () => {
         content,
         font,
       );
-      showToast(true, `${sender}에 대한 롤링페이퍼를 생성하였습니다.`);
+      showToast(true, '페이퍼가 작성되었습니다.');
       navigate('/post/' + id);
     } catch (error) {
       showToast(false, error.message);
